@@ -1,3 +1,5 @@
+# 注意, 本文最新版本请在[本人博客中查看](http://vanishing.cc/2026/03/18/Programming/Cpp/%E4%BB%8E%E7%A1%AC%E4%BB%B6%E5%BA%95%E5%B1%82%E5%BC%80%E5%A7%8B%E7%90%86%E8%A7%A3c++%E5%86%85%E5%AD%98%E5%BA%8F/)
+
 # 从硬件底层开始理解c++内存序
 
 # 本文概览

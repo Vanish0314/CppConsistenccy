@@ -1,11 +1,3 @@
-/*
- * --------------------------------------------------------------------------------
- * Copyright (c) 2025 Vanishing Games. All Rights Reserved.
- * @Author: VanishXiao
- * @Date: 2026-03-18 11:11:07
- * @LastEditTime: 2026-03-18 11:19:08
- * --------------------------------------------------------------------------------
- */
 #include <iostream>
 #include <atomic>
 #include <thread>
