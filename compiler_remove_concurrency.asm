@@ -6,13 +6,13 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 PUBLIC	_Avx2WmemEnabledWeakValue
-PUBLIC	?ready@@3U?$atomic@_N@std@@A			; ready
+PUBLIC	?flag@@3HA					; flag
 ;	COMDAT _Avx2WmemEnabledWeakValue
 _BSS	SEGMENT
 _Avx2WmemEnabledWeakValue DD 01H DUP (?)
 _BSS	ENDS
 _BSS	SEGMENT
-?ready@@3U?$atomic@_N@std@@A DB 01H DUP (?)		; ready
+?flag@@3HA DD	01H DUP (?)				; flag
 _BSS	ENDS
 PUBLIC	??2@YAPEAX_KPEAX@Z				; operator new
 PUBLIC	??0exception@std@@QEAA@QEBD@Z			; std::exception::exception
@@ -59,24 +59,17 @@ PUBLIC	??0_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QEAA@XZ ; std::_Stri
 PUBLIC	??1_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QEAA@XZ ; std::_String_val<std::_Simple_types<char> >::_Bxty::~_Bxty
 PUBLIC	?_Switch_to_buf@_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QEAAXXZ ; std::_String_val<std::_Simple_types<char> >::_Bxty::_Switch_to_buf
 PUBLIC	??1?$_String_val@U?$_Simple_types@D@std@@@std@@QEAA@XZ ; std::_String_val<std::_Simple_types<char> >::~_String_val<std::_Simple_types<char> >
-PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@AEBV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD_K@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	?_Deallocate_for_capacity@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CAXAEAV?$allocator@D@2@QEAD_K@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Deallocate_for_capacity
-PUBLIC	?_Construct_empty@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct_empty
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@$$QEAV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	?_Take_contents@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAXAEAV12@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Take_contents
 PUBLIC	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
-PUBLIC	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 PUBLIC	?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@AEBV12@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::append
 PUBLIC	?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::append
 PUBLIC	?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::append
-PUBLIC	?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign
-PUBLIC	?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign
 PUBLIC	?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::c_str
-PUBLIC	?data@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::data
-PUBLIC	?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA_KXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::size
 PUBLIC	?max_size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA_KXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::max_size
 PUBLIC	?empty@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA_NXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::empty
 PUBLIC	?_Calculate_growth@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CA_K_K00@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Calculate_growth
@@ -92,8 +85,6 @@ PUBLIC	??0runtime_error@std@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$a
 PUBLIC	??1runtime_error@std@@UEAA@XZ			; std::runtime_error::~runtime_error
 PUBLIC	??0runtime_error@std@@QEAA@AEBV01@@Z		; std::runtime_error::runtime_error
 PUBLIC	??_Gruntime_error@std@@UEAAPEAXI@Z		; std::runtime_error::`scalar deleting destructor'
-PUBLIC	?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z ; std::_Check_store_memory_order
-PUBLIC	?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z ; std::_Check_load_memory_order
 PUBLIC	?iostream_category@std@@YAAEBVerror_category@1@XZ ; std::iostream_category
 PUBLIC	??1error_category@std@@UEAA@XZ			; std::error_category::~error_category
 PUBLIC	?default_error_condition@error_category@std@@UEBA?AVerror_condition@2@H@Z ; std::error_category::default_error_condition
@@ -183,13 +174,20 @@ PUBLIC	?flags@ios_base@std@@QEBAHXZ			; std::ios_base::flags
 PUBLIC	?width@ios_base@std@@QEBA_JXZ			; std::ios_base::width
 PUBLIC	?width@ios_base@std@@QEAA_J_J@Z			; std::ios_base::width
 PUBLIC	?getloc@ios_base@std@@QEBA?AVlocale@2@XZ	; std::ios_base::getloc
+PUBLIC	?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ ; std::chrono::steady_clock::now
+PUBLIC	?count@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEBA_JXZ ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::count
+PUBLIC	??Y?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAAAEAV012@AEBV012@@Z ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::operator+=
+PUBLIC	??0?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEAA@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@@Z ; std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+PUBLIC	?time_since_epoch@?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@XZ ; std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >::time_since_epoch
+PUBLIC	??Y?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEAAAEAV012@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@@Z ; std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >::operator+=
+PUBLIC	??$?0_J$0A@@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAA@AEB_J@Z ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::duration<__int64,std::ratio<1,1000000000> ><__int64,0>
 PUBLIC	??1thread@std@@QEAA@XZ				; std::thread::~thread
 PUBLIC	?joinable@thread@std@@QEBA_NXZ			; std::thread::joinable
 PUBLIC	?join@thread@std@@QEAAXXZ			; std::thread::join
-PUBLIC	?store@?$_Atomic_storage@_N$00@std@@QEAAX_N@Z	; std::_Atomic_storage<bool,1>::store
-PUBLIC	?store@?$_Atomic_storage@_N$00@std@@QEAAX_NW4memory_order@2@@Z ; std::_Atomic_storage<bool,1>::store
-PUBLIC	?load@?$_Atomic_storage@_N$00@std@@QEBA_NW4memory_order@2@@Z ; std::_Atomic_storage<bool,1>::load
-PUBLIC	?producer@@YAXXZ				; producer
+PUBLIC	?count@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEBA_JXZ ; std::chrono::duration<__int64,std::ratio<1,1000> >::count
+PUBLIC	?Producer@@YAXXZ				; Producer
+PUBLIC	??$?0H$0A@@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEAA@AEBH@Z ; std::chrono::duration<__int64,std::ratio<1,1000> >::duration<__int64,std::ratio<1,1000> ><int,0>
+PUBLIC	??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z ; std::this_thread::sleep_for<__int64,std::ratio<1,1000> >
 PUBLIC	?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z ; std::basic_ios<char,std::char_traits<char> >::clear
 PUBLIC	?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z ; std::basic_ios<char,std::char_traits<char> >::setstate
 PUBLIC	?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ ; std::basic_ios<char,std::char_traits<char> >::tie
@@ -202,8 +200,7 @@ PUBLIC	?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z ; std::b
 PUBLIC	?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ ; std::basic_ostream<char,std::char_traits<char> >::flush
 PUBLIC	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
 PUBLIC	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-PUBLIC	?consumer@@YAXXZ				; consumer
-PUBLIC	??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
+PUBLIC	?Consumer@@YAXXZ				; Consumer
 PUBLIC	main
 PUBLIC	??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z	; std::thread::thread<void (__cdecl&)(void),0>
 PUBLIC	??$min@_K@std@@YAAEB_KAEB_K0@Z			; std::min<unsigned __int64>
@@ -213,6 +210,13 @@ PUBLIC	??1?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@
 PUBLIC	?release@?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QEAAPEAV_Facet_base@2@XZ ; std::unique_ptr<std::_Facet_base,std::default_delete<std::_Facet_base> >::release
 PUBLIC	?_Get_first@?$_Compressed_pair@U?$default_delete@V_Facet_base@std@@@std@@PEAV_Facet_base@2@$00@std@@QEAAAEAU?$default_delete@V_Facet_base@std@@@2@XZ ; std::_Compressed_pair<std::default_delete<std::_Facet_base>,std::_Facet_base *,1>::_Get_first
 PUBLIC	??$?0U?$default_delete@V_Facet_base@std@@@std@@$0A@@?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QEAA@PEAV_Facet_base@1@@Z ; std::unique_ptr<std::_Facet_base,std::default_delete<std::_Facet_base> >::unique_ptr<std::_Facet_base,std::default_delete<std::_Facet_base> ><std::default_delete<std::_Facet_base>,0>
+PUBLIC	??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z ; std::_To_absolute_time<__int64,std::ratio<1,1000> >
+PUBLIC	??$?0_J$0A@@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEAA@AEB_J@Z ; std::chrono::duration<__int64,std::ratio<1,1000> >::duration<__int64,std::ratio<1,1000> ><__int64,0>
+PUBLIC	??$?O_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z ; std::chrono::operator><__int64,std::ratio<1,1000>,__int64,std::ratio<1,1000> >
+PUBLIC	??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@_JU?$ratio@$00$0DOI@@2@@chrono@std@@YA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z ; std::chrono::operator-<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,__int64,std::ratio<1,1000> >
+PUBLIC	??$?MUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z ; std::chrono::operator<<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+PUBLIC	??$?0_JU?$ratio@$00$0DOI@@std@@$0A@@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAA@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@12@@Z ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::duration<__int64,std::ratio<1,1000000000> ><__int64,std::ratio<1,1000>,0>
+PUBLIC	??$sleep_until@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@this_thread@std@@YAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@1@@Z ; std::this_thread::sleep_until<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
 PUBLIC	??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
 PUBLIC	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
 PUBLIC	??0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z ; std::basic_ostream<char,std::char_traits<char> >::sentry::sentry
@@ -223,12 +227,8 @@ PUBLIC	?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z ; std::bas
 PUBLIC	?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z ; std::basic_streambuf<char,std::char_traits<char> >::sputn
 PUBLIC	?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ ; std::basic_streambuf<char,std::char_traits<char> >::_Pninc
 PUBLIC	?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBA_JXZ ; std::basic_streambuf<char,std::char_traits<char> >::_Pnavail
-PUBLIC	??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z ; std::_Insert_string<char,std::char_traits<char>,unsigned __int64>
 PUBLIC	??$forward@A6AXXZ@std@@YAA6AXXZA6AXXZ@Z		; std::forward<void (__cdecl&)(void)>
 PUBLIC	??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z	; std::thread::_Start<void (__cdecl&)(void)>
-PUBLIC	??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPEDDAEBU?$_Atomic_padded@_N@0@@Z ; std::_Atomic_address_as<char,std::_Atomic_padded<bool> >
-PUBLIC	??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPECDAEAU?$_Atomic_padded@_N@0@@Z ; std::_Atomic_address_as<char,std::_Atomic_padded<bool> >
-PUBLIC	??$_Atomic_reinterpret_as@D_N@std@@YADAEB_N@Z	; std::_Atomic_reinterpret_as<char,bool>
 PUBLIC	??$_Convert_size@_K_K@std@@YA_K_K@Z		; std::_Convert_size<unsigned __int64,unsigned __int64>
 PUBLIC	??$move@AEAV?$allocator@D@std@@@std@@YA$$QEAV?$allocator@D@0@AEAV10@@Z ; std::move<std::allocator<char> &>
 PUBLIC	??$?0V?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAV?$allocator@D@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><std::allocator<char> >
@@ -236,6 +236,13 @@ PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple
 PUBLIC	??$_Construct@$00PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAXQEBD_K@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct<1,char const *>
 PUBLIC	??$_Construct@$01PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAXQEBD_K@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct<2,char const *>
 PUBLIC	??$?0AEAPEAV_Facet_base@std@@@?$_Compressed_pair@U?$default_delete@V_Facet_base@std@@@std@@PEAV_Facet_base@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV_Facet_base@1@@Z ; std::_Compressed_pair<std::default_delete<std::_Facet_base>,std::_Facet_base *,1>::_Compressed_pair<std::default_delete<std::_Facet_base>,std::_Facet_base *,1><std::_Facet_base * &>
+PUBLIC	??$?M_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z ; std::chrono::operator<<__int64,std::ratio<1,1000>,__int64,std::ratio<1,1000> >
+PUBLIC	??$?G_JU?$ratio@$00$0DLJKMKAA@@std@@_JU?$ratio@$00$0DOI@@1@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z ; std::chrono::operator-<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000> >
+PUBLIC	??$?M_JU?$ratio@$00$0DLJKMKAA@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@0@Z ; std::chrono::operator<<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000000000> >
+PUBLIC	??$duration_cast@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@_JU?$ratio@$00$0DOI@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z ; std::chrono::duration_cast<std::chrono::duration<__int64,std::ratio<1,1000000000> >,__int64,std::ratio<1,1000>,0>
+PUBLIC	??$?NUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z ; std::chrono::operator<=<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+PUBLIC	??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z ; std::chrono::operator-<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+PUBLIC	??$_Clamped_rel_time_ms_count@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@std@@YA?AU_Clamped_rel_time_ms_count_result@0@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@0@@Z ; std::_Clamped_rel_time_ms_count<std::chrono::duration<__int64,std::ratio<1,1000000000> > >
 PUBLIC	??$make_unique@V?$tuple@P6AXXZ@std@@A6AXXZ$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@0@A6AXXZ@Z ; std::make_unique<std::tuple<void (__cdecl*)(void)>,void (__cdecl&)(void),0>
 PUBLIC	??R?$default_delete@V?$tuple@P6AXXZ@std@@@std@@QEBAXPEAV?$tuple@P6AXXZ@1@@Z ; std::default_delete<std::tuple<void (__cdecl*)(void)> >::operator()
 PUBLIC	??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::~unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >
@@ -256,6 +263,9 @@ PUBLIC	??$_Reallocate_grow_by@V<lambda_65e615be2a453ca0576c979606f46740>@@PEBD_K
 PUBLIC	??$addressof@V?$_String_val@U?$_Simple_types@D@std@@@std@@@std@@YAPEAV?$_String_val@U?$_Simple_types@D@std@@@0@AEAV10@@Z ; std::addressof<std::_String_val<std::_Simple_types<char> > >
 PUBLIC	??$_Construct_in_place@PEADAEAPEAD@std@@YAXAEAPEAD0@Z ; std::_Construct_in_place<char *,char * &>
 PUBLIC	??$forward@AEAPEAV_Facet_base@std@@@std@@YAAEAPEAV_Facet_base@0@AEAPEAV10@@Z ; std::forward<std::_Facet_base * &>
+PUBLIC	??$?G_JU?$ratio@$00$0DLJKMKAA@@std@@_JU01@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV201@0@Z ; std::chrono::operator-<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000000000> >
+PUBLIC	??$?O_JU?$ratio@$00$0DLJKMKAA@@std@@_JU?$ratio@$00$0DOI@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z ; std::chrono::operator><__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000> >
+PUBLIC	??$ceil@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z ; std::chrono::ceil<std::chrono::duration<__int64,std::ratio<1,1000> >,__int64,std::ratio<1,1000000000>,0>
 PUBLIC	??$?0P6AXXZ$0A@@?$tuple@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><void (__cdecl*)(void),0>
 PUBLIC	??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@PEAV?$tuple@P6AXXZ@1@@Z ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > ><std::default_delete<std::tuple<void (__cdecl*)(void)> >,0>
 PUBLIC	??$forward@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@@std@@YA$$QEAU?$default_delete@V?$tuple@P6AXXZ@std@@@0@AEAU10@@Z ; std::forward<std::default_delete<std::tuple<void (__cdecl*)(void)> > >
@@ -271,8 +281,8 @@ PUBLIC	??$exchange@PEAV?$tuple@P6AXXZ@std@@$$T@std@@YAPEAV?$tuple@P6AXXZ@0@AEAPE
 PUBLIC	??$_Destroy_in_place@PEAD@std@@YAXAEAPEAD@Z	; std::_Destroy_in_place<char *>
 PUBLIC	??$max@_K@std@@YAAEB_KAEB_K0@Z			; std::max<unsigned __int64>
 PUBLIC	??$_Max_limit@_J@std@@YA_JXZ			; std::_Max_limit<__int64>
-PUBLIC	??R<lambda_66f57f934f28d61049862f64df852ff0>@@QEBA@QEAD_KQEBD@Z ; <lambda_66f57f934f28d61049862f64df852ff0>::operator()
-PUBLIC	??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Reallocate_for<<lambda_66f57f934f28d61049862f64df852ff0>,char const *>
+PUBLIC	??$?M_JU?$ratio@$00$0DOI@@std@@_JU?$ratio@$00$0DLJKMKAA@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z ; std::chrono::operator<<__int64,std::ratio<1,1000>,__int64,std::ratio<1,1000000000> >
+PUBLIC	??$duration_cast@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z ; std::chrono::duration_cast<std::chrono::duration<__int64,std::ratio<1,1000> >,__int64,std::ratio<1,1000000000>,0>
 PUBLIC	??$?0U_Exact_args_t@std@@AEBQ6AXXZ$$V$0A@@?$tuple@P6AXXZ@std@@QEAA@U_Exact_args_t@1@AEBQ6AXXZ@Z ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><std::_Exact_args_t,void (__cdecl*const &)(void),0>
 PUBLIC	??$?0AEAPEAV?$tuple@P6AXXZ@std@@@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV?$tuple@P6AXXZ@1@@Z ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1><std::tuple<void (__cdecl*)(void)> * &>
 PUBLIC	??$forward@PEAV?$tuple@P6AXXZ@std@@@std@@YA$$QEAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@@Z ; std::forward<std::tuple<void (__cdecl*)(void)> *>
@@ -331,10 +341,11 @@ PUBLIC	_TI5?AVfailure@ios_base@std@@
 PUBLIC	_CTA5?AVfailure@ios_base@std@@
 PUBLIC	??_R0?AVfailure@ios_base@std@@@8		; std::ios_base::failure `RTTI Type Descriptor'
 PUBLIC	_CT??_R0?AVfailure@ios_base@std@@@8??0failure@ios_base@std@@QEAA@AEBV012@@Z40
-PUBLIC	?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A ; data
-PUBLIC	??_C@_0BK@BDBCDDKG@Payload?5delivered?5safely?$CB@ ; `string'
-PUBLIC	??_C@_0BO@LPEJHBLG@?$FLProducer?$FN?5Flag?5set?5to?5ready?4@ ; `string'
-PUBLIC	??_C@_0BL@NGPCMOCL@?$FLConsumer?$FN?5Data?5observed?3?5@ ; `string'
+PUBLIC	??_C@_0DA@FKNJHCDP@?$FLProducer?$FN?5State?5updated?3?50?5?9?$DO?5@ ; `string'
+PUBLIC	??_C@_0DF@CKIKPHIA@?$FLConsumer?$FN?5Started?5polling?0?5wai@ ; `string'
+PUBLIC	??_C@_0DI@NFCFPNJJ@?$FLConsumer?$FN?5ERROR?3?5Missed?5state?5@ ; `string'
+PUBLIC	??_C@_0DO@LIHDPKAL@?$FLConsumer?$FN?5TIMEOUT?3?5Never?5saw?51@ ; `string'
+PUBLIC	??_C@_0CE@DDNGMNPP@?$FLConsumer?$FN?5SUCCESS?3?5Caught?5stat@ ; `string'
 PUBLIC	?_Static@?1???$_Immortalize_memcpy_image@V_Iostream_error_category2@std@@@std@@YAAEBV_Iostream_error_category2@1@XZ@4U?$_Constexpr_immortalize_impl@V_Iostream_error_category2@std@@@1@A ; `std::_Immortalize_memcpy_image<std::_Iostream_error_category2>'::`2'::_Static
 PUBLIC	?_Psave@?$_Facetptr@V?$ctype@D@std@@@std@@2PEBVfacet@locale@2@EB ; std::_Facetptr<std::ctype<char> >::_Psave
 PUBLIC	??_R4exception@std@@6B@				; std::exception::`RTTI Complete Object Locator'
@@ -403,12 +414,10 @@ PUBLIC	??_R4failure@ios_base@std@@6B@			; std::ios_base::failure::`RTTI Complete
 PUBLIC	??_R3failure@ios_base@std@@8			; std::ios_base::failure::`RTTI Class Hierarchy Descriptor'
 PUBLIC	??_R2failure@ios_base@std@@8			; std::ios_base::failure::`RTTI Base Class Array'
 PUBLIC	??_R1A@?0A@EA@failure@ios_base@std@@8		; std::ios_base::failure::`RTTI Base Class Descriptor at (0,-1,0,64)'
-PUBLIC	__xmm@000000000000000f0000000000000000
 EXTRN	_purecall:PROC
 EXTRN	??2@YAPEAX_K@Z:PROC				; operator new
 EXTRN	??3@YAXPEAX_K@Z:PROC				; operator delete
 EXTRN	??_V@YAXPEAX@Z:PROC				; operator delete[]
-EXTRN	atexit:PROC
 EXTRN	__std_terminate:PROC
 EXTRN	_invoke_watson:PROC
 EXTRN	??0_Lockit@std@@QEAA@H@Z:PROC			; std::_Lockit::_Lockit
@@ -424,8 +433,11 @@ EXTRN	??_Eexception@std@@UEAAPEAXI@Z:PROC		; std::exception::`vector deleting de
 EXTRN	??_Ebad_alloc@std@@UEAAPEAXI@Z:PROC		; std::bad_alloc::`vector deleting destructor'
 EXTRN	??_Ebad_array_new_length@std@@UEAAPEAXI@Z:PROC	; std::bad_array_new_length::`vector deleting destructor'
 EXTRN	??_Eruntime_error@std@@UEAAPEAXI@Z:PROC		; std::runtime_error::`vector deleting destructor'
+EXTRN	_Query_perf_counter:PROC
+EXTRN	_Query_perf_frequency:PROC
 EXTRN	_Thrd_join:PROC
 EXTRN	_Thrd_id:PROC
+EXTRN	_Thrd_sleep_for:PROC
 EXTRN	_Cnd_do_broadcast_at_thread_exit:PROC
 EXTRN	?_Throw_Cpp_error@std@@YAXH@Z:PROC		; std::_Throw_Cpp_error
 EXTRN	??_E_System_error@std@@UEAAPEAXI@Z:PROC		; std::_System_error::`vector deleting destructor'
@@ -572,12 +584,6 @@ $pdata$??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ D
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z DD imagerel $LN81
-	DD	imagerel $LN81+303
-	DD	imagerel $unwind$??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
 $pdata$?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z DD imagerel $LN86
 	DD	imagerel $LN86+111
 	DD	imagerel $unwind$?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z
@@ -611,36 +617,6 @@ pdata	SEGMENT
 $pdata$?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z DD imagerel $LN8
 	DD	imagerel $LN8+48
 	DD	imagerel $unwind$?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z DD imagerel $LN74
-	DD	imagerel $LN74+91
-	DD	imagerel $unwind$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$0$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z DD imagerel $LN74+91
-	DD	imagerel $LN74+234
-	DD	imagerel $chain$0$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$1$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z DD imagerel $LN74+234
-	DD	imagerel $LN74+262
-	DD	imagerel $chain$1$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$2$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z DD imagerel $LN74+262
-	DD	imagerel $LN74+287
-	DD	imagerel $chain$2$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z DD imagerel $LN78
-	DD	imagerel $LN78+303
-	DD	imagerel $unwind$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -956,6 +932,12 @@ $pdata$?getloc@ios_base@std@@QEBA?AVlocale@2@XZ DD imagerel $LN9
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
+$pdata$?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ DD imagerel $LN32
+	DD	imagerel $LN32+216
+	DD	imagerel $unwind$?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
 $pdata$??1thread@std@@QEAA@XZ DD imagerel $LN12
 	DD	imagerel $LN12+21
 	DD	imagerel $unwind$??1thread@std@@QEAA@XZ
@@ -980,15 +962,15 @@ $pdata$1$?join@thread@std@@QEAAXXZ DD imagerel $LN18+37
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$??__Fdata@@YAXXZ DD imagerel ??__Fdata@@YAXXZ
-	DD	imagerel ??__Fdata@@YAXXZ+118
-	DD	imagerel $unwind$??__Fdata@@YAXXZ
+$pdata$?Producer@@YAXXZ DD imagerel $LN196
+	DD	imagerel $LN196+375
+	DD	imagerel $unwind$?Producer@@YAXXZ
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$?producer@@YAXXZ DD imagerel $LN92
-	DD	imagerel $LN92+335
-	DD	imagerel $unwind$?producer@@YAXXZ
+$pdata$??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z DD imagerel $LN189
+	DD	imagerel $LN189+354
+	DD	imagerel $unwind$??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -1052,9 +1034,9 @@ $pdata$??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_trait
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$?consumer@@YAXXZ DD imagerel $LN29
-	DD	imagerel $LN29+85
-	DD	imagerel $unwind$?consumer@@YAXXZ
+$pdata$?Consumer@@YAXXZ DD imagerel $LN22
+	DD	imagerel $LN22+111
+	DD	imagerel $unwind$?Consumer@@YAXXZ
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -1073,6 +1055,18 @@ pdata	SEGMENT
 $pdata$??$_Get_index@$0A@@id@locale@std@@QEAA_KXZ DD imagerel $LN11
 	DD	imagerel $LN11+80
 	DD	imagerel $unwind$??$_Get_index@$0A@@id@locale@std@@QEAA_KXZ
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z DD imagerel $LN69
+	DD	imagerel $LN69+107
+	DD	imagerel $unwind$??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z
+pdata	ENDS
+;	COMDAT pdata
+pdata	SEGMENT
+$pdata$??$sleep_until@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@this_thread@std@@YAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@1@@Z DD imagerel $LN120
+	DD	imagerel $LN120+314
+	DD	imagerel $unwind$??$sleep_until@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@this_thread@std@@YAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@1@@Z
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -1097,18 +1091,6 @@ pdata	SEGMENT
 $pdata$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ DD imagerel $LN14
 	DD	imagerel $LN14+60
 	DD	imagerel $unwind$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z DD imagerel $LN151
-	DD	imagerel $LN151+717
-	DD	imagerel $unwind$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$?catch$4@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA DD imagerel ?catch$4@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA
-	DD	imagerel ?catch$4@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA+91
-	DD	imagerel $unwind$?catch$4@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -1190,36 +1172,6 @@ $pdata$6$??$_Reallocate_grow_by@V<lambda_65e615be2a453ca0576c979606f46740>@@PEBD
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$??R<lambda_66f57f934f28d61049862f64df852ff0>@@QEBA@QEAD_KQEBD@Z DD imagerel $LN8
-	DD	imagerel $LN8+42
-	DD	imagerel $unwind$??R<lambda_66f57f934f28d61049862f64df852ff0>@@QEBA@QEAD_KQEBD@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z DD imagerel $LN58
-	DD	imagerel $LN58+41
-	DD	imagerel $unwind$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$1$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z DD imagerel $LN58+41
-	DD	imagerel $LN58+218
-	DD	imagerel $chain$1$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$2$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z DD imagerel $LN58+218
-	DD	imagerel $LN58+224
-	DD	imagerel $chain$2$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$3$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z DD imagerel $LN58+224
-	DD	imagerel $LN58+249
-	DD	imagerel $chain$3$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
 $pdata$??$_Deallocate@$0BA@@std@@YAXPEAX_K@Z DD imagerel $LN13
 	DD	imagerel $LN13+71
 	DD	imagerel $unwind$??$_Deallocate@$0BA@@std@@YAXPEAX_K@Z
@@ -1236,14 +1188,6 @@ $pdata$??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@
 	DD	imagerel $LN11+77
 	DD	imagerel $unwind$??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z
 pdata	ENDS
-CRT$XCU	SEGMENT
-?data$initializer$@@3P6AXXZEA DQ FLAT:??__Edata@@YAXXZ	; data$initializer$
-CRT$XCU	ENDS
-;	COMDAT __xmm@000000000000000f0000000000000000
-CONST	SEGMENT
-__xmm@000000000000000f0000000000000000 DB 00H, 00H, 00H, 00H, 00H, 00H, 00H
-	DB	00H, 0fH, 00H, 00H, 00H, 00H, 00H, 00H, 00H
-CONST	ENDS
 ;	COMDAT ??_R1A@?0A@EA@failure@ios_base@std@@8
 rdata$r	SEGMENT
 ??_R1A@?0A@EA@failure@ios_base@std@@8 DD imagerel ??_R0?AVfailure@ios_base@std@@@8 ; std::ios_base::failure::`RTTI Base Class Descriptor at (0,-1,0,64)'
@@ -1772,26 +1716,31 @@ _DATA	SEGMENT
 ?_Static@?1???$_Immortalize_memcpy_image@V_Iostream_error_category2@std@@@std@@YAAEBV_Iostream_error_category2@1@XZ@4U?$_Constexpr_immortalize_impl@V_Iostream_error_category2@std@@@1@A DQ FLAT:??_7_Iostream_error_category2@std@@6B@ ; `std::_Immortalize_memcpy_image<std::_Iostream_error_category2>'::`2'::_Static
 	DQ	0000000000000005H
 _DATA	ENDS
-;	COMDAT ??_C@_0BL@NGPCMOCL@?$FLConsumer?$FN?5Data?5observed?3?5@
+;	COMDAT ??_C@_0CE@DDNGMNPP@?$FLConsumer?$FN?5SUCCESS?3?5Caught?5stat@
 CONST	SEGMENT
-??_C@_0BL@NGPCMOCL@?$FLConsumer?$FN?5Data?5observed?3?5@ DB '[Consumer] D'
-	DB	'ata observed: ', 00H			; `string'
+??_C@_0CE@DDNGMNPP@?$FLConsumer?$FN?5SUCCESS?3?5Caught?5stat@ DB '[Consum'
+	DB	'er] SUCCESS: Caught state 1!', 00H		; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0BO@LPEJHBLG@?$FLProducer?$FN?5Flag?5set?5to?5ready?4@
+;	COMDAT ??_C@_0DO@LIHDPKAL@?$FLConsumer?$FN?5TIMEOUT?3?5Never?5saw?51@
 CONST	SEGMENT
-??_C@_0BO@LPEJHBLG@?$FLProducer?$FN?5Flag?5set?5to?5ready?4@ DB '[Produce'
-	DB	'r] Flag set to ready.', 00H			; `string'
+??_C@_0DO@LIHDPKAL@?$FLConsumer?$FN?5TIMEOUT?3?5Never?5saw?51@ DB '[Consu'
+	DB	'mer] TIMEOUT: Never saw 1 or 2 (likely register cached)', 00H ; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0BK@BDBCDDKG@Payload?5delivered?5safely?$CB@
+;	COMDAT ??_C@_0DI@NFCFPNJJ@?$FLConsumer?$FN?5ERROR?3?5Missed?5state?5@
 CONST	SEGMENT
-??_C@_0BK@BDBCDDKG@Payload?5delivered?5safely?$CB@ DB 'Payload delivered '
-	DB	'safely!', 00H				; `string'
+??_C@_0DI@NFCFPNJJ@?$FLConsumer?$FN?5ERROR?3?5Missed?5state?5@ DB '[Consu'
+	DB	'mer] ERROR: Missed state 1, directly saw state 2!', 00H ; `string'
 CONST	ENDS
-_DATA	SEGMENT
-?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A DB 00H ; data
-	DB	23 DUP(00H)
-	DQ	000000000000000fH
-_DATA	ENDS
+;	COMDAT ??_C@_0DF@CKIKPHIA@?$FLConsumer?$FN?5Started?5polling?0?5wai@
+CONST	SEGMENT
+??_C@_0DF@CKIKPHIA@?$FLConsumer?$FN?5Started?5polling?0?5wai@ DB '[Consum'
+	DB	'er] Started polling, waiting for flag == 1...', 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0DA@FKNJHCDP@?$FLProducer?$FN?5State?5updated?3?50?5?9?$DO?5@
+CONST	SEGMENT
+??_C@_0DA@FKNJHCDP@?$FLProducer?$FN?5State?5updated?3?50?5?9?$DO?5@ DB '['
+	DB	'Producer] State updated: 0 -> 1 -> 2 (in code)', 00H ; `string'
+CONST	ENDS
 ;	COMDAT _CT??_R0?AVfailure@ios_base@std@@@8??0failure@ios_base@std@@QEAA@AEBV012@@Z40
 xdata$x	SEGMENT
 _CT??_R0?AVfailure@ios_base@std@@@8??0failure@ios_base@std@@QEAA@AEBV012@@Z40 DD 00H
@@ -2143,44 +2092,6 @@ $unwind$??$_Deallocate@$0BA@@std@@YAXPEAX_K@Z DD 010401H
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$chain$3$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z DD 040021H
-	DD	0be400H
-	DD	0a6400H
-	DD	imagerel $LN58
-	DD	imagerel $LN58+41
-	DD	imagerel $unwind$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$chain$2$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z DD 021H
-	DD	imagerel $LN58
-	DD	imagerel $LN58+41
-	DD	imagerel $unwind$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$chain$1$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z DD 041521H
-	DD	0be415H
-	DD	0a6405H
-	DD	imagerel $LN58
-	DD	imagerel $LN58+41
-	DD	imagerel $unwind$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z DD 060d01H
-	DD	0c340dH
-	DD	0f009520dH
-	DD	050067007H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??R<lambda_66f57f934f28d61049862f64df852ff0>@@QEBA@QEAD_KQEBD@Z DD 040a01H
-	DD	06340aH
-	DD	07006320aH
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
 $chain$6$??$_Reallocate_grow_by@V<lambda_65e615be2a453ca0576c979606f46740>@@PEBD_K@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_65e615be2a453ca0576c979606f46740>@@PEBD_K@Z DD 021H
 	DD	imagerel $LN71
 	DD	imagerel $LN71+46
@@ -2310,81 +2221,6 @@ $unwind$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z DD 040a11H
 	DD	imagerel __CxxFrameHandler4
 	DD	imagerel $cppxdata$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z
 xdata	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	00H
-voltbl	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$?catch$4@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA DD 020a01H
-	DD	05006320aH
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$ip2state$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z DB 0eH
-	DB	0ccH
-	DB	00H
-	DB	'\'
-	DB	02H
-	DB	'm', 02H
-	DB	06H
-	DB	'i', 02H
-	DB	04H
-	DB	010H
-	DB	06H
-	DB	015H, 02H
-	DB	0aH
-	DB	0c0H
-	DB	04H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$handlerMap$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z DB 02H
-	DB	011H
-	DB	080H
-	DD	imagerel ?catch$4@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA
-	DB	0b5H, 07H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$tryMap$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z DB 02H
-	DB	04H
-	DB	04H
-	DB	06H
-	DD	imagerel $handlerMap$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$stateUnwindMap$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z DB 0aH
-	DB	0aH
-	DD	imagerel ??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ
-	DB	040H
-	DB	03aH
-	DD	imagerel ??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ
-	DB	040H
-	DB	030H
-	DB	038H
-	DB	07eH
-	DD	imagerel __std_terminate
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$cppxdata$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z DB 038H
-	DD	imagerel $stateUnwindMap$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z
-	DD	imagerel $tryMap$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z
-	DD	imagerel $ip2state$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z DD 0a1c19H
-	DD	016641cH
-	DD	015341cH
-	DD	0f018d21cH
-	DD	0d014e016H
-	DD	07010c012H
-	DD	imagerel __CxxFrameHandler4
-	DD	imagerel $cppxdata$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z
-xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
 $ip2state$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ DB 02H
@@ -2464,6 +2300,21 @@ $unwind$??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
+$unwind$??$sleep_until@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@this_thread@std@@YAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@1@@Z DD 0a1a01H
+	DD	09741aH
+	DD	08641aH
+	DD	07541aH
+	DD	06341aH
+	DD	0e016321aH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z DD 040a01H
+	DD	07340aH
+	DD	07006320aH
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
 $unwind$??$_Get_index@$0A@@id@locale@std@@QEAA_KXZ DD 020601H
 	DD	030023206H
 xdata	ENDS
@@ -2539,13 +2390,9 @@ $unwind$main DD	020611H
 	DD	imagerel __CxxFrameHandler4
 	DD	imagerel $cppxdata$main
 xdata	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	04H
-voltbl	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$unwind$?consumer@@YAXXZ DD 010401H
+$unwind$?Consumer@@YAXXZ DD 010401H
 	DD	04204H
 xdata	ENDS
 ;	COMDAT xdata
@@ -2884,35 +2731,22 @@ $unwind$?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z DD 040a11H
 	DD	imagerel __CxxFrameHandler4
 	DD	imagerel $cppxdata$?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z
 xdata	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DW	0113H
-voltbl	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$unwind$?producer@@YAXXZ DD 060f01H
-	DD	09640fH
-	DD	08340fH
-	DD	0700b520fH
+$unwind$??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z DD 081201H
+	DD	0a5412H
+	DD	093412H
+	DD	0e00e3212H
+	DD	0600b700cH
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$unwind$??__Fdata@@YAXXZ DD 010401H
-	DD	06204H
+$unwind$?Producer@@YAXXZ DD 081201H
+	DD	0a5412H
+	DD	093412H
+	DD	0e00e3212H
+	DD	0600b700cH
 xdata	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	00H
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	0cH
-	DB	0fH
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	00H
-voltbl	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
 $chain$1$?join@thread@std@@QEAAXXZ DD 021H
@@ -2937,6 +2771,12 @@ xdata	ENDS
 xdata	SEGMENT
 $unwind$??1thread@std@@QEAA@XZ DD 010401H
 	DD	04204H
+xdata	ENDS
+;	COMDAT xdata
+xdata	SEGMENT
+$unwind$?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ DD 040a01H
+	DD	06340aH
+	DD	07006320aH
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -3489,46 +3329,6 @@ $unwind$?_Tidy_deallocate@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$unwind$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z DD 0a1801H
-	DD	0c6418H
-	DD	0b5418H
-	DD	0a3418H
-	DD	0f0145218H
-	DD	07010e012H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$chain$2$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z DD 020021H
-	DD	0af400H
-	DD	imagerel $LN74
-	DD	imagerel $LN74+91
-	DD	imagerel $unwind$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$chain$1$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z DD 021H
-	DD	imagerel $LN74
-	DD	imagerel $LN74+91
-	DD	imagerel $unwind$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$chain$0$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z DD 020521H
-	DD	0af405H
-	DD	imagerel $LN74
-	DD	imagerel $LN74+91
-	DD	imagerel $unwind$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z DD 081201H
-	DD	0c5412H
-	DD	0b3412H
-	DD	0e00e5212H
-	DD	0600b700cH
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
 $unwind$?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z DD 040a01H
 	DD	06340aH
 	DD	07006320aH
@@ -3572,15 +3372,6 @@ $unwind$?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEA
 	DD	0f00d5211H
 	DD	0d009e00bH
 	DD	060067007H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z DD 0a1801H
-	DD	0c6418H
-	DD	0b5418H
-	DD	0a3418H
-	DD	0f0145218H
-	DD	07010e012H
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -3931,167 +3722,41 @@ _This_arg$ = 24
 ??$?0U_Exact_args_t@std@@AEBQ6AXXZ$$V$0A@@?$tuple@P6AXXZ@std@@QEAA@U_Exact_args_t@1@AEBQ6AXXZ@Z ENDP ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><std::_Exact_args_t,void (__cdecl*const &)(void),0>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z
+;	COMDAT ??$duration_cast@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z
 _TEXT	SEGMENT
-this$ = 80
-_New_size$ = 88
-_Fn$ = 96
-<_Args_0>$ = 104
-??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Reallocate_for<<lambda_66f57f934f28d61049862f64df852ff0>,char const *>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 2995
-$LN58:
-	mov	QWORD PTR [rsp+24], rbx
-	push	rbp
-	push	rdi
-	push	r15
-	sub	rsp, 48					; 00000030H
-; Line 2998
-	mov	rbx, 9223372036854775807		; 7fffffffffffffffH
-	mov	r15, r9
-	mov	rbp, rdx
-	mov	rdi, rcx
-	cmp	rdx, rbx
-	ja	$LN56@Reallocate
-; Line 3002
-	mov	QWORD PTR [rsp+80], rsi
-	mov	rsi, QWORD PTR [rcx+24]
-; Line 2978
-	mov	rcx, rdx
-	or	rcx, 15
-	mov	QWORD PTR [rsp+88], r14
-	cmp	rcx, rbx
-; Line 2979
-	ja	SHORT $LN9@Reallocate
-; Line 2983
-	mov	rdx, rsi
-	mov	rax, rbx
-	shr	rdx, 1
-	sub	rax, rdx
-	cmp	rsi, rax
-	ja	SHORT $LN9@Reallocate
-; Line 2987
-	lea	rax, QWORD PTR [rsi+rdx]
-	mov	rbx, rcx
-	cmp	rcx, rax
-	cmovb	rbx, rax
-$LN9@Reallocate:
-; Line 825
-	lea	rcx, QWORD PTR [rbx+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	call	??$_Allocate@$0BA@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z ; std::_Allocate<16,std::_Default_allocate_traits>
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	r8, rbp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3009
-	mov	QWORD PTR [rdi+16], rbp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	rdx, r15
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3010
-	mov	QWORD PTR [rdi+24], rbx
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	rcx, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	mov	r14, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	call	memcpy
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1632
-	mov	BYTE PTR [r14+rbp], 0
-; Line 3012
-	cmp	rsi, 15
-	jbe	SHORT $LN3@Reallocate
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 985
-	mov	rcx, QWORD PTR [rdi]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 852
-	lea	rdx, QWORD PTR [rsi+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 284
-	cmp	rdx, 4096				; 00001000H
-	jb	SHORT $LN41@Reallocate
-; Line 205
-	mov	rax, QWORD PTR [rcx-8]
-	add	rdx, 39					; 00000027H
-; Line 219
-	sub	rcx, rax
-	sub	rcx, 8
-	cmp	rcx, 31
-	ja	SHORT $LN40@Reallocate
-; Line 220
-	mov	rcx, rax
-$LN41@Reallocate:
-; Line 289
-	call	??3@YAXPEAX_K@Z				; operator delete
-$LN3@Reallocate:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3020
-	mov	QWORD PTR [rdi], r14
-	mov	rax, rdi
-	mov	rsi, QWORD PTR [rsp+80]
-	mov	r14, QWORD PTR [rsp+88]
-; Line 3021
-	mov	rbx, QWORD PTR [rsp+96]
-	add	rsp, 48					; 00000030H
-	pop	r15
-	pop	rdi
-	pop	rbp
+__$ReturnUdt$ = 8
+_Dur$ = 16
+??$duration_cast@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z PROC ; std::chrono::duration_cast<std::chrono::duration<__int64,std::ratio<1,1000> >,__int64,std::ratio<1,1000000000>,0>, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 447
+	mov	rax, 4835703278458516699		; 431bde82d7b634dbH
+	imul	QWORD PTR [rdx]
+	sar	rdx, 18
+	mov	rax, rdx
+	shr	rax, 63					; 0000003fH
+	add	rdx, rax
+	mov	rax, rcx
+; Line 108
+	mov	QWORD PTR [rcx], rdx
+; Line 454
 	ret	0
-$LN56@Reallocate:
-; Line 2999
-	call	?_Xlen_string@std@@YAXXZ		; std::_Xlen_string
-	int	3
-$LN40@Reallocate:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 219
-	xor	r9d, r9d
-	mov	QWORD PTR [rsp+32], 0
-	xor	r8d, r8d
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_invoke_watson
-	int	3
-$LN54@Reallocate:
-??$_Reallocate_for@V<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_66f57f934f28d61049862f64df852ff0>@@PEBD@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Reallocate_for<<lambda_66f57f934f28d61049862f64df852ff0>,char const *>
+??$duration_cast@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z ENDP ; std::chrono::duration_cast<std::chrono::duration<__int64,std::ratio<1,1000> >,__int64,std::ratio<1,1000000000>,0>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??R<lambda_66f57f934f28d61049862f64df852ff0>@@QEBA@QEAD_KQEBD@Z
+;	COMDAT ??$?M_JU?$ratio@$00$0DOI@@std@@_JU?$ratio@$00$0DLJKMKAA@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z
 _TEXT	SEGMENT
-this$ = 48
-_New_ptr$ = 56
-_Count$ = 64
-_Ptr$ = 72
-??R<lambda_66f57f934f28d61049862f64df852ff0>@@QEBA@QEAD_KQEBD@Z PROC ; <lambda_66f57f934f28d61049862f64df852ff0>::operator(), COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1633
-$LN8:
-	mov	QWORD PTR [rsp+8], rbx
-	push	rdi
-	sub	rsp, 32					; 00000020H
-	mov	rbx, rdx
-	mov	rdi, r8
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	rcx, rbx
-	mov	rdx, r9
-	call	memcpy
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1632
-	mov	BYTE PTR [rbx+rdi], 0
-; Line 1633
-	mov	rbx, QWORD PTR [rsp+48]
-	add	rsp, 32					; 00000020H
-	pop	rdi
+_Left$ = 8
+_Right$ = 16
+??$?M_JU?$ratio@$00$0DOI@@std@@_JU?$ratio@$00$0DLJKMKAA@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z PROC ; std::chrono::operator<<__int64,std::ratio<1,1000>,__int64,std::ratio<1,1000000000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 442
+	imul	rax, QWORD PTR [rcx], 1000000		; 000f4240H
+; Line 392
+	cmp	rax, QWORD PTR [rdx]
+	setl	al
+; Line 393
 	ret	0
-??R<lambda_66f57f934f28d61049862f64df852ff0>@@QEBA@QEAD_KQEBD@Z ENDP ; <lambda_66f57f934f28d61049862f64df852ff0>::operator()
+??$?M_JU?$ratio@$00$0DOI@@std@@_JU?$ratio@$00$0DLJKMKAA@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z ENDP ; std::chrono::operator<<__int64,std::ratio<1,1000>,__int64,std::ratio<1,1000000000> >
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Max_limit@_J@std@@YA_JXZ
@@ -4285,6 +3950,70 @@ _This_arg$ = 16
 	mov	rax, rcx
 	ret	0
 ??$?0P6AXXZ$0A@@?$tuple@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z ENDP ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><void (__cdecl*)(void),0>
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$ceil@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z
+_TEXT	SEGMENT
+__$ReturnUdt$ = 8
+_Dur$ = 16
+??$ceil@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z PROC ; std::chrono::ceil<std::chrono::duration<__int64,std::ratio<1,1000> >,__int64,std::ratio<1,1000000000>,0>, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 447
+	mov	r8, QWORD PTR [rdx]
+	mov	rax, 4835703278458516699		; 431bde82d7b634dbH
+	imul	r8
+	sar	rdx, 18
+	mov	rax, rdx
+	shr	rax, 63					; 0000003fH
+	add	rdx, rax
+; Line 442
+	imul	rax, rdx, 1000000			; 000f4240H
+; Line 475
+	cmp	rax, r8
+	mov	rax, rcx
+	jge	SHORT $LN2@ceil
+; Line 476
+	inc	rdx
+$LN2@ceil:
+; Line 480
+	mov	QWORD PTR [rcx], rdx
+	ret	0
+??$ceil@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@_JU?$ratio@$00$0DLJKMKAA@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@@Z ENDP ; std::chrono::ceil<std::chrono::duration<__int64,std::ratio<1,1000> >,__int64,std::ratio<1,1000000000>,0>
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?O_JU?$ratio@$00$0DLJKMKAA@@std@@_JU?$ratio@$00$0DOI@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z
+_TEXT	SEGMENT
+_Left$ = 8
+_Right$ = 16
+??$?O_JU?$ratio@$00$0DLJKMKAA@@std@@_JU?$ratio@$00$0DOI@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z PROC ; std::chrono::operator><__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 442
+	imul	rax, QWORD PTR [rdx], 1000000		; 000f4240H
+; Line 392
+	cmp	rax, QWORD PTR [rcx]
+	setl	al
+; Line 406
+	ret	0
+??$?O_JU?$ratio@$00$0DLJKMKAA@@std@@_JU?$ratio@$00$0DOI@@1@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z ENDP ; std::chrono::operator><__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000> >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?G_JU?$ratio@$00$0DLJKMKAA@@std@@_JU01@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV201@0@Z
+_TEXT	SEGMENT
+__$ReturnUdt$ = 8
+_Left$ = 16
+_Right$ = 24
+??$?G_JU?$ratio@$00$0DLJKMKAA@@std@@_JU01@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV201@0@Z PROC ; std::chrono::operator-<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000000000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 300
+	mov	rax, QWORD PTR [rdx]
+	sub	rax, QWORD PTR [r8]
+; Line 108
+	mov	QWORD PTR [rcx], rax
+; Line 300
+	mov	rax, rcx
+; Line 301
+	ret	0
+??$?G_JU?$ratio@$00$0DLJKMKAA@@std@@_JU01@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV201@0@Z ENDP ; std::chrono::operator-<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000000000> >
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$forward@AEAPEAV_Facet_base@std@@@std@@YAAEAPEAV_Facet_base@0@AEAPEAV10@@Z
@@ -4804,6 +4533,155 @@ $LN3@make_uniqu:
 ??$make_unique@V?$tuple@P6AXXZ@std@@A6AXXZ$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@0@A6AXXZ@Z ENDP ; std::make_unique<std::tuple<void (__cdecl*)(void)>,void (__cdecl&)(void),0>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
+;	COMDAT ??$_Clamped_rel_time_ms_count@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@std@@YA?AU_Clamped_rel_time_ms_count_result@0@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@0@@Z
+_TEXT	SEGMENT
+_Rel$ = 8
+$T1 = 8
+$T2 = 8
+??$_Clamped_rel_time_ms_count@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@std@@YA?AU_Clamped_rel_time_ms_count_result@0@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@0@@Z PROC ; std::_Clamped_rel_time_ms_count<std::chrono::duration<__int64,std::ratio<1,1000000000> > >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 392
+	mov	r8, QWORD PTR [rcx]
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 192
+	mov	rax, 86400000000000			; 00004e94914f0000H
+	cmp	r8, rax
+	jle	SHORT $LN2@Clamped_re
+; Line 193
+	mov	DWORD PTR $T1[rsp], 86400000		; 05265c00H
+	mov	BYTE PTR $T1[rsp+4], 1
+; Line 198
+	mov	rax, QWORD PTR $T2[rsp]
+	ret	0
+$LN2@Clamped_re:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 447
+	mov	rax, 4835703278458516699		; 431bde82d7b634dbH
+	imul	r8
+	sar	rdx, 18
+	mov	rax, rdx
+	shr	rax, 63					; 0000003fH
+	add	rdx, rax
+; Line 442
+	imul	rax, rdx, 1000000			; 000f4240H
+; Line 475
+	cmp	rax, r8
+	jge	SHORT $LN20@Clamped_re
+; Line 476
+	inc	rdx
+$LN20@Clamped_re:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 196
+	mov	DWORD PTR $T2[rsp], edx
+	mov	BYTE PTR $T2[rsp+4], 0
+; Line 198
+	mov	rax, QWORD PTR $T2[rsp]
+	ret	0
+??$_Clamped_rel_time_ms_count@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@std@@YA?AU_Clamped_rel_time_ms_count_result@0@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@0@@Z ENDP ; std::_Clamped_rel_time_ms_count<std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z
+_TEXT	SEGMENT
+__$ReturnUdt$ = 8
+_Left$ = 16
+_Right$ = 24
+??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z PROC ; std::chrono::operator-<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,std::chrono::duration<__int64,std::ratio<1,1000000000> > >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 221
+	mov	rax, QWORD PTR [rdx]
+	sub	rax, QWORD PTR [r8]
+; Line 108
+	mov	QWORD PTR [rcx], rax
+; Line 557
+	mov	rax, rcx
+; Line 558
+	ret	0
+??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z ENDP ; std::chrono::operator-<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?NUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z
+_TEXT	SEGMENT
+_Left$ = 8
+_Right$ = 16
+??$?NUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z PROC ; std::chrono::operator<=<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,std::chrono::duration<__int64,std::ratio<1,1000000000> > >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 591
+	mov	rax, QWORD PTR [rcx]
+	cmp	QWORD PTR [rdx], rax
+	setge	al
+; Line 592
+	ret	0
+??$?NUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z ENDP ; std::chrono::operator<=<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$duration_cast@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@_JU?$ratio@$00$0DOI@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z
+_TEXT	SEGMENT
+__$ReturnUdt$ = 8
+_Dur$ = 16
+??$duration_cast@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@_JU?$ratio@$00$0DOI@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z PROC ; std::chrono::duration_cast<std::chrono::duration<__int64,std::ratio<1,1000000000> >,__int64,std::ratio<1,1000>,0>, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 442
+	imul	rax, QWORD PTR [rdx], 1000000		; 000f4240H
+; Line 108
+	mov	QWORD PTR [rcx], rax
+; Line 442
+	mov	rax, rcx
+; Line 454
+	ret	0
+??$duration_cast@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@_JU?$ratio@$00$0DOI@@3@$0A@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z ENDP ; std::chrono::duration_cast<std::chrono::duration<__int64,std::ratio<1,1000000000> >,__int64,std::ratio<1,1000>,0>
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?M_JU?$ratio@$00$0DLJKMKAA@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@0@Z
+_TEXT	SEGMENT
+_Left$ = 8
+_Right$ = 16
+??$?M_JU?$ratio@$00$0DLJKMKAA@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@0@Z PROC ; std::chrono::operator<<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000000000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 392
+	mov	rax, QWORD PTR [rdx]
+	cmp	QWORD PTR [rcx], rax
+	setl	al
+; Line 393
+	ret	0
+??$?M_JU?$ratio@$00$0DLJKMKAA@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@0@Z ENDP ; std::chrono::operator<<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000000000> >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?G_JU?$ratio@$00$0DLJKMKAA@@std@@_JU?$ratio@$00$0DOI@@1@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z
+_TEXT	SEGMENT
+__$ReturnUdt$ = 8
+_Left$ = 16
+_Right$ = 24
+??$?G_JU?$ratio@$00$0DLJKMKAA@@std@@_JU?$ratio@$00$0DOI@@1@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z PROC ; std::chrono::operator-<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 442
+	imul	rax, QWORD PTR [r8], 1000000		; 000f4240H
+; Line 300
+	mov	rdx, QWORD PTR [rdx]
+	sub	rdx, rax
+	mov	rax, rcx
+; Line 108
+	mov	QWORD PTR [rcx], rdx
+; Line 301
+	ret	0
+??$?G_JU?$ratio@$00$0DLJKMKAA@@std@@_JU?$ratio@$00$0DOI@@1@@chrono@std@@YA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z ENDP ; std::chrono::operator-<__int64,std::ratio<1,1000000000>,__int64,std::ratio<1,1000> >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?M_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z
+_TEXT	SEGMENT
+_Left$ = 8
+_Right$ = 16
+??$?M_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z PROC ; std::chrono::operator<<__int64,std::ratio<1,1000>,__int64,std::ratio<1,1000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 392
+	mov	rax, QWORD PTR [rdx]
+	cmp	QWORD PTR [rcx], rax
+	setl	al
+; Line 393
+	ret	0
+??$?M_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z ENDP ; std::chrono::operator<<__int64,std::ratio<1,1000>,__int64,std::ratio<1,1000> >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
 ;	COMDAT ??$?0AEAPEAV_Facet_base@std@@@?$_Compressed_pair@U?$default_delete@V_Facet_base@std@@@std@@PEAV_Facet_base@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV_Facet_base@1@@Z
 _TEXT	SEGMENT
 this$ = 8
@@ -5078,42 +4956,6 @@ _Len$ = 8
 ??$_Convert_size@_K_K@std@@YA_K_K@Z ENDP		; std::_Convert_size<unsigned __int64,unsigned __int64>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??$_Atomic_reinterpret_as@D_N@std@@YADAEB_N@Z
-_TEXT	SEGMENT
-_Source$ = 8
-??$_Atomic_reinterpret_as@D_N@std@@YADAEB_N@Z PROC	; std::_Atomic_reinterpret_as<char,bool>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 358
-	movzx	eax, BYTE PTR [rcx]
-; Line 366
-	ret	0
-??$_Atomic_reinterpret_as@D_N@std@@YADAEB_N@Z ENDP	; std::_Atomic_reinterpret_as<char,bool>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPECDAEAU?$_Atomic_padded@_N@0@@Z
-_TEXT	SEGMENT
-_Source$ = 8
-??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPECDAEAU?$_Atomic_padded@_N@0@@Z PROC ; std::_Atomic_address_as<char,std::_Atomic_padded<bool> >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xatomic.h
-; Line 115
-	mov	rax, rcx
-; Line 116
-	ret	0
-??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPECDAEAU?$_Atomic_padded@_N@0@@Z ENDP ; std::_Atomic_address_as<char,std::_Atomic_padded<bool> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPEDDAEBU?$_Atomic_padded@_N@0@@Z
-_TEXT	SEGMENT
-_Source$ = 8
-??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPEDDAEBU?$_Atomic_padded@_N@0@@Z PROC ; std::_Atomic_address_as<char,std::_Atomic_padded<bool> >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xatomic.h
-; Line 122
-	mov	rax, rcx
-; Line 123
-	ret	0
-??$_Atomic_address_as@DU?$_Atomic_padded@_N@std@@@std@@YAPEDDAEBU?$_Atomic_padded@_N@0@@Z ENDP ; std::_Atomic_address_as<char,std::_Atomic_padded<bool> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z
 _TEXT	SEGMENT
 this$ = 64
@@ -5193,437 +5035,6 @@ _Arg$ = 8
 	ret	0
 ??$forward@A6AXXZ@std@@YAA6AXXZA6AXXZ@Z ENDP		; std::forward<void (__cdecl&)(void)>
 _TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z
-_TEXT	SEGMENT
-_Ok$ = 32
-$T1 = 48
-$T2 = 64
-_Ostr$ = 160
-_Data$ = 168
-_Size$ = 176
-_State$ = 184
-??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z PROC ; std::_Insert_string<char,std::char_traits<char>,unsigned __int64>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 547
-$LN151:
-	mov	QWORD PTR [rsp+16], rbx
-	mov	QWORD PTR [rsp+24], rsi
-	mov	QWORD PTR [rsp+8], rcx
-	push	rdi
-	push	r12
-	push	r13
-	push	r14
-	push	r15
-	sub	rsp, 112				; 00000070H
-	mov	rsi, r8
-	mov	r12, rdx
-	mov	r14, rcx
-; Line 550
-	xor	r13d, r13d
-	mov	edi, r13d
-	mov	DWORD PTR _State$[rsp], r13d
-; Line 553
-	mov	rax, QWORD PTR [rcx]
-	movsxd	r9, DWORD PTR [rax+4]
-	mov	rbx, QWORD PTR [r9+rcx+40]
-	test	rbx, rbx
-	jle	SHORT $LN10@Insert_str
-	cmp	rbx, r8
-	jbe	SHORT $LN10@Insert_str
-; Line 556
-	sub	rbx, r8
-	jmp	SHORT $LN9@Insert_str
-$LN10@Insert_str:
-; Line 554
-	mov	rbx, r13
-$LN9@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
-; Line 69
-	mov	r15, r14
-	mov	QWORD PTR _Ok$[rsp], r14
-; Line 70
-	mov	rcx, QWORD PTR [r9+rcx+72]
-; Line 71
-	test	rcx, rcx
-	je	SHORT $LN106@Insert_str
-; Line 72
-	mov	rax, QWORD PTR [rcx]
-	call	QWORD PTR [rax+8]
-	npad	1
-$LN106@Insert_str:
-; Line 91
-	mov	rcx, QWORD PTR [r14]
-	movsxd	rax, DWORD PTR [rcx+4]
-	cmp	DWORD PTR [rax+r14+16], 0
-	je	SHORT $LN100@Insert_str
-; Line 92
-	mov	BYTE PTR _Ok$[rsp+8], 0
-	xor	al, al
-; Line 93
-	jmp	SHORT $LN99@Insert_str
-$LN100@Insert_str:
-; Line 96
-	mov	rax, QWORD PTR [rax+r14+80]
-; Line 97
-	test	rax, rax
-	je	SHORT $LN102@Insert_str
-	cmp	rax, r14
-	je	SHORT $LN102@Insert_str
-; Line 102
-	mov	rcx, rax
-	call	?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ ; std::basic_ostream<char,std::char_traits<char> >::flush
-; Line 103
-	mov	rcx, QWORD PTR [r14]
-	movsxd	rax, DWORD PTR [rcx+4]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xiosbase
-; Line 206
-	cmp	DWORD PTR [rax+r14+16], 0
-	sete	al
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
-; Line 103
-	mov	BYTE PTR _Ok$[rsp+8], al
-	jmp	SHORT $LN99@Insert_str
-$LN102@Insert_str:
-; Line 98
-	mov	BYTE PTR _Ok$[rsp+8], 1
-	mov	al, 1
-$LN99@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 561
-	test	al, al
-	jne	SHORT $LN11@Insert_str
-; Line 562
-	mov	esi, 4
-	mov	edi, esi
-; Line 563
-	jmp	$LN23@Insert_str
-$LN11@Insert_str:
-; Line 565
-	movsxd	rax, DWORD PTR [rcx+4]
-	mov	ecx, DWORD PTR [rax+r14+24]
-	and	ecx, 448				; 000001c0H
-	cmp	ecx, 64					; 00000040H
-	je	$LN139@Insert_str
-	npad	2
-$LL4@Insert_str:
-; Line 566
-	test	rbx, rbx
-	je	$LN139@Insert_str
-; Line 567
-	mov	rax, QWORD PTR [r14]
-	movsxd	rcx, DWORD PTR [rax+4]
-	movzx	r8d, BYTE PTR [rcx+r14+88]
-	mov	rcx, QWORD PTR [rcx+r14+72]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\streambuf
-; Line 261
-	mov	rax, QWORD PTR [rcx+64]
-	cmp	QWORD PTR [rax], 0
-	je	SHORT $LN78@Insert_str
-	mov	rdx, QWORD PTR [rcx+88]
-	mov	eax, DWORD PTR [rdx]
-; Line 166
-	test	eax, eax
-	jle	SHORT $LN78@Insert_str
-; Line 256
-	dec	eax
-	mov	DWORD PTR [rdx], eax
-; Line 257
-	mov	rcx, QWORD PTR [rcx+64]
-	mov	rdx, QWORD PTR [rcx]
-	lea	rax, QWORD PTR [rdx+1]
-	mov	QWORD PTR [rcx], rax
-; Line 166
-	mov	BYTE PTR [rdx], r8b
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 518
-	mov	eax, r8d
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\streambuf
-; Line 166
-	jmp	SHORT $LN79@Insert_str
-$LN78@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 518
-	mov	edx, r8d
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\streambuf
-; Line 166
-	mov	rax, QWORD PTR [rcx]
-	call	QWORD PTR [rax+24]
-$LN79@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 567
-	cmp	eax, -1
-	jne	SHORT $LN2@Insert_str
-; Line 568
-	mov	esi, 4
-	mov	edi, esi
-	mov	DWORD PTR _State$[rsp], esi
-$LL7@Insert_str:
-; Line 578
-	test	rbx, rbx
-	je	SHORT $LN6@Insert_str
-; Line 579
-	mov	rax, QWORD PTR [r14]
-	movsxd	rcx, DWORD PTR [rax+4]
-	movzx	r8d, BYTE PTR [rcx+r14+88]
-	mov	rcx, QWORD PTR [rcx+r14+72]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\streambuf
-; Line 261
-	mov	rax, QWORD PTR [rcx+64]
-	cmp	QWORD PTR [rax], 0
-	je	SHORT $LN57@Insert_str
-	mov	rdx, QWORD PTR [rcx+88]
-	mov	eax, DWORD PTR [rdx]
-; Line 166
-	test	eax, eax
-	jle	SHORT $LN57@Insert_str
-; Line 256
-	dec	eax
-	mov	DWORD PTR [rdx], eax
-; Line 257
-	mov	rcx, QWORD PTR [rcx+64]
-	mov	rdx, QWORD PTR [rcx]
-	lea	rax, QWORD PTR [rdx+1]
-	mov	QWORD PTR [rcx], rax
-; Line 166
-	mov	BYTE PTR [rdx], r8b
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 518
-	mov	eax, r8d
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\streambuf
-; Line 166
-	jmp	SHORT $LN58@Insert_str
-$LN2@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 566
-	dec	rbx
-	jmp	$LL4@Insert_str
-$LN139@Insert_str:
-; Line 575
-	mov	rax, QWORD PTR [r14]
-	movsxd	rcx, DWORD PTR [rax+4]
-	mov	rcx, QWORD PTR [rcx+r14+72]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\streambuf
-; Line 171
-	mov	rax, QWORD PTR [rcx]
-	mov	r8, rsi
-	mov	rdx, r12
-	call	QWORD PTR [rax+72]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 575
-	cmp	rax, rsi
-	mov	esi, 4
-	je	SHORT $LL7@Insert_str
-; Line 576
-	mov	edi, esi
-	mov	DWORD PTR _State$[rsp], esi
-$LN6@Insert_str:
-; Line 586
-	mov	rax, QWORD PTR [r14]
-	movsxd	rcx, DWORD PTR [rax+4]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xiosbase
-; Line 284
-	mov	QWORD PTR [rcx+r14+40], r13
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-	jmp	SHORT $LN23@Insert_str
-$LN57@Insert_str:
-; Line 518
-	mov	edx, r8d
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\streambuf
-; Line 166
-	mov	rax, QWORD PTR [rcx]
-	call	QWORD PTR [rax+24]
-$LN58@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 579
-	cmp	eax, -1
-	jne	SHORT $LN5@Insert_str
-; Line 580
-	or	edi, 4
-	mov	DWORD PTR _State$[rsp], edi
-; Line 581
-	jmp	SHORT $LN6@Insert_str
-$LN5@Insert_str:
-; Line 578
-	dec	rbx
-	jmp	$LL7@Insert_str
-$LN24@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xiosbase
-	xor	r13d, r13d
-	mov	esi, 4
-	mov	r14, QWORD PTR _Ostr$[rsp]
-	mov	edi, DWORD PTR _State$[rsp]
-	mov	r15, QWORD PTR _Ok$[rsp]
-$LN23@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 590
-	mov	rax, QWORD PTR [r14]
-	movsxd	rcx, DWORD PTR [rax+4]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\ios
-; Line 40
-	cmp	QWORD PTR [rcx+r14+72], 0
-	cmovne	esi, r13d
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xiosbase
-; Line 155
-	or	esi, DWORD PTR [rcx+r14+16]
-	or	esi, edi
-	and	esi, 23
-; Line 156
-	mov	DWORD PTR [rcx+r14+16], esi
-; Line 157
-	and	esi, DWORD PTR [rcx+r14+20]
-; Line 158
-	jne	SHORT $LN150@Insert_str
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
-; Line 111
-	call	?uncaught_exception@std@@YA_NXZ		; std::uncaught_exception
-; Line 116
-	test	al, al
-	jne	SHORT $LN41@Insert_str
-; Line 117
-	mov	rcx, r15
-	call	?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ ; std::basic_ostream<char,std::char_traits<char> >::_Osfx
-	npad	1
-$LN41@Insert_str:
-; Line 77
-	mov	rax, QWORD PTR [r15]
-	movsxd	rcx, DWORD PTR [rax+4]
-	mov	rcx, QWORD PTR [rcx+r15+72]
-; Line 78
-	test	rcx, rcx
-	je	SHORT $LN47@Insert_str
-; Line 79
-	mov	rax, QWORD PTR [rcx]
-	call	QWORD PTR [rax+16]
-	npad	1
-$LN47@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 591
-	mov	rax, r14
-; Line 592
-	lea	r11, QWORD PTR [rsp+112]
-	mov	rbx, QWORD PTR [r11+56]
-	mov	rsi, QWORD PTR [r11+64]
-	mov	rsp, r11
-	pop	r15
-	pop	r14
-	pop	r13
-	pop	r12
-	pop	rdi
-	ret	0
-$LN150@Insert_str:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xiosbase
-; Line 164
-	test	sil, 4
-	je	SHORT $LN32@Insert_str
-; Line 165
-	lea	rbx, OFFSET FLAT:??_C@_0BF@PHHKMMFD@ios_base?3?3badbit?5set@
-	jmp	SHORT $LN34@Insert_str
-$LN32@Insert_str:
-; Line 166
-	test	sil, 2
-	lea	rbx, OFFSET FLAT:??_C@_0BG@FMKFHCIL@ios_base?3?3failbit?5set@
-	lea	rax, OFFSET FLAT:??_C@_0BF@OOHOMBOF@ios_base?3?3eofbit?5set@
-	cmove	rbx, rax
-$LN34@Insert_str:
-; Line 172
-	mov	edx, 1
-	lea	rcx, QWORD PTR $T1[rsp]
-	call	?make_error_code@std@@YA?AVerror_code@1@W4io_errc@1@@Z ; std::make_error_code
-	mov	r8, rax
-	mov	rdx, rbx
-	lea	rcx, QWORD PTR $T2[rsp]
-	call	??0failure@ios_base@std@@QEAA@PEBDAEBVerror_code@2@@Z ; std::ios_base::failure::failure
-	lea	rdx, OFFSET FLAT:_TI5?AVfailure@ios_base@std@@
-	lea	rcx, QWORD PTR $T2[rsp]
-	call	_CxxThrowException
-	int	3
-$LN147@Insert_str:
-??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z ENDP ; std::_Insert_string<char,std::char_traits<char>,unsigned __int64>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT text$x
-text$x	SEGMENT
-_Ok$ = 32
-$T1 = 48
-$T2 = 64
-_Ostr$ = 160
-_Data$ = 168
-_Size$ = 176
-_State$ = 184
-?dtor$3@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA PROC ; `std::_Insert_string<char,std::char_traits<char>,unsigned __int64>'::`1'::dtor$3
-	lea	rcx, QWORD PTR _Ok$[rdx]
-	jmp	??1_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::~_Sentry_base
-?dtor$3@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA ENDP ; `std::_Insert_string<char,std::char_traits<char>,unsigned __int64>'::`1'::dtor$3
-text$x	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT text$x
-text$x	SEGMENT
-_Ok$ = 32
-$T1 = 48
-$T2 = 64
-_Ostr$ = 160
-_Data$ = 168
-_Size$ = 176
-_State$ = 184
-?dtor$0@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA PROC ; `std::_Insert_string<char,std::char_traits<char>,unsigned __int64>'::`1'::dtor$0
-	lea	rcx, QWORD PTR _Ok$[rdx]
-	jmp	??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::~sentry
-?dtor$0@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA ENDP ; `std::_Insert_string<char,std::char_traits<char>,unsigned __int64>'::`1'::dtor$0
-text$x	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT text$x
-text$x	SEGMENT
-_Ok$ = 32
-$T1 = 48
-$T2 = 64
-_Ostr$ = 160
-_Data$ = 168
-_Size$ = 176
-_State$ = 184
-?catch$4@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA PROC ; `std::_Insert_string<char,std::char_traits<char>,unsigned __int64>'::`1'::catch$4
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 587
-	mov	QWORD PTR [rsp+16], rdx
-	push	rbp
-	sub	rsp, 32					; 00000020H
-	mov	rbp, rdx
-__catch$??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z$0:
-	mov	rdx, QWORD PTR _Ostr$[rbp]
-	mov	rax, QWORD PTR [rdx]
-	movsxd	rcx, DWORD PTR [rax+4]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\ios
-; Line 40
-	mov	eax, 4
-	xor	r8d, r8d
-	cmp	QWORD PTR [rcx+rdx+72], r8
-	cmovne	eax, r8d
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xiosbase
-; Line 155
-	or	eax, DWORD PTR [rcx+rdx+16]
-	and	eax, 19
-	or	eax, 4
-; Line 156
-	mov	DWORD PTR [rcx+rdx+16], eax
-; Line 157
-	test	DWORD PTR [rcx+rdx+20], eax
-; Line 158
-	je	SHORT $LN119@catch$4
-; Line 160
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_CxxThrowException
-	npad	1
-$LN119@catch$4:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 587
-	mov	rax, 0
-	add	rsp, 32					; 00000020H
-	pop	rbp
-	ret	0
-	int	3
-?catch$4@?0???$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z@4HA ENDP ; `std::_Insert_string<char,std::char_traits<char>,unsigned __int64>'::`1'::catch$4
-text$x	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBA_JXZ
 _TEXT	SEGMENT
@@ -5919,6 +5330,276 @@ $LN4@Sentry_bas:
 ??0_Sentry_base@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z ENDP ; std::basic_ostream<char,std::char_traits<char> >::_Sentry_base::_Sentry_base
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
+;	COMDAT ??$sleep_until@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@this_thread@std@@YAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@1@@Z
+_TEXT	SEGMENT
+_Abs_time$ = 48
+??$sleep_until@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@this_thread@std@@YAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@1@@Z PROC ; std::this_thread::sleep_until<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 208
+$LN120:
+	mov	QWORD PTR [rsp+8], rbx
+	mov	QWORD PTR [rsp+16], rbp
+	mov	QWORD PTR [rsp+24], rsi
+	mov	QWORD PTR [rsp+32], rdi
+	push	r14
+	sub	rsp, 32					; 00000020H
+	mov	rdi, rcx
+	mov	rsi, 86400000000000			; 00004e94914f0000H
+	mov	rbp, 4835703278458516699		; 431bde82d7b634dbH
+	mov	r14, -5551535331153507085		; b2f4fc0794908cf3H
+	npad	5
+$LL4@sleep_unti:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 657
+	call	_Query_perf_frequency
+	mov	rbx, rax
+; Line 658
+	call	_Query_perf_counter
+	mov	rcx, rax
+; Line 664
+	cmp	rbx, 10000000				; 00989680H
+	jne	SHORT $LN8@sleep_unti
+; Line 670
+	imul	rax, rcx, 100				; 00000064H
+	jmp	SHORT $LN11@sleep_unti
+$LN8@sleep_unti:
+; Line 671
+	cmp	rbx, 24000000				; 016e3600H
+	jne	SHORT $LN10@sleep_unti
+; Line 673
+	mov	rax, r14
+	imul	rcx
+	lea	r8, QWORD PTR [rcx+rdx]
+	sar	r8, 24
+	mov	rax, r8
+	shr	rax, 63					; 0000003fH
+	add	r8, rax
+	imul	rax, r8, 24000000			; 016e3600H
+; Line 674
+	sub	rcx, rax
+	mov	rax, r14
+	imul	rcx, rcx, 1000000000			; 3b9aca00H
+	imul	rcx
+	lea	rax, QWORD PTR [rcx+rdx]
+	sar	rax, 24
+	mov	rcx, rax
+	shr	rcx, 63					; 0000003fH
+	add	rax, rcx
+	imul	rcx, r8, 1000000000			; 3b9aca00H
+; Line 675
+	jmp	SHORT $LN117@sleep_unti
+$LN10@sleep_unti:
+; Line 683
+	cdq
+	idiv	rbx
+	mov	rcx, rax
+	imul	rax, rdx, 1000000000			; 3b9aca00H
+	cdq
+	idiv	rbx
+	imul	rcx, rcx, 1000000000			; 3b9aca00H
+$LN117@sleep_unti:
+; Line 221
+	add	rax, rcx
+$LN11@sleep_unti:
+	mov	rcx, QWORD PTR [rdi]
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 212
+	cmp	rax, rcx
+	jge	SHORT $LN108@sleep_unti
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 221
+	sub	rcx, rax
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 192
+	cmp	rcx, rsi
+	jle	SHORT $LN63@sleep_unti
+; Line 193
+	mov	edx, 86400000				; 05265c00H
+; Line 217
+	mov	ecx, edx
+	call	_Thrd_sleep_for
+	jmp	$LL4@sleep_unti
+$LN63@sleep_unti:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 447
+	mov	rax, rbp
+	imul	rcx
+	sar	rdx, 18
+	mov	rax, rdx
+	shr	rax, 63					; 0000003fH
+	add	rdx, rax
+; Line 442
+	imul	rax, rdx, 1000000			; 000f4240H
+; Line 475
+	cmp	rax, rcx
+	jge	SHORT $LN82@sleep_unti
+; Line 476
+	inc	edx
+$LN82@sleep_unti:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 217
+	mov	ecx, edx
+	call	_Thrd_sleep_for
+	jmp	$LL4@sleep_unti
+$LN108@sleep_unti:
+; Line 219
+	mov	rbx, QWORD PTR [rsp+48]
+	mov	rbp, QWORD PTR [rsp+56]
+	mov	rsi, QWORD PTR [rsp+64]
+	mov	rdi, QWORD PTR [rsp+72]
+	add	rsp, 32					; 00000020H
+	pop	r14
+	ret	0
+??$sleep_until@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@this_thread@std@@YAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@1@@Z ENDP ; std::this_thread::sleep_until<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?0_JU?$ratio@$00$0DOI@@std@@$0A@@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAA@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@12@@Z
+_TEXT	SEGMENT
+this$ = 8
+_Dur$ = 16
+??$?0_JU?$ratio@$00$0DOI@@std@@$0A@@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAA@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@12@@Z PROC ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::duration<__int64,std::ratio<1,1000000000> ><__int64,std::ratio<1,1000>,0>, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 442
+	imul	rax, QWORD PTR [rdx], 1000000		; 000f4240H
+; Line 116
+	mov	QWORD PTR [rcx], rax
+	mov	rax, rcx
+	ret	0
+??$?0_JU?$ratio@$00$0DOI@@std@@$0A@@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAA@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@12@@Z ENDP ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::duration<__int64,std::ratio<1,1000000000> ><__int64,std::ratio<1,1000>,0>
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?MUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z
+_TEXT	SEGMENT
+_Left$ = 8
+_Right$ = 16
+??$?MUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z PROC ; std::chrono::operator<<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,std::chrono::duration<__int64,std::ratio<1,1000000000> > >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 221
+	mov	rax, QWORD PTR [rdx]
+	cmp	QWORD PTR [rcx], rax
+; Line 392
+	setl	al
+; Line 584
+	ret	0
+??$?MUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@V312@@chrono@std@@YA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@0@Z ENDP ; std::chrono::operator<<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@_JU?$ratio@$00$0DOI@@2@@chrono@std@@YA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z
+_TEXT	SEGMENT
+__$ReturnUdt$ = 8
+_Left$ = 16
+_Right$ = 24
+??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@_JU?$ratio@$00$0DOI@@2@@chrono@std@@YA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z PROC ; std::chrono::operator-<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,__int64,std::ratio<1,1000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 442
+	imul	rax, QWORD PTR [r8], 1000000		; 000f4240H
+; Line 116
+	mov	rdx, QWORD PTR [rdx]
+	sub	rdx, rax
+; Line 549
+	mov	rax, rcx
+; Line 213
+	mov	QWORD PTR [rcx], rdx
+; Line 550
+	ret	0
+??$?GUsteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@_JU?$ratio@$00$0DOI@@2@@chrono@std@@YA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@01@AEBV201@AEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@@Z ENDP ; std::chrono::operator-<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> >,__int64,std::ratio<1,1000> >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?O_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z
+_TEXT	SEGMENT
+_Left$ = 8
+_Right$ = 16
+??$?O_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z PROC ; std::chrono::operator><__int64,std::ratio<1,1000>,__int64,std::ratio<1,1000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 392
+	mov	rax, QWORD PTR [rcx]
+	cmp	QWORD PTR [rdx], rax
+	setl	al
+; Line 406
+	ret	0
+??$?O_JU?$ratio@$00$0DOI@@std@@_JU01@@chrono@std@@YA_NAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@01@0@Z ENDP ; std::chrono::operator><__int64,std::ratio<1,1000>,__int64,std::ratio<1,1000> >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?0_J$0A@@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEAA@AEB_J@Z
+_TEXT	SEGMENT
+this$ = 8
+_Val$ = 16
+??$?0_J$0A@@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEAA@AEB_J@Z PROC ; std::chrono::duration<__int64,std::ratio<1,1000> >::duration<__int64,std::ratio<1,1000> ><__int64,0>, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 108
+	mov	rax, QWORD PTR [rdx]
+	mov	QWORD PTR [rcx], rax
+	mov	rax, rcx
+	ret	0
+??$?0_J$0A@@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEAA@AEB_J@Z ENDP ; std::chrono::duration<__int64,std::ratio<1,1000> >::duration<__int64,std::ratio<1,1000> ><__int64,0>
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z
+_TEXT	SEGMENT
+__$ReturnUdt$ = 48
+_Now$ = 48
+_Rel_time$ = 56
+??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z PROC ; std::_To_absolute_time<__int64,std::ratio<1,1000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 167
+$LN69:
+	mov	QWORD PTR [rsp+16], rbx
+	push	rdi
+	sub	rsp, 32					; 00000020H
+	mov	rdi, rcx
+	mov	rbx, rdx
+; Line 169
+	lea	rcx, QWORD PTR _Now$[rsp]
+	call	?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ ; std::chrono::steady_clock::now
+; Line 170
+	mov	rax, QWORD PTR _Now$[rsp]
+	mov	QWORD PTR [rdi], rax
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 392
+	mov	rdx, QWORD PTR [rbx]
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 171
+	test	rdx, rdx
+	jle	SHORT $LN64@To_absolut
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 442
+	imul	rcx, rdx, 1000000			; 000f4240H
+; Line 116
+	mov	r8, 9223372036854775807			; 7fffffffffffffffH
+	mov	rdx, r8
+	sub	rdx, rcx
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 173
+	cmp	rax, rdx
+	jge	SHORT $LN3@To_absolut
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 151
+	add	rcx, rax
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 180
+	mov	rax, rdi
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 151
+	mov	QWORD PTR [rdi], rcx
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 180
+	mov	rbx, QWORD PTR [rsp+56]
+	add	rsp, 32					; 00000020H
+	pop	rdi
+	ret	0
+$LN3@To_absolut:
+; Line 176
+	mov	QWORD PTR [rdi], r8
+$LN64@To_absolut:
+; Line 180
+	mov	rbx, QWORD PTR [rsp+56]
+	mov	rax, rdi
+	add	rsp, 32					; 00000020H
+	pop	rdi
+	ret	0
+??$_To_absolute_time@_JU?$ratio@$00$0DOI@@std@@@std@@YA?A_PAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@0@@Z ENDP ; std::_To_absolute_time<__int64,std::ratio<1,1000> >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
 ;	COMDAT ??$?0U?$default_delete@V_Facet_base@std@@@std@@$0A@@?$unique_ptr@V_Facet_base@std@@U?$default_delete@V_Facet_base@std@@@2@@std@@QEAA@PEAV_Facet_base@1@@Z
 _TEXT	SEGMENT
 this$ = 8
@@ -6144,8 +5825,8 @@ $T2 = 80
 _Decay_copied$3 = 112
 _Decay_copied$4 = 112
 main	PROC						; COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 25
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 50
 $LN206:
 	push	rbx
 	sub	rsp, 96					; 00000060H
@@ -6158,7 +5839,7 @@ $LN206:
 	je	SHORT $LN15@main
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
 ; Line 132
-	lea	rcx, OFFSET FLAT:?producer@@YAXXZ	; producer
+	lea	rcx, OFFSET FLAT:?Producer@@YAXXZ	; Producer
 	mov	QWORD PTR [rax], rcx
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
 ; Line 3630
@@ -6191,7 +5872,7 @@ $LN16@main:
 	je	SHORT $LN96@main
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
 ; Line 132
-	lea	rcx, OFFSET FLAT:?consumer@@YAXXZ	; consumer
+	lea	rcx, OFFSET FLAT:?Consumer@@YAXXZ	; Consumer
 	mov	QWORD PTR [rax], rcx
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
 ; Line 3630
@@ -6255,8 +5936,8 @@ $LN97@main:
 ; Line 97
 	cmp	DWORD PTR t1$[rsp+8], eax
 	jne	SHORT $LN204@main
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 31
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 58
 	add	rsp, 96					; 00000060H
 	pop	rbx
 	ret	0
@@ -6354,68 +6035,62 @@ main$dtor$1 PROC
 main$dtor$1 ENDP
 text$x	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z
+;	COMDAT ?Consumer@@YAXXZ
 _TEXT	SEGMENT
-_Ostr$ = 8
-_Str$ = 16
-??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z PROC ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 445
-	cmp	QWORD PTR [rdx+24], 15
-	mov	rax, rdx
-	jbe	SHORT $LN7@operator
-; Line 446
-	mov	rax, QWORD PTR [rdx]
-$LN7@operator:
-; Line 3446
-	mov	r8, QWORD PTR [rdx+16]
-	mov	rdx, rax
-	jmp	??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z ; std::_Insert_string<char,std::char_traits<char>,unsigned __int64>
-??$?6DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@@Z ENDP ; std::operator<<<char,std::char_traits<char>,std::allocator<char> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?consumer@@YAXXZ
-_TEXT	SEGMENT
-?consumer@@YAXXZ PROC					; consumer, COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 17
-$LN29:
+?Consumer@@YAXXZ PROC					; Consumer, COMDAT
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 28
+$LN22:
 	sub	rsp, 40					; 00000028H
-$LL2@consumer:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 719
-	movzx	eax, BYTE PTR ?ready@@3U?$atomic@_N@std@@A ; ready
-; Line 720
-	npad	1
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 19
-	test	al, al
-	je	SHORT $LL2@consumer
-; Line 22
-	lea	rdx, OFFSET FLAT:??_C@_0BL@NGPCMOCL@?$FLConsumer?$FN?5Data?5observed?3?5@
+; Line 29
+	lea	rdx, OFFSET FLAT:??_C@_0DF@CKIKPHIA@?$FLConsumer?$FN?5Started?5polling?0?5wai@
 	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
 	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 445
-	cmp	QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A+24, 15
-	lea	rdx, OFFSET FLAT:?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A ; data
-; Line 3446
-	mov	r8, QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A+16
-	mov	rcx, rax
-; Line 445
-	cmova	rdx, QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A
-; Line 3446
-	call	??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z ; std::_Insert_string<char,std::char_traits<char>,unsigned __int64>
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
 ; Line 191
 	mov	rcx, rax
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 23
+	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 33
+	mov	ecx, DWORD PTR ?flag@@3HA		; flag
+	xor	eax, eax
+	cmp	ecx, 1
+	je	SHORT $LN3@Consumer
+	npad	4
+$LL2@Consumer:
+; Line 35
+	cmp	ecx, 2
+	je	SHORT $LN16@Consumer
+; Line 41
+	inc	eax
+	cmp	eax, 500000000				; 1dcd6500H
+	jle	SHORT $LL2@Consumer
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
+; Line 191
+	lea	rdx, OFFSET FLAT:??_C@_0DO@LIHDPKAL@?$FLConsumer?$FN?5TIMEOUT?3?5Never?5saw?51@
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 43
+	jmp	SHORT $LN1@Consumer
+$LN16@Consumer:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
+; Line 191
+	lea	rdx, OFFSET FLAT:??_C@_0DI@NFCFPNJJ@?$FLConsumer?$FN?5ERROR?3?5Missed?5state?5@
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 37
+	jmp	SHORT $LN1@Consumer
+$LN3@Consumer:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
+; Line 191
+	lea	rdx, OFFSET FLAT:??_C@_0CE@DDNGMNPP@?$FLConsumer?$FN?5SUCCESS?3?5Caught?5stat@
+$LN1@Consumer:
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 48
+	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
+	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+	mov	rcx, rax
 	add	rsp, 40					; 00000028H
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
-; Line 191
 	jmp	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-?consumer@@YAXXZ ENDP					; consumer
+?Consumer@@YAXXZ ENDP					; Consumer
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z
@@ -7696,271 +7371,331 @@ _Reraise$ = 24
 ?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z ENDP ; std::basic_ios<char,std::char_traits<char> >::clear
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ?producer@@YAXXZ
+;	COMDAT ??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z
 _TEXT	SEGMENT
-?producer@@YAXXZ PROC					; producer, COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 9
-$LN92:
-	mov	QWORD PTR [rsp+8], rbx
-	mov	QWORD PTR [rsp+16], rsi
+_Rel_time$ = 64
+_Now$4 = 64
+??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z PROC ; std::this_thread::sleep_for<__int64,std::ratio<1,1000> >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 222
+$LN189:
+	mov	QWORD PTR [rsp+16], rbx
+	mov	QWORD PTR [rsp+24], rbp
+	push	rsi
 	push	rdi
-	sub	rsp, 48					; 00000030H
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1618
-	mov	rdi, QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A+24
-	cmp	rdi, 25
-	jb	SHORT $LN11@producer
-; Line 436
-	cmp	rdi, 15
-; Line 1621
-	mov	QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A+16, 25
-; Line 435
-	lea	rbx, OFFSET FLAT:?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A ; data
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 174
-	mov	r8d, 25
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 436
-	cmova	rbx, QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 174
-	lea	rdx, OFFSET FLAT:??_C@_0BK@BDBCDDKG@Payload?5delivered?5safely?$CB@
+	push	r14
+	sub	rsp, 32					; 00000020H
+	mov	rdi, rcx
+; Line 169
+	lea	rcx, QWORD PTR _Now$4[rsp]
+	call	?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ ; std::chrono::steady_clock::now
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 392
+	mov	rax, QWORD PTR [rdi]
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 170
+	mov	rbx, QWORD PTR _Now$4[rsp]
 	mov	rcx, rbx
-	call	memmove
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1623
-	mov	BYTE PTR [rbx+25], 0
-; Line 1625
-	jmp	$LN26@producer
-$LN11@producer:
-; Line 2983
-	mov	rcx, rdi
+; Line 171
+	test	rax, rax
+	jle	SHORT $LN5@sleep_for
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 442
+	imul	rdx, rax, 1000000			; 000f4240H
+; Line 116
 	mov	rbx, 9223372036854775807		; 7fffffffffffffffH
-	shr	rcx, 1
 	mov	rax, rbx
-	sub	rax, rcx
-	cmp	rdi, rax
-	ja	SHORT $LN31@producer
-; Line 2987
-	lea	rax, QWORD PTR [rcx+rdi]
-	mov	ebx, 31
-	cmp	rax, rbx
-	cmova	rbx, rax
-$LN31@producer:
-; Line 825
-	lea	rcx, QWORD PTR [rbx+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	call	??$_Allocate@$0BA@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z ; std::_Allocate<16,std::_Default_allocate_traits>
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3009
-	mov	QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A+16, 25
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	mov	rsi, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3010
-	mov	QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A+24, rbx
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	movups	xmm0, XMMWORD PTR ??_C@_0BK@BDBCDDKG@Payload?5delivered?5safely?$CB@
-	movups	XMMWORD PTR [rax], xmm0
-	movsd	xmm0, QWORD PTR ??_C@_0BK@BDBCDDKG@Payload?5delivered?5safely?$CB@+16
-	movsd	QWORD PTR [rax+16], xmm0
-	movzx	ecx, BYTE PTR ??_C@_0BK@BDBCDDKG@Payload?5delivered?5safely?$CB@+24
-	mov	BYTE PTR [rax+24], cl
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1632
-	mov	BYTE PTR [rax+25], 0
-; Line 3012
-	cmp	rdi, 15
-	jbe	SHORT $LN25@producer
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 985
-	mov	rcx, QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 852
-	lea	rdx, QWORD PTR [rdi+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 284
-	cmp	rdx, 4096				; 00001000H
-	jb	SHORT $LN63@producer
-; Line 205
-	mov	rax, QWORD PTR [rcx-8]
-	add	rdx, 39					; 00000027H
-; Line 219
-	sub	rcx, rax
-	sub	rcx, 8
-	cmp	rcx, 31
-	ja	SHORT $LN62@producer
-; Line 220
+	sub	rax, rdx
+	cmp	rcx, rax
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 173
+	jge	SHORT $LN5@sleep_for
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 151
+	lea	rbx, QWORD PTR [rdx+rcx]
+$LN5@sleep_for:
+	mov	rsi, 86400000000000			; 00004e94914f0000H
+	mov	rbp, 4835703278458516699		; 431bde82d7b634dbH
+	mov	r14, -5551535331153507085		; b2f4fc0794908cf3H
+	npad	3
+$LL69@sleep_for:
+; Line 657
+	call	_Query_perf_frequency
+	mov	rdi, rax
+; Line 658
+	call	_Query_perf_counter
 	mov	rcx, rax
-$LN63@producer:
-; Line 289
-	call	??3@YAXPEAX_K@Z				; operator delete
-$LN25@producer:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 706
-	mov	QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A, rsi
-$LN26@producer:
-	npad	1
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 14
-	lea	rdx, OFFSET FLAT:??_C@_0BO@LPEJHBLG@?$FLProducer?$FN?5Flag?5set?5to?5ready?4@
+; Line 664
+	cmp	rdi, 10000000				; 00989680H
+	jne	SHORT $LN73@sleep_for
+; Line 670
+	imul	rax, rcx, 100				; 00000064H
+	jmp	SHORT $LN76@sleep_for
+$LN73@sleep_for:
+; Line 671
+	cmp	rdi, 24000000				; 016e3600H
+	jne	SHORT $LN75@sleep_for
+; Line 673
+	mov	rax, r14
+	imul	rcx
+	lea	r8, QWORD PTR [rcx+rdx]
+	sar	r8, 24
+	mov	rax, r8
+	shr	rax, 63					; 0000003fH
+	add	r8, rax
+	imul	rax, r8, 24000000			; 016e3600H
+; Line 674
+	sub	rcx, rax
+	mov	rax, r14
+	imul	rcx, rcx, 1000000000			; 3b9aca00H
+	imul	rcx
+	lea	rax, QWORD PTR [rcx+rdx]
+	sar	rax, 24
+	mov	rcx, rax
+	shr	rcx, 63					; 0000003fH
+	add	rax, rcx
+	imul	rcx, r8, 1000000000			; 3b9aca00H
+; Line 675
+	jmp	SHORT $LN186@sleep_for
+$LN75@sleep_for:
+; Line 683
+	cdq
+	idiv	rdi
+	mov	rcx, rax
+	imul	rax, rdx, 1000000000			; 3b9aca00H
+	cdq
+	idiv	rdi
+	imul	rcx, rcx, 1000000000			; 3b9aca00H
+$LN186@sleep_for:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 212
+	add	rax, rcx
+$LN76@sleep_for:
+	cmp	rax, rbx
+	jge	SHORT $LN173@sleep_for
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 221
+	mov	rcx, rbx
+	sub	rcx, rax
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 192
+	cmp	rcx, rsi
+	jle	SHORT $LN128@sleep_for
+; Line 193
+	mov	edx, 86400000				; 05265c00H
+; Line 217
+	mov	ecx, edx
+	call	_Thrd_sleep_for
+	jmp	$LL69@sleep_for
+$LN128@sleep_for:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 447
+	mov	rax, rbp
+	imul	rcx
+	sar	rdx, 18
+	mov	rax, rdx
+	shr	rax, 63					; 0000003fH
+	add	rdx, rax
+; Line 442
+	imul	rax, rdx, 1000000			; 000f4240H
+; Line 475
+	cmp	rax, rcx
+	jge	SHORT $LN147@sleep_for
+; Line 476
+	inc	edx
+$LN147@sleep_for:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 217
+	mov	ecx, edx
+	call	_Thrd_sleep_for
+	jmp	$LL69@sleep_for
+$LN173@sleep_for:
+; Line 224
+	mov	rbx, QWORD PTR [rsp+72]
+	mov	rbp, QWORD PTR [rsp+80]
+	add	rsp, 32					; 00000020H
+	pop	r14
+	pop	rdi
+	pop	rsi
+	ret	0
+??$sleep_for@_JU?$ratio@$00$0DOI@@std@@@this_thread@std@@YAXAEBV?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@1@@Z ENDP ; std::this_thread::sleep_for<__int64,std::ratio<1,1000> >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?0H$0A@@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEAA@AEBH@Z
+_TEXT	SEGMENT
+this$ = 8
+_Val$ = 16
+??$?0H$0A@@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEAA@AEBH@Z PROC ; std::chrono::duration<__int64,std::ratio<1,1000> >::duration<__int64,std::ratio<1,1000> ><int,0>, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 108
+	movsxd	rax, DWORD PTR [rdx]
+	mov	QWORD PTR [rcx], rax
+	mov	rax, rcx
+	ret	0
+??$?0H$0A@@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEAA@AEBH@Z ENDP ; std::chrono::duration<__int64,std::ratio<1,1000> >::duration<__int64,std::ratio<1,1000> ><int,0>
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ?Producer@@YAXXZ
+_TEXT	SEGMENT
+_Now$4 = 64
+?Producer@@YAXXZ PROC					; Producer, COMDAT
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 15
+$LN196:
+	mov	QWORD PTR [rsp+16], rbx
+	mov	QWORD PTR [rsp+24], rbp
+	push	rsi
+	push	rdi
+	push	r14
+	sub	rsp, 32					; 00000020H
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 169
+	lea	rcx, QWORD PTR _Now$4[rsp]
+	call	?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ ; std::chrono::steady_clock::now
+; Line 173
+	mov	rbx, QWORD PTR _Now$4[rsp]
+	mov	rax, 9223372036754775807		; 7ffffffffa0a1effH
+	cmp	rbx, rax
+	jge	SHORT $LN10@Producer
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 151
+	add	rbx, 100000000				; 05f5e100H
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 175
+	jmp	SHORT $LN186@Producer
+$LN10@Producer:
+; Line 176
+	mov	rbx, 9223372036854775807		; 7fffffffffffffffH
+$LN186@Producer:
+	mov	rsi, 86400000000000			; 00004e94914f0000H
+	mov	rbp, 4835703278458516699		; 431bde82d7b634dbH
+	mov	r14, -5551535331153507085		; b2f4fc0794908cf3H
+$LL74@Producer:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 657
+	call	_Query_perf_frequency
+	mov	rdi, rax
+; Line 658
+	call	_Query_perf_counter
+	mov	rcx, rax
+; Line 664
+	cmp	rdi, 10000000				; 00989680H
+	jne	SHORT $LN78@Producer
+; Line 670
+	imul	rax, rcx, 100				; 00000064H
+	jmp	SHORT $LN81@Producer
+$LN78@Producer:
+; Line 671
+	cmp	rdi, 24000000				; 016e3600H
+	jne	SHORT $LN80@Producer
+; Line 673
+	mov	rax, r14
+	imul	rcx
+	lea	r8, QWORD PTR [rcx+rdx]
+	sar	r8, 24
+	mov	rax, r8
+	shr	rax, 63					; 0000003fH
+	add	r8, rax
+	imul	rax, r8, 24000000			; 016e3600H
+; Line 674
+	sub	rcx, rax
+	mov	rax, r14
+	imul	rcx, rcx, 1000000000			; 3b9aca00H
+	imul	rcx
+	lea	rax, QWORD PTR [rcx+rdx]
+	sar	rax, 24
+	mov	rcx, rax
+	shr	rcx, 63					; 0000003fH
+	add	rax, rcx
+	imul	rcx, r8, 1000000000			; 3b9aca00H
+; Line 675
+	jmp	SHORT $LN193@Producer
+$LN80@Producer:
+; Line 683
+	cdq
+	idiv	rdi
+	mov	rcx, rax
+	imul	rax, rdx, 1000000000			; 3b9aca00H
+	cdq
+	idiv	rdi
+	imul	rcx, rcx, 1000000000			; 3b9aca00H
+$LN193@Producer:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 212
+	add	rax, rcx
+$LN81@Producer:
+	cmp	rax, rbx
+	jge	SHORT $LN180@Producer
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 221
+	mov	rcx, rbx
+	sub	rcx, rax
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 192
+	cmp	rcx, rsi
+	jle	SHORT $LN133@Producer
+; Line 193
+	mov	edx, 86400000				; 05265c00H
+; Line 217
+	mov	ecx, edx
+	call	_Thrd_sleep_for
+	jmp	$LL74@Producer
+$LN133@Producer:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 447
+	mov	rax, rbp
+	imul	rcx
+	sar	rdx, 18
+	mov	rax, rdx
+	shr	rax, 63					; 0000003fH
+	add	rdx, rax
+; Line 442
+	imul	rax, rdx, 1000000			; 000f4240H
+; Line 475
+	cmp	rax, rcx
+	jge	SHORT $LN152@Producer
+; Line 476
+	inc	edx
+$LN152@Producer:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 217
+	mov	ecx, edx
+	call	_Thrd_sleep_for
+	jmp	$LL74@Producer
+$LN180@Producer:
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 25
+	lea	rdx, OFFSET FLAT:??_C@_0DA@FKNJHCDP@?$FLProducer?$FN?5State?5updated?3?50?5?9?$DO?5@
+	mov	DWORD PTR ?flag@@3HA, 2			; flag
 	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 706
-	mov	BYTE PTR ?ready@@3U?$atomic@_N@std@@A, 1 ; ready
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 14
 	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
 ; Line 191
 	mov	rcx, rax
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 15
-	mov	rbx, QWORD PTR [rsp+64]
-	mov	rsi, QWORD PTR [rsp+72]
-	add	rsp, 48					; 00000030H
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\compiler_remove_concurrency.cpp
+; Line 26
+	mov	rbx, QWORD PTR [rsp+72]
+	mov	rbp, QWORD PTR [rsp+80]
+	add	rsp, 32					; 00000020H
+	pop	r14
 	pop	rdi
+	pop	rsi
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
 ; Line 191
 	jmp	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-$LN62@producer:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 219
-	xor	r9d, r9d
-	mov	QWORD PTR [rsp+32], 0
-	xor	r8d, r8d
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_invoke_watson
-	int	3
-$LN89@producer:
-?producer@@YAXXZ ENDP					; producer
+?Producer@@YAXXZ ENDP					; Producer
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??__Fdata@@YAXXZ
-text$yd	SEGMENT
-??__Fdata@@YAXXZ PROC					; `dynamic atexit destructor for 'data'', COMDAT
-	sub	rsp, 56					; 00000038H
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 453
-	mov	rdx, QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A+24
-; Line 3083
-	cmp	rdx, 15
-	jbe	SHORT $LN23@dynamic
-; Line 3086
-	mov	rcx, QWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A
-; Line 852
-	inc	rdx
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 284
-	cmp	rdx, 4096				; 00001000H
-	jb	SHORT $LN28@dynamic
-; Line 205
-	mov	rax, QWORD PTR [rcx-8]
-	add	rdx, 39					; 00000027H
-; Line 219
-	sub	rcx, rax
-	sub	rcx, 8
-	cmp	rcx, 31
-	ja	SHORT $LN27@dynamic
-; Line 220
-	mov	rcx, rax
-$LN28@dynamic:
-; Line 289
-	call	??3@YAXPEAX_K@Z				; operator delete
-$LN23@dynamic:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3090
-	movdqa	xmm0, XMMWORD PTR __xmm@000000000000000f0000000000000000
-	movdqu	XMMWORD PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A+16, xmm0
-; Line 3093
-	mov	BYTE PTR ?data@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A, 0
-	add	rsp, 56					; 00000038H
-	ret	0
-$LN27@dynamic:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 219
-	xor	r9d, r9d
-	mov	QWORD PTR [rsp+32], 0
-	xor	r8d, r8d
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_invoke_watson
-	int	3
-$LN35@dynamic:
-??__Fdata@@YAXXZ ENDP					; `dynamic atexit destructor for 'data''
-text$yd	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??__Edata@@YAXXZ
-text$di	SEGMENT
-??__Edata@@YAXXZ PROC					; `dynamic initializer for 'data'', COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_acq_rel.cpp
-; Line 7
-	lea	rcx, OFFSET FLAT:??__Fdata@@YAXXZ	; `dynamic atexit destructor for 'data''
-	jmp	atexit
-??__Edata@@YAXXZ ENDP					; `dynamic initializer for 'data''
-text$di	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?load@?$_Atomic_storage@_N$00@std@@QEBA_NW4memory_order@2@@Z
+;	COMDAT ?count@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEBA_JXZ
 _TEXT	SEGMENT
 this$ = 8
-_Order$ = 16
-?load@?$_Atomic_storage@_N$00@std@@QEBA_NW4memory_order@2@@Z PROC ; std::_Atomic_storage<bool,1>::load, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 719
-	movzx	eax, BYTE PTR [rcx]
-; Line 720
-	test	edx, edx
-	je	SHORT $LN5@load
-	npad	1
-$LN5@load:
-; Line 723
+?count@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEBA_JXZ PROC ; std::chrono::duration<__int64,std::ratio<1,1000> >::count, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 119
+	mov	rax, QWORD PTR [rcx]
+; Line 120
 	ret	0
-?load@?$_Atomic_storage@_N$00@std@@QEBA_NW4memory_order@2@@Z ENDP ; std::_Atomic_storage<bool,1>::load
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?store@?$_Atomic_storage@_N$00@std@@QEAAX_NW4memory_order@2@@Z
-_TEXT	SEGMENT
-this$ = 8
-_Value$ = 16
-_Order$ = 24
-?store@?$_Atomic_storage@_N$00@std@@QEAAX_NW4memory_order@2@@Z PROC ; std::_Atomic_storage<bool,1>::store, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 703
-	test	r8d, r8d
-	je	SHORT $LN11@store
-; Line 705
-	cmp	r8d, 3
-	jne	SHORT $LN4@store
-; Line 706
-	npad	1
-$LN11@store:
-; Line 710
-	mov	BYTE PTR [rcx], dl
-	ret	0
-$LN4@store:
-; Line 694
-	xchg	BYTE PTR [rcx], dl
-; Line 710
-	ret	0
-?store@?$_Atomic_storage@_N$00@std@@QEAAX_NW4memory_order@2@@Z ENDP ; std::_Atomic_storage<bool,1>::store
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?store@?$_Atomic_storage@_N$00@std@@QEAAX_N@Z
-_TEXT	SEGMENT
-this$ = 8
-_Value$ = 16
-?store@?$_Atomic_storage@_N$00@std@@QEAAX_N@Z PROC	; std::_Atomic_storage<bool,1>::store, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 694
-	xchg	BYTE PTR [rcx], dl
-; Line 695
-	ret	0
-?store@?$_Atomic_storage@_N$00@std@@QEAAX_N@Z ENDP	; std::_Atomic_storage<bool,1>::store
+?count@?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@std@@QEBA_JXZ ENDP ; std::chrono::duration<__int64,std::ratio<1,1000> >::count
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?join@thread@std@@QEAAXXZ
@@ -8051,6 +7786,179 @@ $LN10@thread:
 	int	3
 $LN8@thread:
 ??1thread@std@@QEAA@XZ ENDP				; std::thread::~thread
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??$?0_J$0A@@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAA@AEB_J@Z
+_TEXT	SEGMENT
+this$ = 8
+_Val$ = 16
+??$?0_J$0A@@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAA@AEB_J@Z PROC ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::duration<__int64,std::ratio<1,1000000000> ><__int64,0>, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 108
+	mov	rax, QWORD PTR [rdx]
+	mov	QWORD PTR [rcx], rax
+	mov	rax, rcx
+	ret	0
+??$?0_J$0A@@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAA@AEB_J@Z ENDP ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::duration<__int64,std::ratio<1,1000000000> ><__int64,0>
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??Y?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEAAAEAV012@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@@Z
+_TEXT	SEGMENT
+this$ = 8
+_Dur$ = 16
+??Y?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEAAAEAV012@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@@Z PROC ; std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >::operator+=, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 151
+	mov	rax, QWORD PTR [rdx]
+	add	QWORD PTR [rcx], rax
+; Line 243
+	mov	rax, rcx
+; Line 244
+	ret	0
+??Y?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEAAAEAV012@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@@Z ENDP ; std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >::operator+=
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ?time_since_epoch@?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@XZ
+_TEXT	SEGMENT
+this$ = 8
+__$ReturnUdt$ = 16
+?time_since_epoch@?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@XZ PROC ; std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >::time_since_epoch, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 221
+	mov	rax, QWORD PTR [rcx]
+	mov	QWORD PTR [rdx], rax
+	mov	rax, rdx
+; Line 222
+	ret	0
+?time_since_epoch@?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@XZ ENDP ; std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >::time_since_epoch
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??0?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEAA@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@@Z
+_TEXT	SEGMENT
+this$ = 8
+_Other$ = 16
+??0?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEAA@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@@Z PROC ; std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 213
+	mov	rax, QWORD PTR [rdx]
+	mov	QWORD PTR [rcx], rax
+	mov	rax, rcx
+	ret	0
+??0?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@QEAA@AEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@12@@Z ENDP ; std::chrono::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >::time_point<std::chrono::steady_clock,std::chrono::duration<__int64,std::ratio<1,1000000000> > >
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ??Y?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAAAEAV012@AEBV012@@Z
+_TEXT	SEGMENT
+this$ = 8
+_Right$ = 16
+??Y?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAAAEAV012@AEBV012@@Z PROC ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::operator+=, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 151
+	mov	rax, QWORD PTR [rdx]
+	add	QWORD PTR [rcx], rax
+; Line 152
+	mov	rax, rcx
+; Line 153
+	ret	0
+??Y?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEAAAEAV012@AEBV012@@Z ENDP ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::operator+=
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ?count@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEBA_JXZ
+_TEXT	SEGMENT
+this$ = 8
+?count@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEBA_JXZ PROC ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::count, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 119
+	mov	rax, QWORD PTR [rcx]
+; Line 120
+	ret	0
+?count@?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@QEBA_JXZ ENDP ; std::chrono::duration<__int64,std::ratio<1,1000000000> >::count
+_TEXT	ENDS
+; Function compile flags: /Ogtpy
+;	COMDAT ?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ
+_TEXT	SEGMENT
+__$ReturnUdt$ = 48
+?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ PROC ; std::chrono::steady_clock::now, COMDAT
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_chrono.hpp
+; Line 656
+$LN32:
+	mov	QWORD PTR [rsp+8], rbx
+	push	rdi
+	sub	rsp, 32					; 00000020H
+	mov	rbx, rcx
+; Line 657
+	call	_Query_perf_frequency
+	mov	rdi, rax
+; Line 658
+	call	_Query_perf_counter
+	mov	r9, rax
+; Line 664
+	cmp	rdi, 10000000				; 00989680H
+	jne	SHORT $LN2@now
+; Line 670
+	imul	rax, r9, 100				; 00000064H
+; Line 686
+	mov	QWORD PTR [rbx], rax
+	mov	rax, rbx
+	mov	rbx, QWORD PTR [rsp+48]
+	add	rsp, 32					; 00000020H
+	pop	rdi
+	ret	0
+$LN2@now:
+; Line 671
+	cmp	rdi, 24000000				; 016e3600H
+	jne	SHORT $LN4@now
+; Line 673
+	mov	r10, -5551535331153507085		; b2f4fc0794908cf3H
+	mov	rax, r10
+	imul	r9
+; Line 674
+	mov	rax, r10
+	lea	r8, QWORD PTR [r9+rdx]
+	sar	r8, 24
+	mov	rcx, r8
+	shr	rcx, 63					; 0000003fH
+	add	r8, rcx
+	imul	rcx, r8, 24000000			; 016e3600H
+	sub	r9, rcx
+	imul	rcx, r9, 1000000000			; 3b9aca00H
+	imul	rcx
+	add	rdx, rcx
+	sar	rdx, 24
+	mov	rax, rdx
+	shr	rax, 63					; 0000003fH
+	add	rdx, rax
+	imul	rax, r8, 1000000000			; 3b9aca00H
+; Line 675
+	add	rdx, rax
+; Line 686
+	mov	rax, rbx
+; Line 213
+	mov	QWORD PTR [rbx], rdx
+; Line 686
+	mov	rbx, QWORD PTR [rsp+48]
+	add	rsp, 32					; 00000020H
+	pop	rdi
+	ret	0
+$LN4@now:
+; Line 683
+	cdq
+	idiv	rdi
+	mov	rcx, rax
+	imul	rax, rdx, 1000000000			; 3b9aca00H
+	imul	rcx, rcx, 1000000000			; 3b9aca00H
+	cdq
+	idiv	rdi
+; Line 684
+	add	rax, rcx
+; Line 686
+	mov	QWORD PTR [rbx], rax
+	mov	rax, rbx
+	mov	rbx, QWORD PTR [rsp+48]
+	add	rsp, 32					; 00000020H
+	pop	rdi
+	ret	0
+?now@steady_clock@chrono@std@@SA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@23@XZ ENDP ; std::chrono::steady_clock::now
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getloc@ios_base@std@@QEBA?AVlocale@2@XZ
@@ -11306,26 +11214,6 @@ _TEXT	SEGMENT
 ?iostream_category@std@@YAAEBVerror_category@1@XZ ENDP	; std::iostream_category
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z
-_TEXT	SEGMENT
-_Order$ = 8
-?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z PROC ; std::_Check_load_memory_order, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 319
-	ret	0
-?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z ENDP ; std::_Check_load_memory_order
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z
-_TEXT	SEGMENT
-_Order$ = 8
-?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z PROC ; std::_Check_store_memory_order, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 303
-	ret	0
-?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z ENDP ; std::_Check_store_memory_order
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
 ;	COMDAT ??_Gruntime_error@std@@UEAAPEAXI@Z
 _TEXT	SEGMENT
 this$ = 48
@@ -11675,38 +11563,6 @@ this$ = 8
 ?max_size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA_KXZ ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::max_size
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA_KXZ
-_TEXT	SEGMENT
-this$ = 8
-?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA_KXZ PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::size, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 2374
-	mov	rax, QWORD PTR [rcx+16]
-; Line 2375
-	ret	0
-?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBA_KXZ ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::size
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?data@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ
-_TEXT	SEGMENT
-this$ = 8
-?data@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::data, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 445
-	cmp	QWORD PTR [rcx+24], 15
-	jbe	SHORT $LN11@data
-; Line 2360
-	mov	rax, QWORD PTR [rcx]
-; Line 2361
-	ret	0
-$LN11@data:
-; Line 2360
-	mov	rax, rcx
-; Line 2361
-	ret	0
-?data@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::data
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
 ;	COMDAT ?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ
 _TEXT	SEGMENT
 this$ = 8
@@ -11725,327 +11581,6 @@ $LN11@c_str:
 ; Line 2357
 	ret	0
 ?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEBAPEBDXZ ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::c_str
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z
-_TEXT	SEGMENT
-this$ = 80
-_Ptr$ = 88
-?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1637
-$LN78:
-	mov	QWORD PTR [rsp+8], rbx
-	mov	QWORD PTR [rsp+16], rbp
-	mov	QWORD PTR [rsp+24], rsi
-	push	rdi
-	push	r14
-	push	r15
-	sub	rsp, 48					; 00000030H
-	mov	rbx, rcx
-	mov	rbp, rdx
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 459
-	mov	rcx, rdx
-	call	strlen
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1618
-	mov	r14, QWORD PTR [rbx+24]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 459
-	mov	rsi, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1618
-	cmp	rax, r14
-	ja	SHORT $LN7@assign
-; Line 435
-	mov	rdi, rbx
-; Line 436
-	cmp	r14, 15
-	jbe	SHORT $LN10@assign
-; Line 437
-	mov	rdi, QWORD PTR [rbx]
-$LN10@assign:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 174
-	mov	r8, rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1621
-	mov	QWORD PTR [rbx+16], rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 174
-	mov	rdx, rbp
-	mov	rcx, rdi
-	call	memmove
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1623
-	mov	BYTE PTR [rdi+rsi], 0
-; Line 1625
-	jmp	$LN6@assign
-$LN7@assign:
-; Line 2998
-	mov	rdi, 9223372036854775807		; 7fffffffffffffffH
-	cmp	rsi, rdi
-	ja	$LN76@assign
-; Line 2978
-	mov	rcx, rsi
-	or	rcx, 15
-	cmp	rcx, rdi
-; Line 2979
-	ja	SHORT $LN27@assign
-; Line 2983
-	mov	rdx, r14
-	mov	rax, rdi
-	shr	rdx, 1
-	sub	rax, rdx
-	cmp	r14, rax
-	ja	SHORT $LN27@assign
-; Line 2987
-	lea	rax, QWORD PTR [r14+rdx]
-	mov	rdi, rcx
-	cmp	rcx, rax
-	cmovb	rdi, rax
-$LN27@assign:
-; Line 825
-	lea	rcx, QWORD PTR [rdi+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	call	??$_Allocate@$0BA@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z ; std::_Allocate<16,std::_Default_allocate_traits>
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	r8, rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3009
-	mov	QWORD PTR [rbx+16], rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	rdx, rbp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3010
-	mov	QWORD PTR [rbx+24], rdi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	rcx, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	mov	r15, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	call	memcpy
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1632
-	mov	BYTE PTR [r15+rsi], 0
-; Line 3012
-	cmp	r14, 15
-	jbe	SHORT $LN21@assign
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 985
-	mov	rcx, QWORD PTR [rbx]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 852
-	lea	rdx, QWORD PTR [r14+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 284
-	cmp	rdx, 4096				; 00001000H
-	jb	SHORT $LN59@assign
-; Line 205
-	mov	rax, QWORD PTR [rcx-8]
-	add	rdx, 39					; 00000027H
-; Line 219
-	sub	rcx, rax
-	sub	rcx, 8
-	cmp	rcx, 31
-	ja	SHORT $LN58@assign
-; Line 220
-	mov	rcx, rax
-$LN59@assign:
-; Line 289
-	call	??3@YAXPEAX_K@Z				; operator delete
-$LN21@assign:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1628
-	mov	QWORD PTR [rbx], r15
-$LN6@assign:
-; Line 1639
-	mov	rbp, QWORD PTR [rsp+88]
-	mov	rax, rbx
-	mov	rbx, QWORD PTR [rsp+80]
-	mov	rsi, QWORD PTR [rsp+96]
-	add	rsp, 48					; 00000030H
-	pop	r15
-	pop	r14
-	pop	rdi
-	ret	0
-$LN76@assign:
-; Line 2999
-	call	?_Xlen_string@std@@YAXXZ		; std::_Xlen_string
-	int	3
-$LN58@assign:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 219
-	xor	r9d, r9d
-	mov	QWORD PTR [rsp+32], 0
-	xor	r8d, r8d
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_invoke_watson
-	int	3
-$LN74@assign:
-?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z
-_TEXT	SEGMENT
-this$ = 80
-_Ptr$ = 88
-_Count$ = 96
-?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1616
-$LN74:
-	mov	QWORD PTR [rsp+16], rbx
-	mov	QWORD PTR [rsp+24], rbp
-	push	rsi
-	push	rdi
-	push	r14
-	sub	rsp, 48					; 00000030H
-; Line 1618
-	mov	r14, QWORD PTR [rcx+24]
-	mov	rsi, r8
-	mov	rbp, rdx
-	mov	rbx, rcx
-	cmp	r8, r14
-	ja	SHORT $LN2@assign
-; Line 435
-	mov	rdi, rcx
-; Line 436
-	cmp	r14, 15
-	jbe	SHORT $LN5@assign
-; Line 437
-	mov	rdi, QWORD PTR [rcx]
-$LN5@assign:
-; Line 1621
-	mov	QWORD PTR [rcx+16], rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 174
-	mov	rcx, rdi
-	call	memmove
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1623
-	mov	BYTE PTR [rdi+rsi], 0
-; Line 1625
-	jmp	$LN70@assign
-$LN2@assign:
-; Line 2998
-	mov	rdi, 9223372036854775807		; 7fffffffffffffffH
-	cmp	rsi, rdi
-	ja	$LN72@assign
-; Line 2978
-	mov	rcx, rsi
-	mov	QWORD PTR [rsp+80], r15
-	or	rcx, 15
-	cmp	rcx, rdi
-; Line 2979
-	ja	SHORT $LN22@assign
-; Line 2983
-	mov	rdx, r14
-	mov	rax, rdi
-	shr	rdx, 1
-	sub	rax, rdx
-	cmp	r14, rax
-	ja	SHORT $LN22@assign
-; Line 2987
-	lea	rax, QWORD PTR [r14+rdx]
-	mov	rdi, rcx
-	cmp	rcx, rax
-	cmovb	rdi, rax
-$LN22@assign:
-; Line 825
-	lea	rcx, QWORD PTR [rdi+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	call	??$_Allocate@$0BA@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z ; std::_Allocate<16,std::_Default_allocate_traits>
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	r8, rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3009
-	mov	QWORD PTR [rbx+16], rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	rdx, rbp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3010
-	mov	QWORD PTR [rbx+24], rdi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	rcx, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	mov	r15, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	call	memcpy
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1632
-	mov	BYTE PTR [r15+rsi], 0
-; Line 3012
-	cmp	r14, 15
-	jbe	SHORT $LN16@assign
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 985
-	mov	rcx, QWORD PTR [rbx]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 852
-	lea	rdx, QWORD PTR [r14+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 284
-	cmp	rdx, 4096				; 00001000H
-	jb	SHORT $LN54@assign
-; Line 205
-	mov	rax, QWORD PTR [rcx-8]
-	add	rdx, 39					; 00000027H
-; Line 219
-	sub	rcx, rax
-	sub	rcx, 8
-	cmp	rcx, 31
-	ja	SHORT $LN53@assign
-; Line 220
-	mov	rcx, rax
-$LN54@assign:
-; Line 289
-	call	??3@YAXPEAX_K@Z				; operator delete
-$LN16@assign:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1628
-	mov	QWORD PTR [rbx], r15
-	mov	r15, QWORD PTR [rsp+80]
-$LN70@assign:
-; Line 1635
-	mov	rbp, QWORD PTR [rsp+96]
-	mov	rax, rbx
-	mov	rbx, QWORD PTR [rsp+88]
-	add	rsp, 48					; 00000030H
-	pop	r14
-	pop	rdi
-	pop	rsi
-	ret	0
-$LN72@assign:
-; Line 2999
-	call	?_Xlen_string@std@@YAXXZ		; std::_Xlen_string
-	int	3
-$LN53@assign:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 219
-	xor	r9d, r9d
-	mov	QWORD PTR [rsp+32], 0
-	xor	r8d, r8d
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_invoke_watson
-	int	3
-$LN69@assign:
-?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD_K@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@QEBD@Z
@@ -12280,173 +11815,6 @@ $LN4@append:
 ?append@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV12@AEBV12@@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::append
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z
-_TEXT	SEGMENT
-this$ = 80
-_Ptr$ = 88
-??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1445
-$LN81:
-	mov	QWORD PTR [rsp+8], rbx
-	mov	QWORD PTR [rsp+16], rbp
-	mov	QWORD PTR [rsp+24], rsi
-	push	rdi
-	push	r14
-	push	r15
-	sub	rsp, 48					; 00000030H
-	mov	rbx, rcx
-	mov	rbp, rdx
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 459
-	mov	rcx, rdx
-	call	strlen
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1618
-	mov	r14, QWORD PTR [rbx+24]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 459
-	mov	rsi, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1618
-	cmp	rax, r14
-	ja	SHORT $LN9@operator
-; Line 435
-	mov	rdi, rbx
-; Line 436
-	cmp	r14, 15
-	jbe	SHORT $LN12@operator
-; Line 437
-	mov	rdi, QWORD PTR [rbx]
-$LN12@operator:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 174
-	mov	r8, rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1621
-	mov	QWORD PTR [rbx+16], rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 174
-	mov	rdx, rbp
-	mov	rcx, rdi
-	call	memmove
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1623
-	mov	BYTE PTR [rdi+rsi], 0
-; Line 1625
-	jmp	$LN8@operator
-$LN9@operator:
-; Line 2998
-	mov	rdi, 9223372036854775807		; 7fffffffffffffffH
-	cmp	rsi, rdi
-	ja	$LN79@operator
-; Line 2978
-	mov	rcx, rsi
-	or	rcx, 15
-	cmp	rcx, rdi
-; Line 2979
-	ja	SHORT $LN29@operator
-; Line 2983
-	mov	rdx, r14
-	mov	rax, rdi
-	shr	rdx, 1
-	sub	rax, rdx
-	cmp	r14, rax
-	ja	SHORT $LN29@operator
-; Line 2987
-	lea	rax, QWORD PTR [r14+rdx]
-	mov	rdi, rcx
-	cmp	rcx, rax
-	cmovb	rdi, rax
-$LN29@operator:
-; Line 825
-	lea	rcx, QWORD PTR [rdi+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	call	??$_Allocate@$0BA@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z ; std::_Allocate<16,std::_Default_allocate_traits>
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	r8, rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3009
-	mov	QWORD PTR [rbx+16], rsi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	rdx, rbp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 3010
-	mov	QWORD PTR [rbx+24], rdi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	mov	rcx, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 990
-	mov	r15, rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_string_view.hpp
-; Line 121
-	call	memcpy
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1632
-	mov	BYTE PTR [r15+rsi], 0
-; Line 3012
-	cmp	r14, 15
-	jbe	SHORT $LN23@operator
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 985
-	mov	rcx, QWORD PTR [rbx]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 852
-	lea	rdx, QWORD PTR [r14+1]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 284
-	cmp	rdx, 4096				; 00001000H
-	jb	SHORT $LN61@operator
-; Line 205
-	mov	rax, QWORD PTR [rcx-8]
-	add	rdx, 39					; 00000027H
-; Line 219
-	sub	rcx, rax
-	sub	rcx, 8
-	cmp	rcx, 31
-	ja	SHORT $LN60@operator
-; Line 220
-	mov	rcx, rax
-$LN61@operator:
-; Line 289
-	call	??3@YAXPEAX_K@Z				; operator delete
-$LN23@operator:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 1628
-	mov	QWORD PTR [rbx], r15
-$LN8@operator:
-; Line 1447
-	mov	rbp, QWORD PTR [rsp+88]
-	mov	rax, rbx
-	mov	rbx, QWORD PTR [rsp+80]
-	mov	rsi, QWORD PTR [rsp+96]
-	add	rsp, 48					; 00000030H
-	pop	r15
-	pop	r14
-	pop	rdi
-	ret	0
-$LN79@operator:
-; Line 2999
-	call	?_Xlen_string@std@@YAXXZ		; std::_Xlen_string
-	int	3
-$LN60@operator:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 219
-	xor	r9d, r9d
-	mov	QWORD PTR [rsp+32], 0
-	xor	r8d, r8d
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_invoke_watson
-	int	3
-$LN77@operator:
-??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAAAEAV01@QEBD@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ
 _TEXT	SEGMENT
 this$ = 64
@@ -12565,22 +11933,6 @@ _Right$ = 16
 ; Line 1031
 	ret	0
 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@$$QEAV01@@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Construct_empty@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAXXZ
-_TEXT	SEGMENT
-this$ = 8
-?_Construct_empty@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAXXZ PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct_empty, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 860
-	mov	QWORD PTR [rcx+16], 0
-; Line 861
-	mov	QWORD PTR [rcx+24], 15
-; Line 865
-	mov	BYTE PTR [rcx], 0
-; Line 866
-	ret	0
-?_Construct_empty@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAXXZ ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct_empty
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?_Deallocate_for_capacity@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CAXAEAV?$allocator@D@2@QEAD_K@Z
@@ -12812,28 +12164,6 @@ $LN54@basic_stri:
 	int	3
 $LN52@basic_stri:
 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@AEBV01@@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ
-_TEXT	SEGMENT
-this$ = 8
-??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring
-; Line 708
-	xorps	xmm0, xmm0
-; Line 710
-	mov	rax, rcx
-; Line 493
-	movups	XMMWORD PTR [rcx], xmm0
-; Line 860
-	mov	QWORD PTR [rcx+16], 0
-; Line 861
-	mov	QWORD PTR [rcx+24], 15
-; Line 865
-	mov	BYTE PTR [rcx], 0
-; Line 710
-	ret	0
-??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAA@XZ ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??1?$_String_val@U?$_Simple_types@D@std@@@std@@QEAA@XZ

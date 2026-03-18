@@ -6,8 +6,8 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 PUBLIC	_Avx2WmemEnabledWeakValue
-PUBLIC	?x@@3U?$atomic@H@std@@A				; x
-PUBLIC	?y@@3U?$atomic@H@std@@A				; y
+PUBLIC	?x@@3HA						; x
+PUBLIC	?y@@3HA						; y
 PUBLIC	?r1@@3HA					; r1
 PUBLIC	?r2@@3HA					; r2
 ;	COMDAT _Avx2WmemEnabledWeakValue
@@ -15,8 +15,8 @@ _BSS	SEGMENT
 _Avx2WmemEnabledWeakValue DD 01H DUP (?)
 _BSS	ENDS
 _BSS	SEGMENT
-?x@@3U?$atomic@H@std@@A DD 01H DUP (?)			; x
-?y@@3U?$atomic@H@std@@A DD 01H DUP (?)			; y
+?x@@3HA	DD	01H DUP (?)				; x
+?y@@3HA	DD	01H DUP (?)				; y
 ?r1@@3HA DD	01H DUP (?)				; r1
 ?r2@@3HA DD	01H DUP (?)				; r2
 _BSS	ENDS
@@ -113,8 +113,6 @@ PUBLIC	??0runtime_error@std@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$a
 PUBLIC	??1runtime_error@std@@UEAA@XZ			; std::runtime_error::~runtime_error
 PUBLIC	??0runtime_error@std@@QEAA@AEBV01@@Z		; std::runtime_error::runtime_error
 PUBLIC	??_Gruntime_error@std@@UEAAPEAXI@Z		; std::runtime_error::`scalar deleting destructor'
-PUBLIC	?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z ; std::_Check_store_memory_order
-PUBLIC	?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z ; std::_Check_load_memory_order
 PUBLIC	?iostream_category@std@@YAAEBVerror_category@1@XZ ; std::iostream_category
 PUBLIC	??1error_category@std@@UEAA@XZ			; std::error_category::~error_category
 PUBLIC	?default_error_condition@error_category@std@@UEBA?AVerror_condition@2@H@Z ; std::error_category::default_error_condition
@@ -213,10 +211,6 @@ PUBLIC	?getloc@ios_base@std@@QEBA?AVlocale@2@XZ	; std::ios_base::getloc
 PUBLIC	??1thread@std@@QEAA@XZ				; std::thread::~thread
 PUBLIC	?joinable@thread@std@@QEBA_NXZ			; std::thread::joinable
 PUBLIC	?join@thread@std@@QEAAXXZ			; std::thread::join
-PUBLIC	?store@?$_Atomic_storage@H$03@std@@QEAAXH@Z	; std::_Atomic_storage<int,4>::store
-PUBLIC	?store@?$_Atomic_storage@H$03@std@@QEAAXHW4memory_order@2@@Z ; std::_Atomic_storage<int,4>::store
-PUBLIC	?load@?$_Atomic_storage@H$03@std@@QEBAHW4memory_order@2@@Z ; std::_Atomic_storage<int,4>::load
-PUBLIC	??4?$atomic@H@std@@QEAAHH@Z			; std::atomic<int>::operator=
 PUBLIC	?thread1@@YAXXZ					; thread1
 PUBLIC	?thread2@@YAXXZ					; thread2
 PUBLIC	main
@@ -253,9 +247,6 @@ PUBLIC	?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ ; std::
 PUBLIC	?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBA_JXZ ; std::basic_streambuf<char,std::char_traits<char> >::_Pnavail
 PUBLIC	??$forward@A6AXXZ@std@@YAA6AXXZA6AXXZ@Z		; std::forward<void (__cdecl&)(void)>
 PUBLIC	??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z	; std::thread::_Start<void (__cdecl&)(void)>
-PUBLIC	??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPEDHAEBU?$_Atomic_padded@H@0@@Z ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >
-PUBLIC	??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPECHAEAU?$_Atomic_padded@H@0@@Z ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >
-PUBLIC	??$_Atomic_reinterpret_as@HH@std@@YAHAEBH@Z	; std::_Atomic_reinterpret_as<int,int>
 PUBLIC	??$_Convert_size@_K_K@std@@YA_K_K@Z		; std::_Convert_size<unsigned __int64,unsigned __int64>
 PUBLIC	??$move@AEAV?$allocator@D@std@@@std@@YA$$QEAV?$allocator@D@0@AEAV10@@Z ; std::move<std::allocator<char> &>
 PUBLIC	??$?0V?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAV?$allocator@D@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><std::allocator<char> >
@@ -418,9 +409,10 @@ PUBLIC	_TI5?AVfailure@ios_base@std@@
 PUBLIC	_CTA5?AVfailure@ios_base@std@@
 PUBLIC	??_R0?AVfailure@ios_base@std@@@8		; std::ios_base::failure `RTTI Type Descriptor'
 PUBLIC	_CT??_R0?AVfailure@ios_base@std@@@8??0failure@ios_base@std@@QEAA@AEBV012@@Z40
-PUBLIC	??_C@_0DO@NBNMGBEK@?$FLSeq_Cst?$FN?5Starting?5experiment?4?5@ ; `string'
-PUBLIC	??_C@_0CI@EEKFHLNG@?$FLSeq_Cst?$FN?5Completed?5500?0000?5ite@ ; `string'
-PUBLIC	??_C@_0CN@EJLKPHAD@?$FLSeq_Cst?$FN?5Violations?5?$CIr1?$DN0?0?5r2?$DN@ ; `string'
+PUBLIC	??_C@_0CK@CIBONEPK@Starting?5Memory?5Consistency?5Exp@ ; `string'
+PUBLIC	??_C@_0CP@JNPLHOND@?3?5?$FLCONSISTENCY?5VIOLATION?$FN?5r1?$DN0?0@ ; `string'
+PUBLIC	??_C@_0L@KDIGCGPK@Iteration?5@			; `string'
+PUBLIC	??_C@_0EL@JGOIJPF@Executed?51?0000?0000?5times?0?5no?5vi@ ; `string'
 PUBLIC	?_Static@?1???$_Immortalize_memcpy_image@V_Iostream_error_category2@std@@@std@@YAAEBV_Iostream_error_category2@1@XZ@4U?$_Constexpr_immortalize_impl@V_Iostream_error_category2@std@@@1@A ; `std::_Immortalize_memcpy_image<std::_Iostream_error_category2>'::`2'::_Static
 PUBLIC	?_Psave@?$_Facetptr@V?$ctype@D@std@@@std@@2PEBVfacet@locale@2@EB ; std::_Facetptr<std::ctype<char> >::_Psave
 PUBLIC	?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
@@ -1200,8 +1192,8 @@ $pdata$1$?join@thread@std@@QEAAXXZ DD imagerel $LN18+37
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$main DD	imagerel $LN234
-	DD	imagerel $LN234+594
+$pdata$main DD	imagerel $LN256
+	DD	imagerel $LN256+624
 	DD	imagerel $unwind$main
 pdata	ENDS
 ;	COMDAT pdata
@@ -2387,20 +2379,25 @@ _DATA	SEGMENT
 ?_Static@?1???$_Immortalize_memcpy_image@V_Iostream_error_category2@std@@@std@@YAAEBV_Iostream_error_category2@1@XZ@4U?$_Constexpr_immortalize_impl@V_Iostream_error_category2@std@@@1@A DQ FLAT:??_7_Iostream_error_category2@std@@6B@ ; `std::_Immortalize_memcpy_image<std::_Iostream_error_category2>'::`2'::_Static
 	DQ	0000000000000005H
 _DATA	ENDS
-;	COMDAT ??_C@_0CN@EJLKPHAD@?$FLSeq_Cst?$FN?5Violations?5?$CIr1?$DN0?0?5r2?$DN@
+;	COMDAT ??_C@_0EL@JGOIJPF@Executed?51?0000?0000?5times?0?5no?5vi@
 CONST	SEGMENT
-??_C@_0CN@EJLKPHAD@?$FLSeq_Cst?$FN?5Violations?5?$CIr1?$DN0?0?5r2?$DN@ DB '['
-	DB	'Seq_Cst] Violations (r1=0, r2=0) detected: ', 00H ; `string'
+??_C@_0EL@JGOIJPF@Executed?51?0000?0000?5times?0?5no?5vi@ DB 'Executed 1,'
+	DB	'000,000 times, no violation detected (Luck or strong hardware'
+	DB	').', 00H					; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0CI@EEKFHLNG@?$FLSeq_Cst?$FN?5Completed?5500?0000?5ite@
+;	COMDAT ??_C@_0L@KDIGCGPK@Iteration?5@
 CONST	SEGMENT
-??_C@_0CI@EEKFHLNG@?$FLSeq_Cst?$FN?5Completed?5500?0000?5ite@ DB '[Seq_Cs'
-	DB	't] Completed 500,000 iterations.', 00H	; `string'
+??_C@_0L@KDIGCGPK@Iteration?5@ DB 'Iteration ', 00H	; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0DO@NBNMGBEK@?$FLSeq_Cst?$FN?5Starting?5experiment?4?5@
+;	COMDAT ??_C@_0CP@JNPLHOND@?3?5?$FLCONSISTENCY?5VIOLATION?$FN?5r1?$DN0?0@
 CONST	SEGMENT
-??_C@_0DO@NBNMGBEK@?$FLSeq_Cst?$FN?5Starting?5experiment?4?5@ DB '[Seq_Cs'
-	DB	't] Starting experiment. This will run 500,000 times...', 00H ; `string'
+??_C@_0CP@JNPLHOND@?3?5?$FLCONSISTENCY?5VIOLATION?$FN?5r1?$DN0?0@ DB ': ['
+	DB	'CONSISTENCY VIOLATION] r1=0, r2=0 detected!', 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0CK@CIBONEPK@Starting?5Memory?5Consistency?5Exp@
+CONST	SEGMENT
+??_C@_0CK@CIBONEPK@Starting?5Memory?5Consistency?5Exp@ DB 'Starting Memor'
+	DB	'y Consistency Experiment...', 00H		; `string'
 CONST	ENDS
 ;	COMDAT _CT??_R0?AVfailure@ios_base@std@@@8??0failure@ios_base@std@@QEAA@AEBV012@@Z40
 xdata$x	SEGMENT
@@ -4206,29 +4203,28 @@ $unwind$?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z DD 040a11H
 	DD	imagerel __CxxFrameHandler4
 	DD	imagerel $cppxdata$?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z
 xdata	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	052H
-	DB	05aH
-voltbl	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$ip2state$main DB 010H
-	DB	'H'
+$ip2state$main DB 014H
+	DB	'^'
 	DB	00H
-	DB	0ceH
+	DB	0acH
 	DB	02H
-	DB	'h'
+	DB	'd'
 	DB	04H
-	DB	015H, 04H
-	DB	00H
-	DB	092H
+	DB	'i', 03H
+	DB	08H
+	DB	'f'
+	DB	04H
+	DB	08eH
+	DB	08H
+	DB	01cH
+	DB	04H
+	DB	','
 	DB	06H
-	DB	01eH
+	DB	'('
 	DB	02H
-	DB	01eH
-	DB	00H
-	DB	016H
+	DB	'"'
 	DB	08H
 xdata	ENDS
 ;	COMDAT xdata
@@ -4240,14 +4236,14 @@ $stateUnwindMap$main DB 08H
 	DB	02H
 	DB	042H
 	DD	imagerel ??1thread@std@@QEAA@XZ
-	DB	060H
+	DB	080H
 	DB	032H
 	DD	imagerel ??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ
 	DB	01H
 	DB	02H
 	DB	06aH
 	DD	imagerel ??1thread@std@@QEAA@XZ
-	DB	080H
+	DB	060H
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -4257,41 +4253,15 @@ $cppxdata$main DB 028H
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$unwind$main DD	081211H
-	DD	0125412H
-	DD	0113412H
-	DD	0e00eb212H
-	DD	0600b700cH
+$unwind$main DD	0a1b11H
+	DD	013741bH
+	DD	012641bH
+	DD	011341bH
+	DD	0f014b21bH
+	DD	05010e012H
 	DD	imagerel __CxxFrameHandler4
 	DD	imagerel $cppxdata$main
 xdata	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	05H
-	DB	0bH
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	05H
-	DB	0bH
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	02H
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	00H
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	0cH
-	DB	0fH
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	00H
-voltbl	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
 $chain$1$?join@thread@std@@QEAAXXZ DD 021H
@@ -13215,42 +13185,6 @@ _Len$ = 8
 ??$_Convert_size@_K_K@std@@YA_K_K@Z ENDP		; std::_Convert_size<unsigned __int64,unsigned __int64>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??$_Atomic_reinterpret_as@HH@std@@YAHAEBH@Z
-_TEXT	SEGMENT
-_Source$ = 8
-??$_Atomic_reinterpret_as@HH@std@@YAHAEBH@Z PROC	; std::_Atomic_reinterpret_as<int,int>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 358
-	mov	eax, DWORD PTR [rcx]
-; Line 366
-	ret	0
-??$_Atomic_reinterpret_as@HH@std@@YAHAEBH@Z ENDP	; std::_Atomic_reinterpret_as<int,int>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPECHAEAU?$_Atomic_padded@H@0@@Z
-_TEXT	SEGMENT
-_Source$ = 8
-??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPECHAEAU?$_Atomic_padded@H@0@@Z PROC ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xatomic.h
-; Line 115
-	mov	rax, rcx
-; Line 116
-	ret	0
-??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPECHAEAU?$_Atomic_padded@H@0@@Z ENDP ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPEDHAEBU?$_Atomic_padded@H@0@@Z
-_TEXT	SEGMENT
-_Source$ = 8
-??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPEDHAEBU?$_Atomic_padded@H@0@@Z PROC ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xatomic.h
-; Line 122
-	mov	rax, rcx
-; Line 123
-	ret	0
-??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPEDHAEBU?$_Atomic_padded@H@0@@Z ENDP ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z
 _TEXT	SEGMENT
 this$ = 64
@@ -15622,48 +15556,47 @@ _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT main
 _TEXT	SEGMENT
-t1$1 = 48
-t2$2 = 64
+t2$1 = 48
+t1$2 = 64
 $T3 = 80
 $T4 = 80
 _Decay_copied$5 = 128
 _Decay_copied$6 = 128
 main	PROC						; COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 28
-$LN234:
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\memory_no_consistency.cpp
+; Line 29
+$LN256:
 	mov	QWORD PTR [rsp+16], rbx
-	mov	QWORD PTR [rsp+24], rbp
-	push	rsi
-	push	rdi
+	mov	QWORD PTR [rsp+24], rsi
+	mov	QWORD PTR [rsp+32], rdi
+	push	rbp
 	push	r14
+	push	r15
+	mov	rbp, rsp
 	sub	rsp, 96					; 00000060H
 	xor	esi, esi
 ; Line 30
+	mov	ebx, esi
+; Line 31
 	mov	edi, esi
-; Line 32
-	lea	rdx, OFFSET FLAT:??_C@_0DO@NBNMGBEK@?$FLSeq_Cst?$FN?5Starting?5experiment?4?5@
+; Line 33
+	lea	rdx, OFFSET FLAT:??_C@_0CK@CIBONEPK@Starting?5Memory?5Consistency?5Exp@
 	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
 	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
 ; Line 191
 	mov	rcx, rax
 	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 34
-	mov	ebx, esi
-	lea	rbp, OFFSET FLAT:?thread1@@YAXXZ	; thread1
-	lea	r14, OFFSET FLAT:?thread2@@YAXXZ	; thread2
-	npad	15
-$LL4@main:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	mov	eax, esi
-	xchg	DWORD PTR ?x@@3U?$atomic@H@std@@A, eax	; x
-	mov	ecx, esi
-	xchg	DWORD PTR ?y@@3U?$atomic@H@std@@A, ecx	; y
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 35
+	lea	r14, OFFSET FLAT:?thread1@@YAXXZ	; thread1
+	lea	r15, OFFSET FLAT:?thread2@@YAXXZ	; thread2
+	npad	6
+$LL2@main:
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\memory_no_consistency.cpp
+; Line 37
+	inc	ebx
+; Line 38
+	mov	DWORD PTR ?x@@3HA, esi			; x
+	mov	DWORD PTR ?y@@3HA, esi			; y
 	mov	DWORD PTR ?r1@@3HA, esi			; r1
 	mov	DWORD PTR ?r2@@3HA, esi			; r2
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
@@ -15671,54 +15604,22 @@ $LL4@main:
 	mov	ecx, 8
 	call	??2@YAPEAX_K@Z				; operator new
 	test	rax, rax
-	je	SHORT $LN33@main
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 132
-	mov	QWORD PTR [rax], rbp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3630
-	jmp	SHORT $LN34@main
-$LN33@main:
-	mov	rax, rsi
-$LN34@main:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1536
-	mov	QWORD PTR _Decay_copied$5[rsp], rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 78
-	lea	rcx, QWORD PTR t1$1[rsp+8]
-	mov	QWORD PTR [rsp+40], rcx
-	mov	DWORD PTR [rsp+32], esi
-	mov	r9, rax
-	lea	r8, OFFSET FLAT:??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z ; std::thread::_Invoke<std::tuple<void (__cdecl*)(void)>,0>
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_beginthreadex
-	mov	QWORD PTR t1$1[rsp], rax
-	test	rax, rax
-; Line 81
-	je	$LN26@main
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3630
-	mov	ecx, 8
-	call	??2@YAPEAX_K@Z				; operator new
-	test	rax, rax
-	je	SHORT $LN114@main
+	je	SHORT $LN22@main
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
 ; Line 132
 	mov	QWORD PTR [rax], r14
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
 ; Line 3630
-	jmp	SHORT $LN115@main
-$LN114@main:
+	jmp	SHORT $LN23@main
+$LN22@main:
 	mov	rax, rsi
-$LN115@main:
+$LN23@main:
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
 ; Line 1536
-	mov	QWORD PTR _Decay_copied$6[rsp], rax
+	mov	QWORD PTR _Decay_copied$5[rbp-96], rax
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
 ; Line 78
-	lea	rcx, QWORD PTR t2$2[rsp+8]
+	lea	rcx, QWORD PTR t1$2[rbp-88]
 	mov	QWORD PTR [rsp+40], rcx
 	mov	DWORD PTR [rsp+32], esi
 	mov	r9, rax
@@ -15726,138 +15627,196 @@ $LN115@main:
 	xor	edx, edx
 	xor	ecx, ecx
 	call	_beginthreadex
-	mov	QWORD PTR t2$2[rsp], rax
+	mov	QWORD PTR t1$2[rbp-96], rax
 	test	rax, rax
 ; Line 81
-	je	$LN107@main
+	je	$LN15@main
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
+; Line 3630
+	mov	ecx, 8
+	call	??2@YAPEAX_K@Z				; operator new
+	test	rax, rax
+	je	SHORT $LN103@main
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
+; Line 132
+	mov	QWORD PTR [rax], r15
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
+; Line 3630
+	jmp	SHORT $LN104@main
+$LN103@main:
+	mov	rax, rsi
+$LN104@main:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
+; Line 1536
+	mov	QWORD PTR _Decay_copied$6[rbp-96], rax
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 78
+	lea	rcx, QWORD PTR t2$1[rbp-88]
+	mov	QWORD PTR [rsp+40], rcx
+	mov	DWORD PTR [rsp+32], esi
+	mov	r9, rax
+	lea	r8, OFFSET FLAT:??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z ; std::thread::_Invoke<std::tuple<void (__cdecl*)(void)>,0>
+	xor	edx, edx
+	xor	ecx, ecx
+	call	_beginthreadex
+	mov	QWORD PTR t2$1[rbp-96], rax
+	test	rax, rax
+; Line 81
+	je	$LN96@main
 ; Line 125
-	cmp	DWORD PTR t1$1[rsp+8], 0
-	je	$LN219@main
+	cmp	DWORD PTR t1$2[rbp-88], 0
+	je	$LN236@main
 ; Line 129
 	call	_Thrd_id
-	cmp	DWORD PTR t1$1[rsp+8], eax
-	je	$LN220@main
+	cmp	DWORD PTR t1$2[rbp-88], eax
+	je	$LN237@main
 ; Line 133
-	movaps	xmm0, XMMWORD PTR t1$1[rsp]
-	movdqa	XMMWORD PTR $T3[rsp], xmm0
+	movaps	xmm0, XMMWORD PTR t1$2[rbp-96]
+	movdqa	XMMWORD PTR $T3[rbp-96], xmm0
 	xor	edx, edx
-	lea	rcx, QWORD PTR $T3[rsp]
+	lea	rcx, QWORD PTR $T3[rbp-96]
 	call	_Thrd_join
 	test	eax, eax
-	jne	$LN221@main
+	jne	$LN238@main
 	xorps	xmm0, xmm0
 ; Line 137
-	movdqa	XMMWORD PTR t1$1[rsp], xmm0
+	movdqa	XMMWORD PTR t1$2[rbp-96], xmm0
 ; Line 125
-	cmp	DWORD PTR t2$2[rsp+8], eax
-	je	$LN219@main
+	cmp	DWORD PTR t2$1[rbp-88], eax
+	je	$LN236@main
 ; Line 129
 	call	_Thrd_id
-	cmp	DWORD PTR t2$2[rsp+8], eax
-	je	$LN220@main
+	cmp	DWORD PTR t2$1[rbp-88], eax
+	je	$LN237@main
 ; Line 133
-	movaps	xmm0, XMMWORD PTR t2$2[rsp]
-	movdqa	XMMWORD PTR $T4[rsp], xmm0
+	movaps	xmm0, XMMWORD PTR t2$1[rbp-96]
+	movdqa	XMMWORD PTR $T4[rbp-96], xmm0
 	xor	edx, edx
-	lea	rcx, QWORD PTR $T4[rsp]
+	lea	rcx, QWORD PTR $T4[rbp-96]
 	call	_Thrd_join
 	test	eax, eax
-	jne	$LN221@main
+	jne	$LN238@main
 	xorps	xmm0, xmm0
 ; Line 137
-	movdqa	XMMWORD PTR t2$2[rsp], xmm0
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 43
+	movdqa	XMMWORD PTR t2$1[rbp-96], xmm0
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\memory_no_consistency.cpp
+; Line 50
 	cmp	DWORD PTR ?r1@@3HA, eax			; r1
 	jne	SHORT $LN5@main
 	cmp	DWORD PTR ?r2@@3HA, eax			; r2
 	jne	SHORT $LN5@main
-; Line 44
+; Line 51
 	inc	edi
+; Line 52
+	lea	rdx, OFFSET FLAT:??_C@_0L@KDIGCGPK@Iteration?5@
+	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
+	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+	mov	rcx, rax
+	mov	edx, ebx
+	call	??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
+	mov	rcx, rax
+	lea	rdx, OFFSET FLAT:??_C@_0CP@JNPLHOND@?3?5?$FLCONSISTENCY?5VIOLATION?$FN?5r1?$DN0?0@
+	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
+; Line 191
+	mov	rcx, rax
+	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\memory_no_consistency.cpp
+; Line 55
+	cmp	edi, 5
+	jge	SHORT $LN242@main
 $LN5@main:
+; Line 58
+	cmp	ebx, 1000000				; 000f4240H
+	jg	SHORT $LN243@main
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
 ; Line 97
-	cmp	DWORD PTR t1$1[rsp+8], 0
-	jne	$LN226@main
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 34
-	inc	ebx
-	cmp	ebx, 500000				; 0007a120H
-	jl	$LL4@main
-; Line 48
-	lea	rdx, OFFSET FLAT:??_C@_0CI@EEKFHLNG@?$FLSeq_Cst?$FN?5Completed?5500?0000?5ite@
-	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
-; Line 191
-	mov	rcx, rax
-	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 49
-	lea	rdx, OFFSET FLAT:??_C@_0CN@EJLKPHAD@?$FLSeq_Cst?$FN?5Violations?5?$CIr1?$DN0?0?5r2?$DN@
-	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
-	mov	rcx, rax
-	mov	edx, edi
-	call	??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
-; Line 191
-	mov	rcx, rax
-	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 51
+	cmp	DWORD PTR t2$1[rbp-88], 0
+	jne	SHORT $LN249@main
+	cmp	DWORD PTR t1$2[rbp-88], 0
+	jne	SHORT $LN250@main
+	jmp	$LL2@main
+$LN242@main:
+	cmp	DWORD PTR t2$1[rbp-88], 0
+	jne	SHORT $LN249@main
+	cmp	DWORD PTR t1$2[rbp-88], 0
+	jne	SHORT $LN250@main
+$LN215@main:
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\memory_no_consistency.cpp
+; Line 64
 	xor	eax, eax
-; Line 52
+; Line 65
 	lea	r11, QWORD PTR [rsp+96]
 	mov	rbx, QWORD PTR [r11+40]
-	mov	rbp, QWORD PTR [r11+48]
+	mov	rsi, QWORD PTR [r11+48]
+	mov	rdi, QWORD PTR [r11+56]
 	mov	rsp, r11
+	pop	r15
 	pop	r14
-	pop	rdi
-	pop	rsi
+	pop	rbp
 	ret	0
-$LN107@main:
+$LN243@main:
+; Line 59
+	lea	rdx, OFFSET FLAT:??_C@_0EL@JGOIJPF@Executed?51?0000?0000?5times?0?5no?5vi@
+	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
+	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
+; Line 191
+	mov	rcx, rax
+	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
+	npad	1
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
+; Line 97
+	cmp	DWORD PTR t2$1[rbp-88], 0
+	jne	SHORT $LN249@main
+	cmp	DWORD PTR t1$2[rbp-88], 0
+	jne	SHORT $LN250@main
+	jmp	SHORT $LN215@main
+$LN96@main:
 ; Line 84
-	mov	DWORD PTR t2$2[rsp+8], esi
+	mov	DWORD PTR t2$1[rbp-88], esi
 ; Line 85
 	mov	ecx, 6
 	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
 	npad	1
-$LN26@main:
-; Line 84
-	mov	DWORD PTR t1$1[rsp+8], esi
-; Line 85
-	mov	ecx, 6
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	npad	1
-$LN226@main:
+$LN250@main:
 ; Line 98
 	call	terminate
 	npad	1
-$LN221@main:
+$LN15@main:
+; Line 84
+	mov	DWORD PTR t1$2[rbp-88], esi
+; Line 85
+	mov	ecx, 6
+	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
+	npad	1
+$LN249@main:
+; Line 98
+	call	terminate
+	npad	1
+$LN238@main:
 ; Line 134
 	mov	ecx, 2
 	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
 	int	3
-$LN220@main:
+$LN237@main:
 ; Line 130
 	mov	ecx, 5
 	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
 	int	3
-$LN219@main:
+$LN236@main:
 ; Line 126
 	mov	ecx, 1
 	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
 	int	3
-$LN231@main:
+$LN253@main:
 main	ENDP
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT text$x
 text$x	SEGMENT
-t1$1 = 48
-t2$2 = 64
+t2$1 = 48
+t1$2 = 64
 $T3 = 80
 $T4 = 80
 _Decay_copied$5 = 128
@@ -15870,22 +15829,22 @@ text$x	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT text$x
 text$x	SEGMENT
-t1$1 = 48
-t2$2 = 64
+t2$1 = 48
+t1$2 = 64
 $T3 = 80
 $T4 = 80
 _Decay_copied$5 = 128
 _Decay_copied$6 = 128
 main$dtor$0 PROC
-	lea	rcx, QWORD PTR t1$1[rdx]
+	lea	rcx, QWORD PTR t1$2[rdx]
 	jmp	??1thread@std@@QEAA@XZ			; std::thread::~thread
 main$dtor$0 ENDP
 text$x	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT text$x
 text$x	SEGMENT
-t1$1 = 48
-t2$2 = 64
+t2$1 = 48
+t1$2 = 64
 $T3 = 80
 $T4 = 80
 _Decay_copied$5 = 128
@@ -15898,14 +15857,14 @@ text$x	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT text$x
 text$x	SEGMENT
-t1$1 = 48
-t2$2 = 64
+t2$1 = 48
+t1$2 = 64
 $T3 = 80
 $T4 = 80
 _Decay_copied$5 = 128
 _Decay_copied$6 = 128
 main$dtor$1 PROC
-	lea	rcx, QWORD PTR t2$2[rdx]
+	lea	rcx, QWORD PTR t2$1[rdx]
 	jmp	??1thread@std@@QEAA@XZ			; std::thread::~thread
 main$dtor$1 ENDP
 text$x	ENDS
@@ -15913,19 +15872,12 @@ text$x	ENDS
 ;	COMDAT ?thread2@@YAXXZ
 _TEXT	SEGMENT
 ?thread2@@YAXXZ PROC					; thread2, COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	mov	eax, 1
-	xchg	DWORD PTR ?y@@3U?$atomic@H@std@@A, eax	; y
-; Line 932
-	mov	ecx, DWORD PTR ?x@@3U?$atomic@H@std@@A	; x
-; Line 933
-	npad	1
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 25
-	mov	DWORD PTR ?r2@@3HA, ecx			; r2
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\memory_no_consistency.cpp
 ; Line 26
+	mov	eax, DWORD PTR ?x@@3HA			; x
+	mov	DWORD PTR ?r2@@3HA, eax			; r2
+	mov	DWORD PTR ?y@@3HA, 1			; y
+; Line 27
 	ret	0
 ?thread2@@YAXXZ ENDP					; thread2
 _TEXT	ENDS
@@ -15933,95 +15885,14 @@ _TEXT	ENDS
 ;	COMDAT ?thread1@@YAXXZ
 _TEXT	SEGMENT
 ?thread1@@YAXXZ PROC					; thread1, COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	mov	eax, 1
-	xchg	DWORD PTR ?x@@3U?$atomic@H@std@@A, eax	; x
-; Line 932
-	mov	ecx, DWORD PTR ?y@@3U?$atomic@H@std@@A	; y
-; Line 933
-	npad	1
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\memory_no_consistency.cpp
 ; Line 20
-	mov	DWORD PTR ?r1@@3HA, ecx			; r1
+	mov	eax, DWORD PTR ?y@@3HA			; y
+	mov	DWORD PTR ?r1@@3HA, eax			; r1
+	mov	DWORD PTR ?x@@3HA, 1			; x
 ; Line 21
 	ret	0
 ?thread1@@YAXXZ ENDP					; thread1
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??4?$atomic@H@std@@QEAAHH@Z
-_TEXT	SEGMENT
-this$ = 8
-_Value$ = 16
-??4?$atomic@H@std@@QEAAHH@Z PROC			; std::atomic<int>::operator=, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	mov	eax, edx
-	xchg	DWORD PTR [rcx], eax
-; Line 2175
-	mov	eax, edx
-; Line 2176
-	ret	0
-??4?$atomic@H@std@@QEAAHH@Z ENDP			; std::atomic<int>::operator=
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?load@?$_Atomic_storage@H$03@std@@QEBAHW4memory_order@2@@Z
-_TEXT	SEGMENT
-this$ = 8
-_Order$ = 16
-?load@?$_Atomic_storage@H$03@std@@QEBAHW4memory_order@2@@Z PROC ; std::_Atomic_storage<int,4>::load, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 932
-	mov	eax, DWORD PTR [rcx]
-; Line 933
-	test	edx, edx
-	je	SHORT $LN5@load
-	npad	1
-$LN5@load:
-; Line 936
-	ret	0
-?load@?$_Atomic_storage@H$03@std@@QEBAHW4memory_order@2@@Z ENDP ; std::_Atomic_storage<int,4>::load
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?store@?$_Atomic_storage@H$03@std@@QEAAXHW4memory_order@2@@Z
-_TEXT	SEGMENT
-this$ = 8
-_Value$ = 16
-_Order$ = 24
-?store@?$_Atomic_storage@H$03@std@@QEAAXHW4memory_order@2@@Z PROC ; std::_Atomic_storage<int,4>::store, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 916
-	test	r8d, r8d
-	je	SHORT $LN11@store
-; Line 918
-	cmp	r8d, 3
-	jne	SHORT $LN4@store
-; Line 919
-	npad	1
-$LN11@store:
-; Line 923
-	mov	DWORD PTR [rcx], edx
-	ret	0
-$LN4@store:
-; Line 907
-	xchg	DWORD PTR [rcx], edx
-; Line 923
-	ret	0
-?store@?$_Atomic_storage@H$03@std@@QEAAXHW4memory_order@2@@Z ENDP ; std::_Atomic_storage<int,4>::store
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?store@?$_Atomic_storage@H$03@std@@QEAAXH@Z
-_TEXT	SEGMENT
-this$ = 8
-_Value$ = 16
-?store@?$_Atomic_storage@H$03@std@@QEAAXH@Z PROC	; std::_Atomic_storage<int,4>::store, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	xchg	DWORD PTR [rcx], edx
-; Line 908
-	ret	0
-?store@?$_Atomic_storage@H$03@std@@QEAAXH@Z ENDP	; std::_Atomic_storage<int,4>::store
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?join@thread@std@@QEAAXXZ
@@ -19456,26 +19327,6 @@ _TEXT	SEGMENT
 ; Line 699
 	ret	0
 ?iostream_category@std@@YAAEBVerror_category@1@XZ ENDP	; std::iostream_category
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z
-_TEXT	SEGMENT
-_Order$ = 8
-?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z PROC ; std::_Check_load_memory_order, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 319
-	ret	0
-?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z ENDP ; std::_Check_load_memory_order
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z
-_TEXT	SEGMENT
-_Order$ = 8
-?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z PROC ; std::_Check_store_memory_order, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 303
-	ret	0
-?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z ENDP ; std::_Check_store_memory_order
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??_Gruntime_error@std@@UEAAPEAXI@Z

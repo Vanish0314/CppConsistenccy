@@ -13957,7 +13957,7 @@ _Decay_copied$5 = 128
 _Decay_copied$6 = 128
 main	PROC						; COMDAT
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 42
+; Line 41
 $LN248:
 	mov	QWORD PTR [rsp+16], rbx
 	mov	QWORD PTR [rsp+24], rbp
@@ -13966,7 +13966,7 @@ $LN248:
 	push	r14
 	sub	rsp, 96					; 00000060H
 	xor	esi, esi
-; Line 43
+; Line 42
 	lea	rdx, OFFSET FLAT:??_C@_0BJ@HGONFDLJ@Starting?5Relaxed?5test?4?4?4@
 	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
 	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
@@ -13975,7 +13975,7 @@ $LN248:
 	mov	rcx, rax
 	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 46
+; Line 45
 	mov	edi, esi
 	lea	rbp, OFFSET FLAT:?producer@@YAXXZ	; producer
 	lea	r14, OFFSET FLAT:?consumer@@YAXXZ	; consumer
@@ -14097,7 +14097,7 @@ $LN121@main:
 ; Line 933
 	npad	1
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 57
+; Line 56
 	cmp	eax, 1000				; 000003e8H
 	je	SHORT $LN5@main
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
@@ -14106,7 +14106,7 @@ $LN121@main:
 ; Line 933
 	npad	1
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 58
+; Line 57
 	lea	rdx, OFFSET FLAT:??_C@_0CF@PDPOGBMJ@?$FLRelaxed?$FN?5Atomicity?5Error?$CB?5Coun@
 	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
 	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
@@ -14126,11 +14126,11 @@ $LN5@main:
 	cmp	DWORD PTR t1$2[rsp+8], 0
 	jne	SHORT $LN240@main
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 46
+; Line 45
 	inc	edi
 	cmp	edi, 100				; 00000064H
 	jl	$LL4@main
-; Line 62
+; Line 61
 	lea	rdx, OFFSET FLAT:??_C@_0FM@EKDMDPJJ@Test?5finished?4?5?$CIOn?5x86?0?5glitche@
 	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
 	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
@@ -14139,9 +14139,9 @@ $LN5@main:
 	mov	rcx, rax
 	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 64
+; Line 63
 	xor	eax, eax
-; Line 65
+; Line 64
 	lea	r11, QWORD PTR [rsp+96]
 	mov	rbx, QWORD PTR [r11+40]
 	mov	rbp, QWORD PTR [r11+48]
@@ -16030,7 +16030,7 @@ _TEXT	ENDS
 _TEXT	SEGMENT
 ?consumer@@YAXXZ PROC					; consumer, COMDAT
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 30
+; Line 29
 $LN22:
 	sub	rsp, 40					; 00000028H
 $LL2@consumer:
@@ -16038,17 +16038,17 @@ $LL2@consumer:
 ; Line 722
 	movzx	eax, BYTE PTR ?ready@@3U?$atomic@_N@std@@A ; ready
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 32
+; Line 31
 	test	al, al
 	je	SHORT $LL2@consumer
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
 ; Line 935
 	mov	eax, DWORD PTR ?data@@3U?$atomic@H@std@@A ; data
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 37
+; Line 36
 	test	eax, eax
 	jne	SHORT $LN4@consumer
-; Line 38
+; Line 37
 	lea	rdx, OFFSET FLAT:??_C@_0EK@IPICMBOE@?$FLRelaxed?$FN?5GLITCH?3?5Saw?5ready?$DNtru@
 	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
 	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
@@ -16056,14 +16056,14 @@ $LL2@consumer:
 ; Line 191
 	mov	rcx, rax
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 40
+; Line 39
 	add	rsp, 40					; 00000028H
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
 ; Line 191
 	jmp	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
 $LN4@consumer:
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 40
+; Line 39
 	add	rsp, 40					; 00000028H
 	ret	0
 ?consumer@@YAXXZ ENDP					; consumer
@@ -16073,7 +16073,7 @@ _TEXT	ENDS
 _TEXT	SEGMENT
 ?producer@@YAXXZ PROC					; producer, COMDAT
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 20
+; Line 19
 	mov	eax, 1000				; 000003e8H
 	npad	11
 $LL4@producer:
@@ -16081,7 +16081,7 @@ $LL4@producer:
 ; Line 1435
 	lock inc DWORD PTR ?counter@@3U?$atomic@H@std@@A ; counter
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 20
+; Line 19
 	sub	rax, 1
 	jne	SHORT $LL4@producer
 ; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
@@ -16090,7 +16090,7 @@ $LL4@producer:
 ; Line 704
 	mov	BYTE PTR ?ready@@3U?$atomic@_N@std@@A, 1 ; ready
 ; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_relaxed.cpp
-; Line 28
+; Line 27
 	ret	0
 ?producer@@YAXXZ ENDP					; producer
 _TEXT	ENDS

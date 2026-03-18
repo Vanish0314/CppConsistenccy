@@ -6,19 +6,9 @@ INCLUDELIB LIBCMT
 INCLUDELIB OLDNAMES
 
 PUBLIC	_Avx2WmemEnabledWeakValue
-PUBLIC	?x@@3U?$atomic@H@std@@A				; x
-PUBLIC	?y@@3U?$atomic@H@std@@A				; y
-PUBLIC	?r1@@3HA					; r1
-PUBLIC	?r2@@3HA					; r2
 ;	COMDAT _Avx2WmemEnabledWeakValue
 _BSS	SEGMENT
 _Avx2WmemEnabledWeakValue DD 01H DUP (?)
-_BSS	ENDS
-_BSS	SEGMENT
-?x@@3U?$atomic@H@std@@A DD 01H DUP (?)			; x
-?y@@3U?$atomic@H@std@@A DD 01H DUP (?)			; y
-?r1@@3HA DD	01H DUP (?)				; r1
-?r2@@3HA DD	01H DUP (?)				; r2
 _BSS	ENDS
 PUBLIC	??2@YAPEAX_KPEAX@Z				; operator new
 PUBLIC	?fpclassify@@YAHN@Z				; fpclassify
@@ -113,8 +103,6 @@ PUBLIC	??0runtime_error@std@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$a
 PUBLIC	??1runtime_error@std@@UEAA@XZ			; std::runtime_error::~runtime_error
 PUBLIC	??0runtime_error@std@@QEAA@AEBV01@@Z		; std::runtime_error::runtime_error
 PUBLIC	??_Gruntime_error@std@@UEAAPEAXI@Z		; std::runtime_error::`scalar deleting destructor'
-PUBLIC	?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z ; std::_Check_store_memory_order
-PUBLIC	?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z ; std::_Check_load_memory_order
 PUBLIC	?iostream_category@std@@YAAEBVerror_category@1@XZ ; std::iostream_category
 PUBLIC	??1error_category@std@@UEAA@XZ			; std::error_category::~error_category
 PUBLIC	?default_error_condition@error_category@std@@UEBA?AVerror_condition@2@H@Z ; std::error_category::default_error_condition
@@ -210,15 +198,6 @@ PUBLIC	?precision@ios_base@std@@QEBA_JXZ		; std::ios_base::precision
 PUBLIC	?width@ios_base@std@@QEBA_JXZ			; std::ios_base::width
 PUBLIC	?width@ios_base@std@@QEAA_J_J@Z			; std::ios_base::width
 PUBLIC	?getloc@ios_base@std@@QEBA?AVlocale@2@XZ	; std::ios_base::getloc
-PUBLIC	??1thread@std@@QEAA@XZ				; std::thread::~thread
-PUBLIC	?joinable@thread@std@@QEBA_NXZ			; std::thread::joinable
-PUBLIC	?join@thread@std@@QEAAXXZ			; std::thread::join
-PUBLIC	?store@?$_Atomic_storage@H$03@std@@QEAAXH@Z	; std::_Atomic_storage<int,4>::store
-PUBLIC	?store@?$_Atomic_storage@H$03@std@@QEAAXHW4memory_order@2@@Z ; std::_Atomic_storage<int,4>::store
-PUBLIC	?load@?$_Atomic_storage@H$03@std@@QEBAHW4memory_order@2@@Z ; std::_Atomic_storage<int,4>::load
-PUBLIC	??4?$atomic@H@std@@QEAAHH@Z			; std::atomic<int>::operator=
-PUBLIC	?thread1@@YAXXZ					; thread1
-PUBLIC	?thread2@@YAXXZ					; thread2
 PUBLIC	main
 PUBLIC	?clear@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z ; std::basic_ios<char,std::char_traits<char> >::clear
 PUBLIC	?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z ; std::basic_ios<char,std::char_traits<char> >::setstate
@@ -233,7 +212,6 @@ PUBLIC	?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z ; std::b
 PUBLIC	?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ ; std::basic_ostream<char,std::char_traits<char> >::flush
 PUBLIC	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
 PUBLIC	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-PUBLIC	??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z	; std::thread::thread<void (__cdecl&)(void),0>
 PUBLIC	??$min@_K@std@@YAAEB_KAEB_K0@Z			; std::min<unsigned __int64>
 PUBLIC	??$_Get_index@$0A@@id@locale@std@@QEAA_KXZ	; std::locale::id::_Get_index<0>
 PUBLIC	??R?$default_delete@V_Facet_base@std@@@std@@QEBAXPEAV_Facet_base@1@@Z ; std::default_delete<std::_Facet_base>::operator()
@@ -251,11 +229,6 @@ PUBLIC	?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z ; std::bas
 PUBLIC	?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z ; std::basic_streambuf<char,std::char_traits<char> >::sputn
 PUBLIC	?_Pninc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEAAPEADXZ ; std::basic_streambuf<char,std::char_traits<char> >::_Pninc
 PUBLIC	?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBA_JXZ ; std::basic_streambuf<char,std::char_traits<char> >::_Pnavail
-PUBLIC	??$forward@A6AXXZ@std@@YAA6AXXZA6AXXZ@Z		; std::forward<void (__cdecl&)(void)>
-PUBLIC	??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z	; std::thread::_Start<void (__cdecl&)(void)>
-PUBLIC	??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPEDHAEBU?$_Atomic_padded@H@0@@Z ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >
-PUBLIC	??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPECHAEAU?$_Atomic_padded@H@0@@Z ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >
-PUBLIC	??$_Atomic_reinterpret_as@HH@std@@YAHAEBH@Z	; std::_Atomic_reinterpret_as<int,int>
 PUBLIC	??$_Convert_size@_K_K@std@@YA_K_K@Z		; std::_Convert_size<unsigned __int64,unsigned __int64>
 PUBLIC	??$move@AEAV?$allocator@D@std@@@std@@YA$$QEAV?$allocator@D@0@AEAV10@@Z ; std::move<std::allocator<char> &>
 PUBLIC	??$?0V?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAV?$allocator@D@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><std::allocator<char> >
@@ -288,15 +261,6 @@ PUBLIC	??D?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@QEAAAEAV01@XZ ; std
 PUBLIC	??E?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@QEAAAEAV01@XZ ; std::ostreambuf_iterator<char,std::char_traits<char> >::operator++
 PUBLIC	?failed@?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@QEBA_NXZ ; std::ostreambuf_iterator<char,std::char_traits<char> >::failed
 PUBLIC	??$?0AEAPEAV_Facet_base@std@@@?$_Compressed_pair@U?$default_delete@V_Facet_base@std@@@std@@PEAV_Facet_base@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV_Facet_base@1@@Z ; std::_Compressed_pair<std::default_delete<std::_Facet_base>,std::_Facet_base *,1>::_Compressed_pair<std::default_delete<std::_Facet_base>,std::_Facet_base *,1><std::_Facet_base * &>
-PUBLIC	??$make_unique@V?$tuple@P6AXXZ@std@@A6AXXZ$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@0@A6AXXZ@Z ; std::make_unique<std::tuple<void (__cdecl*)(void)>,void (__cdecl&)(void),0>
-PUBLIC	??R?$default_delete@V?$tuple@P6AXXZ@std@@@std@@QEBAXPEAV?$tuple@P6AXXZ@1@@Z ; std::default_delete<std::tuple<void (__cdecl*)(void)> >::operator()
-PUBLIC	??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::~unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >
-PUBLIC	?get_deleter@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAAAEAU?$default_delete@V?$tuple@P6AXXZ@std@@@2@XZ ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::get_deleter
-PUBLIC	?get@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEBAPEAV?$tuple@P6AXXZ@2@XZ ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::get
-PUBLIC	?release@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAAPEAV?$tuple@P6AXXZ@2@XZ ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::release
-PUBLIC	?_Get_first@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAAAEAU?$default_delete@V?$tuple@P6AXXZ@std@@@2@XZ ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Get_first
-PUBLIC	??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@$$QEAV01@@Z ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > ><std::default_delete<std::tuple<void (__cdecl*)(void)> >,0>
-PUBLIC	??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z ; std::thread::_Invoke<std::tuple<void (__cdecl*)(void)>,0>
 PUBLIC	??$forward@V?$allocator@D@std@@@std@@YA$$QEAV?$allocator@D@0@AEAV10@@Z ; std::forward<std::allocator<char> >
 PUBLIC	??$_Allocate_for_capacity@$0A@@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@CAPEADAEAV?$allocator@D@1@AEA_K@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Allocate_for_capacity<0>
 PUBLIC	??$_Construct_in_place@PEADAEBQEAD@std@@YAXAEAPEADAEBQEAD@Z ; std::_Construct_in_place<char *,char * const &>
@@ -331,25 +295,14 @@ PUBLIC	??$_Reallocate_grow_by@V<lambda_65e615be2a453ca0576c979606f46740>@@PEBD_K
 PUBLIC	??$addressof@V?$_String_val@U?$_Simple_types@D@std@@@std@@@std@@YAPEAV?$_String_val@U?$_Simple_types@D@std@@@0@AEAV10@@Z ; std::addressof<std::_String_val<std::_Simple_types<char> > >
 PUBLIC	??$_Construct_in_place@PEADAEAPEAD@std@@YAXAEAPEAD0@Z ; std::_Construct_in_place<char *,char * &>
 PUBLIC	??$forward@AEAPEAV_Facet_base@std@@@std@@YAAEAPEAV_Facet_base@0@AEAPEAV10@@Z ; std::forward<std::_Facet_base * &>
-PUBLIC	??$?0P6AXXZ$0A@@?$tuple@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><void (__cdecl*)(void),0>
-PUBLIC	??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@PEAV?$tuple@P6AXXZ@1@@Z ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > ><std::default_delete<std::tuple<void (__cdecl*)(void)> >,0>
-PUBLIC	??$forward@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@@std@@YA$$QEAU?$default_delete@V?$tuple@P6AXXZ@std@@@0@AEAU10@@Z ; std::forward<std::default_delete<std::tuple<void (__cdecl*)(void)> > >
-PUBLIC	??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@1@@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAU?$default_delete@V?$tuple@P6AXXZ@std@@@1@$$QEAPEAV?$tuple@P6AXXZ@1@@Z ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1><std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *>
-PUBLIC	??$get@$0A@P6AXXZ@std@@YAAEAP6AXXZAEAV?$tuple@P6AXXZ@0@@Z ; std::get<0,void (__cdecl*)(void)>
-PUBLIC	??$move@AEAP6AXXZ@std@@YA$$QEAP6AXXZAEAP6AXXZ@Z	; std::move<void (__cdecl*&)(void)>
-PUBLIC	??$invoke@P6AXXZ@std@@YAX$$QEAP6AXXZ@Z		; std::invoke<void (__cdecl*)(void)>
 PUBLIC	??$_Allocate_at_least_helper@V?$allocator@D@std@@@std@@YAPEADAEAV?$allocator@D@0@AEA_K@Z ; std::_Allocate_at_least_helper<std::allocator<char> >
 PUBLIC	??$addressof@PEAD@std@@YAPEAPEADAEAPEAD@Z	; std::addressof<char *>
 PUBLIC	??$forward@AEBQEAD@std@@YAAEBQEADAEBQEAD@Z	; std::forward<char * const &>
 PUBLIC	??$forward@AEAPEAD@std@@YAAEAPEADAEAPEAD@Z	; std::forward<char * &>
 PUBLIC	??$?0$0A@@id@locale@std@@QEAA@XZ		; std::locale::id::id<0>
-PUBLIC	??$exchange@PEAV?$tuple@P6AXXZ@std@@$$T@std@@YAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@$$QEA$$T@Z ; std::exchange<std::tuple<void (__cdecl*)(void)> *,std::nullptr_t>
 PUBLIC	??$_Destroy_in_place@PEAD@std@@YAXAEAPEAD@Z	; std::_Destroy_in_place<char *>
 PUBLIC	??$max@_K@std@@YAAEB_KAEB_K0@Z			; std::max<unsigned __int64>
 PUBLIC	??$_Max_limit@_J@std@@YA_JXZ			; std::_Max_limit<__int64>
-PUBLIC	??$?0U_Exact_args_t@std@@AEBQ6AXXZ$$V$0A@@?$tuple@P6AXXZ@std@@QEAA@U_Exact_args_t@1@AEBQ6AXXZ@Z ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><std::_Exact_args_t,void (__cdecl*const &)(void),0>
-PUBLIC	??$?0AEAPEAV?$tuple@P6AXXZ@std@@@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV?$tuple@P6AXXZ@1@@Z ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1><std::tuple<void (__cdecl*)(void)> * &>
-PUBLIC	??$forward@PEAV?$tuple@P6AXXZ@std@@@std@@YA$$QEAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@@Z ; std::forward<std::tuple<void (__cdecl*)(void)> *>
 PUBLIC	??$_Deallocate@$0BA@@std@@YAXPEAX_K@Z		; std::_Deallocate<16>
 PUBLIC	??R<lambda_b986da8d428e4af07c64af60eec09b61>@@QEBA@QEADQEBD_K22D@Z ; <lambda_b986da8d428e4af07c64af60eec09b61>::operator()
 PUBLIC	??$_Reallocate_grow_by@V<lambda_b986da8d428e4af07c64af60eec09b61>@@_K_KD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAAEAV01@_KV<lambda_b986da8d428e4af07c64af60eec09b61>@@_K2D@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Reallocate_grow_by<<lambda_b986da8d428e4af07c64af60eec09b61>,unsigned __int64,unsigned __int64,char>
@@ -358,10 +311,6 @@ PUBLIC	??$_Reallocate_grow_by@V<lambda_e1befb086ad3257e3f042a63030725f7>@@_KD@?$
 PUBLIC	??$addressof@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YAPEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@AEAV10@@Z ; std::addressof<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >
 PUBLIC	??$_Pocma@V?$allocator@D@std@@@std@@YAXAEAV?$allocator@D@0@0@Z ; std::_Pocma<std::allocator<char> >
 PUBLIC	??$_Construct@$0A@D@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAXD_K@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct<0,char>
-PUBLIC	??$forward@AEBQ6AXXZ@std@@YAAEBQ6AXXZAEBQ6AXXZ@Z ; std::forward<void (__cdecl*const &)(void)>
-PUBLIC	??$?0U_Exact_args_t@std@@$0A@@?$tuple@$$V@std@@QEAA@U_Exact_args_t@1@@Z ; std::tuple<>::tuple<><std::_Exact_args_t,0>
-PUBLIC	??$?0AEBQ6AXXZ@?$_Tuple_val@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z ; std::_Tuple_val<void (__cdecl*)(void)>::_Tuple_val<void (__cdecl*)(void)><void (__cdecl*const &)(void)>
-PUBLIC	??$forward@AEAPEAV?$tuple@P6AXXZ@std@@@std@@YAAEAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@@Z ; std::forward<std::tuple<void (__cdecl*)(void)> * &>
 PUBLIC	??$_Allocate@$0BA@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z ; std::_Allocate<16,std::_Default_allocate_traits>
 PUBLIC	??$_Get_size_of_n@$00@std@@YA_K_K@Z		; std::_Get_size_of_n<1>
 PUBLIC	??$_Allocate_manually_vector_aligned@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z ; std::_Allocate_manually_vector_aligned<std::_Default_allocate_traits>
@@ -418,9 +367,7 @@ PUBLIC	_TI5?AVfailure@ios_base@std@@
 PUBLIC	_CTA5?AVfailure@ios_base@std@@
 PUBLIC	??_R0?AVfailure@ios_base@std@@@8		; std::ios_base::failure `RTTI Type Descriptor'
 PUBLIC	_CT??_R0?AVfailure@ios_base@std@@@8??0failure@ios_base@std@@QEAA@AEBV012@@Z40
-PUBLIC	??_C@_0DO@NBNMGBEK@?$FLSeq_Cst?$FN?5Starting?5experiment?4?5@ ; `string'
-PUBLIC	??_C@_0CI@EEKFHLNG@?$FLSeq_Cst?$FN?5Completed?5500?0000?5ite@ ; `string'
-PUBLIC	??_C@_0CN@EJLKPHAD@?$FLSeq_Cst?$FN?5Violations?5?$CIr1?$DN0?0?5r2?$DN@ ; `string'
+PUBLIC	??_C@_01CLKCMJKC@?5@				; `string'
 PUBLIC	?_Static@?1???$_Immortalize_memcpy_image@V_Iostream_error_category2@std@@@std@@YAAEBV_Iostream_error_category2@1@XZ@4U?$_Constexpr_immortalize_impl@V_Iostream_error_category2@std@@@1@A ; `std::_Immortalize_memcpy_image<std::_Iostream_error_category2>'::`2'::_Static
 PUBLIC	?_Psave@?$_Facetptr@V?$ctype@D@std@@@std@@2PEBVfacet@locale@2@EB ; std::_Facetptr<std::ctype<char> >::_Psave
 PUBLIC	?id@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@2V0locale@2@A ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::id
@@ -530,17 +477,12 @@ EXTRN	?_Xlength_error@std@@YAXPEBD@Z:PROC		; std::_Xlength_error
 EXTRN	?_Xout_of_range@std@@YAXPEBD@Z:PROC		; std::_Xout_of_range
 EXTRN	?_Xruntime_error@std@@YAXPEBD@Z:PROC		; std::_Xruntime_error
 EXTRN	?uncaught_exception@std@@YA_NXZ:PROC		; std::uncaught_exception
-EXTRN	terminate:PROC
 EXTRN	__std_exception_copy:PROC
 EXTRN	__std_exception_destroy:PROC
 EXTRN	??_Eexception@std@@UEAAPEAXI@Z:PROC		; std::exception::`vector deleting destructor'
 EXTRN	??_Ebad_alloc@std@@UEAAPEAXI@Z:PROC		; std::bad_alloc::`vector deleting destructor'
 EXTRN	??_Ebad_array_new_length@std@@UEAAPEAXI@Z:PROC	; std::bad_array_new_length::`vector deleting destructor'
 EXTRN	??_Eruntime_error@std@@UEAAPEAXI@Z:PROC		; std::runtime_error::`vector deleting destructor'
-EXTRN	_Thrd_join:PROC
-EXTRN	_Thrd_id:PROC
-EXTRN	_Cnd_do_broadcast_at_thread_exit:PROC
-EXTRN	?_Throw_Cpp_error@std@@YAXH@Z:PROC		; std::_Throw_Cpp_error
 EXTRN	??_E_System_error@std@@UEAAPEAXI@Z:PROC		; std::_System_error::`vector deleting destructor'
 EXTRN	??_Esystem_error@std@@UEAAPEAXI@Z:PROC		; std::system_error::`vector deleting destructor'
 EXTRN	?_Syserror_map@std@@YAPEBDH@Z:PROC		; std::_Syserror_map
@@ -560,7 +502,6 @@ EXTRN	?_Getgloballocale@locale@std@@CAPEAV_Locimp@12@XZ:PROC ; std::locale::_Get
 EXTRN	??_Ectype_base@std@@UEAAPEAXI@Z:PROC		; std::ctype_base::`vector deleting destructor'
 EXTRN	??_E?$ctype@D@std@@MEAAPEAXI@Z:PROC		; std::ctype<char>::`vector deleting destructor'
 EXTRN	??_Efailure@ios_base@std@@UEAAPEAXI@Z:PROC	; std::ios_base::failure::`vector deleting destructor'
-EXTRN	_beginthreadex:PROC
 EXTRN	??_E?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@MEAAPEAXI@Z:PROC ; std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > >::`vector deleting destructor'
 EXTRN	??_E?$numpunct@D@std@@MEAAPEAXI@Z:PROC		; std::numpunct<char>::`vector deleting destructor'
 EXTRN	_CxxThrowException:PROC
@@ -1176,32 +1117,8 @@ $pdata$?getloc@ios_base@std@@QEBA?AVlocale@2@XZ DD imagerel $LN9
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$??1thread@std@@QEAA@XZ DD imagerel $LN12
-	DD	imagerel $LN12+21
-	DD	imagerel $unwind$??1thread@std@@QEAA@XZ
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$?join@thread@std@@QEAAXXZ DD imagerel $LN18
-	DD	imagerel $LN18+15
-	DD	imagerel $unwind$?join@thread@std@@QEAAXXZ
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$0$?join@thread@std@@QEAAXXZ DD imagerel $LN18+15
-	DD	imagerel $LN18+37
-	DD	imagerel $chain$0$?join@thread@std@@QEAAXXZ
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$1$?join@thread@std@@QEAAXXZ DD imagerel $LN18+37
-	DD	imagerel $LN18+106
-	DD	imagerel $chain$1$?join@thread@std@@QEAAXXZ
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$main DD	imagerel $LN234
-	DD	imagerel $LN234+594
+$pdata$main DD	imagerel $LN28
+	DD	imagerel $LN28+199
 	DD	imagerel $unwind$main
 pdata	ENDS
 ;	COMDAT pdata
@@ -1278,12 +1195,6 @@ $pdata$??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_trait
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
-$pdata$??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z DD imagerel $LN84
-	DD	imagerel $LN84+114
-	DD	imagerel $unwind$??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
 $pdata$??$_Get_index@$0A@@id@locale@std@@QEAA_KXZ DD imagerel $LN11
 	DD	imagerel $LN11+80
 	DD	imagerel $unwind$??$_Get_index@$0A@@id@locale@std@@QEAA_KXZ
@@ -1311,12 +1222,6 @@ pdata	SEGMENT
 $pdata$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ DD imagerel $LN14
 	DD	imagerel $LN14+60
 	DD	imagerel $unwind$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z DD imagerel $LN81
-	DD	imagerel $LN81+111
-	DD	imagerel $unwind$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -1467,18 +1372,6 @@ pdata	SEGMENT
 $pdata$??4?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@QEAAAEAV01@D@Z DD imagerel $LN34
 	DD	imagerel $LN34+95
 	DD	imagerel $unwind$??4?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@QEAAAEAV01@D@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$??$make_unique@V?$tuple@P6AXXZ@std@@A6AXXZ$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@0@A6AXXZ@Z DD imagerel $LN44
-	DD	imagerel $LN44+72
-	DD	imagerel $unwind$??$make_unique@V?$tuple@P6AXXZ@std@@A6AXXZ$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@0@A6AXXZ@Z
-pdata	ENDS
-;	COMDAT pdata
-pdata	SEGMENT
-$pdata$??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z DD imagerel $LN21
-	DD	imagerel $LN21+37
-	DD	imagerel $unwind$??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z
 pdata	ENDS
 ;	COMDAT pdata
 pdata	SEGMENT
@@ -2387,20 +2280,9 @@ _DATA	SEGMENT
 ?_Static@?1???$_Immortalize_memcpy_image@V_Iostream_error_category2@std@@@std@@YAAEBV_Iostream_error_category2@1@XZ@4U?$_Constexpr_immortalize_impl@V_Iostream_error_category2@std@@@1@A DQ FLAT:??_7_Iostream_error_category2@std@@6B@ ; `std::_Immortalize_memcpy_image<std::_Iostream_error_category2>'::`2'::_Static
 	DQ	0000000000000005H
 _DATA	ENDS
-;	COMDAT ??_C@_0CN@EJLKPHAD@?$FLSeq_Cst?$FN?5Violations?5?$CIr1?$DN0?0?5r2?$DN@
+;	COMDAT ??_C@_01CLKCMJKC@?5@
 CONST	SEGMENT
-??_C@_0CN@EJLKPHAD@?$FLSeq_Cst?$FN?5Violations?5?$CIr1?$DN0?0?5r2?$DN@ DB '['
-	DB	'Seq_Cst] Violations (r1=0, r2=0) detected: ', 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0CI@EEKFHLNG@?$FLSeq_Cst?$FN?5Completed?5500?0000?5ite@
-CONST	SEGMENT
-??_C@_0CI@EEKFHLNG@?$FLSeq_Cst?$FN?5Completed?5500?0000?5ite@ DB '[Seq_Cs'
-	DB	't] Completed 500,000 iterations.', 00H	; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0DO@NBNMGBEK@?$FLSeq_Cst?$FN?5Starting?5experiment?4?5@
-CONST	SEGMENT
-??_C@_0DO@NBNMGBEK@?$FLSeq_Cst?$FN?5Starting?5experiment?4?5@ DB '[Seq_Cs'
-	DB	't] Starting experiment. This will run 500,000 times...', 00H ; `string'
+??_C@_01CLKCMJKC@?5@ DB ' ', 00H			; `string'
 CONST	ENDS
 ;	COMDAT _CT??_R0?AVfailure@ios_base@std@@@8??0failure@ios_base@std@@QEAA@AEBV012@@Z40
 xdata$x	SEGMENT
@@ -3217,30 +3099,6 @@ $unwind$??$_Allocate_for_capacity@$0A@@?$basic_string@DU?$char_traits@D@std@@V?$
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$ip2state$??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z DB 02H
-	DB	012H
-	DB	00H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$cppxdata$??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z DB 060H
-	DD	imagerel $ip2state$??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z DD 020619H
-	DD	030023206H
-	DD	imagerel __CxxFrameHandler4
-	DD	imagerel $cppxdata$??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??$make_unique@V?$tuple@P6AXXZ@std@@A6AXXZ$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@0@A6AXXZ@Z DD 040a01H
-	DD	08340aH
-	DD	07006520aH
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
 $unwind$??4?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@QEAAAEAV01@D@Z DD 020601H
 	DD	030023206H
 xdata	ENDS
@@ -3642,35 +3500,6 @@ $unwind$??$_Construct@$00PEBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$ip2state$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z DB 04H
-	DB	'*'
-	DB	00H
-	DB	0a8H
-	DB	02H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$stateUnwindMap$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z DB 02H
-	DB	0aH
-	DD	imagerel ??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ
-	DB	080H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$cppxdata$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z DB 028H
-	DD	imagerel $stateUnwindMap$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z
-	DD	imagerel $ip2state$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z DD 040a11H
-	DD	09340aH
-	DD	07006520aH
-	DD	imagerel __CxxFrameHandler4
-	DD	imagerel $cppxdata$??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
 $ip2state$??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@XZ DB 02H
 	DB	'd'
 	DB	02H
@@ -3750,35 +3579,6 @@ xdata	ENDS
 xdata	SEGMENT
 $unwind$??$_Get_index@$0A@@id@locale@std@@QEAA_KXZ DD 020601H
 	DD	030023206H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$ip2state$??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z DB 04H
-	DB	'*'
-	DB	00H
-	DB	0aeH
-	DB	02H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$stateUnwindMap$??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z DB 02H
-	DB	0aH
-	DD	imagerel ??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ
-	DB	080H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$cppxdata$??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z DB 028H
-	DD	imagerel $stateUnwindMap$??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z
-	DD	imagerel $ip2state$??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z DD 040a11H
-	DD	09340aH
-	DD	07006520aH
-	DD	imagerel __CxxFrameHandler4
-	DD	imagerel $cppxdata$??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -4206,48 +4006,22 @@ $unwind$?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z DD 040a11H
 	DD	imagerel __CxxFrameHandler4
 	DD	imagerel $cppxdata$?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z
 xdata	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	052H
-	DB	05aH
-voltbl	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$ip2state$main DB 010H
-	DB	'H'
+$ip2state$main DB 06H
+	DB	'6'
 	DB	00H
-	DB	0ceH
+	DB	08cH
 	DB	02H
-	DB	'h'
-	DB	04H
-	DB	015H, 04H
+	DB	'8'
 	DB	00H
-	DB	092H
-	DB	06H
-	DB	01eH
-	DB	02H
-	DB	01eH
-	DB	00H
-	DB	016H
-	DB	08H
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$stateUnwindMap$main DB 08H
+$stateUnwindMap$main DB 02H
 	DB	0aH
-	DD	imagerel ??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ
-	DB	01H
-	DB	02H
-	DB	042H
-	DD	imagerel ??1thread@std@@QEAA@XZ
-	DB	060H
-	DB	032H
-	DD	imagerel ??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ
-	DB	01H
-	DB	02H
-	DB	06aH
-	DD	imagerel ??1thread@std@@QEAA@XZ
-	DB	080H
+	DD	imagerel ??1locale@std@@QEAA@XZ
+	DB	040H
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -4257,65 +4031,12 @@ $cppxdata$main DB 028H
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
-$unwind$main DD	081211H
-	DD	0125412H
-	DD	0113412H
-	DD	0e00eb212H
-	DD	0600b700cH
+$unwind$main DD	060f11H
+	DD	09640fH
+	DD	08340fH
+	DD	0700b520fH
 	DD	imagerel __CxxFrameHandler4
 	DD	imagerel $cppxdata$main
-xdata	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	05H
-	DB	0bH
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	05H
-	DB	0bH
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	02H
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	00H
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	0cH
-	DB	0fH
-voltbl	ENDS
-;	COMDAT voltbl
-voltbl	SEGMENT
-_volmd	DB	00H
-voltbl	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$chain$1$?join@thread@std@@QEAAXXZ DD 021H
-	DD	imagerel $LN18
-	DD	imagerel $LN18+15
-	DD	imagerel $unwind$?join@thread@std@@QEAAXXZ
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$chain$0$?join@thread@std@@QEAAXXZ DD 020521H
-	DD	083405H
-	DD	imagerel $LN18
-	DD	imagerel $LN18+15
-	DD	imagerel $unwind$?join@thread@std@@QEAAXXZ
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$?join@thread@std@@QEAAXXZ DD 020601H
-	DD	070025206H
-xdata	ENDS
-;	COMDAT xdata
-xdata	SEGMENT
-$unwind$??1thread@std@@QEAA@XZ DD 010401H
-	DD	04204H
 xdata	ENDS
 ;	COMDAT xdata
 xdata	SEGMENT
@@ -5360,56 +5081,6 @@ $LN14@Allocate:
 ??$_Allocate@$0BA@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z ENDP ; std::_Allocate<16,std::_Default_allocate_traits>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??$forward@AEAPEAV?$tuple@P6AXXZ@std@@@std@@YAAEAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@@Z
-_TEXT	SEGMENT
-_Arg$ = 8
-??$forward@AEAPEAV?$tuple@P6AXXZ@std@@@std@@YAAEAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@@Z PROC ; std::forward<std::tuple<void (__cdecl*)(void)> * &>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits
-; Line 1502
-	mov	rax, rcx
-; Line 1503
-	ret	0
-??$forward@AEAPEAV?$tuple@P6AXXZ@std@@@std@@YAAEAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@@Z ENDP ; std::forward<std::tuple<void (__cdecl*)(void)> * &>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$?0AEBQ6AXXZ@?$_Tuple_val@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z
-_TEXT	SEGMENT
-this$ = 8
-_Arg$ = 16
-??$?0AEBQ6AXXZ@?$_Tuple_val@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z PROC ; std::_Tuple_val<void (__cdecl*)(void)>::_Tuple_val<void (__cdecl*)(void)><void (__cdecl*const &)(void)>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 132
-	mov	rax, QWORD PTR [rdx]
-	mov	QWORD PTR [rcx], rax
-	mov	rax, rcx
-	ret	0
-??$?0AEBQ6AXXZ@?$_Tuple_val@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z ENDP ; std::_Tuple_val<void (__cdecl*)(void)>::_Tuple_val<void (__cdecl*)(void)><void (__cdecl*const &)(void)>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$?0U_Exact_args_t@std@@$0A@@?$tuple@$$V@std@@QEAA@U_Exact_args_t@1@@Z
-_TEXT	SEGMENT
-this$ = 8
-__formal$ = 16
-??$?0U_Exact_args_t@std@@$0A@@?$tuple@$$V@std@@QEAA@U_Exact_args_t@1@@Z PROC ; std::tuple<>::tuple<><std::_Exact_args_t,0>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 235
-	mov	rax, rcx
-	ret	0
-??$?0U_Exact_args_t@std@@$0A@@?$tuple@$$V@std@@QEAA@U_Exact_args_t@1@@Z ENDP ; std::tuple<>::tuple<><std::_Exact_args_t,0>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$forward@AEBQ6AXXZ@std@@YAAEBQ6AXXZAEBQ6AXXZ@Z
-_TEXT	SEGMENT
-_Arg$ = 8
-??$forward@AEBQ6AXXZ@std@@YAAEBQ6AXXZAEBQ6AXXZ@Z PROC	; std::forward<void (__cdecl*const &)(void)>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits
-; Line 1502
-	mov	rax, rcx
-; Line 1503
-	ret	0
-??$forward@AEBQ6AXXZ@std@@YAAEBQ6AXXZAEBQ6AXXZ@Z ENDP	; std::forward<void (__cdecl*const &)(void)>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Construct@$0A@D@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAAXD_K@Z
 _TEXT	SEGMENT
 this$ = 48
@@ -6029,49 +5700,6 @@ $LN10@Deallocate:
 ??$_Deallocate@$0BA@@std@@YAXPEAX_K@Z ENDP		; std::_Deallocate<16>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??$forward@PEAV?$tuple@P6AXXZ@std@@@std@@YA$$QEAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@@Z
-_TEXT	SEGMENT
-_Arg$ = 8
-??$forward@PEAV?$tuple@P6AXXZ@std@@@std@@YA$$QEAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@@Z PROC ; std::forward<std::tuple<void (__cdecl*)(void)> *>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits
-; Line 1502
-	mov	rax, rcx
-; Line 1503
-	ret	0
-??$forward@PEAV?$tuple@P6AXXZ@std@@@std@@YA$$QEAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@@Z ENDP ; std::forward<std::tuple<void (__cdecl*)(void)> *>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$?0AEAPEAV?$tuple@P6AXXZ@std@@@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV?$tuple@P6AXXZ@1@@Z
-_TEXT	SEGMENT
-this$ = 8
-__formal$ = 16
-<_Val2_0>$ = 24
-??$?0AEAPEAV?$tuple@P6AXXZ@std@@@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV?$tuple@P6AXXZ@1@@Z PROC ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1><std::tuple<void (__cdecl*)(void)> * &>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1531
-	mov	rax, QWORD PTR [r8]
-	mov	QWORD PTR [rcx], rax
-	mov	rax, rcx
-	ret	0
-??$?0AEAPEAV?$tuple@P6AXXZ@std@@@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV?$tuple@P6AXXZ@1@@Z ENDP ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1><std::tuple<void (__cdecl*)(void)> * &>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$?0U_Exact_args_t@std@@AEBQ6AXXZ$$V$0A@@?$tuple@P6AXXZ@std@@QEAA@U_Exact_args_t@1@AEBQ6AXXZ@Z
-_TEXT	SEGMENT
-this$ = 8
-__formal$ = 16
-_This_arg$ = 24
-??$?0U_Exact_args_t@std@@AEBQ6AXXZ$$V$0A@@?$tuple@P6AXXZ@std@@QEAA@U_Exact_args_t@1@AEBQ6AXXZ@Z PROC ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><std::_Exact_args_t,void (__cdecl*const &)(void),0>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 132
-	mov	rax, QWORD PTR [r8]
-	mov	QWORD PTR [rcx], rax
-; Line 301
-	mov	rax, rcx
-	ret	0
-??$?0U_Exact_args_t@std@@AEBQ6AXXZ$$V$0A@@?$tuple@P6AXXZ@std@@QEAA@U_Exact_args_t@1@AEBQ6AXXZ@Z ENDP ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><std::_Exact_args_t,void (__cdecl*const &)(void),0>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
 ;	COMDAT ??$_Max_limit@_J@std@@YA_JXZ
 _TEXT	SEGMENT
 ??$_Max_limit@_J@std@@YA_JXZ PROC			; std::_Max_limit<__int64>, COMDAT
@@ -6107,21 +5735,6 @@ _Obj$ = 8
 ; Line 326
 	ret	0
 ??$_Destroy_in_place@PEAD@std@@YAXAEAPEAD@Z ENDP	; std::_Destroy_in_place<char *>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$exchange@PEAV?$tuple@P6AXXZ@std@@$$T@std@@YAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@$$QEA$$T@Z
-_TEXT	SEGMENT
-_Val$ = 8
-_New_val$ = 16
-??$exchange@PEAV?$tuple@P6AXXZ@std@@$$T@std@@YAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@$$QEA$$T@Z PROC ; std::exchange<std::tuple<void (__cdecl*)(void)> *,std::nullptr_t>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\utility
-; Line 774
-	mov	rdx, QWORD PTR [rdx]
-	mov	rax, QWORD PTR [rcx]
-	mov	QWORD PTR [rcx], rdx
-; Line 776
-	ret	0
-??$exchange@PEAV?$tuple@P6AXXZ@std@@$$T@std@@YAPEAV?$tuple@P6AXXZ@0@AEAPEAV10@$$QEA$$T@Z ENDP ; std::exchange<std::tuple<void (__cdecl*)(void)> *,std::nullptr_t>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$?0$0A@@id@locale@std@@QEAA@XZ
@@ -6182,99 +5795,6 @@ _Count$ = 16
 	mov	rcx, QWORD PTR [rdx]
 	jmp	??$_Allocate@$0BA@U_Default_allocate_traits@std@@@std@@YAPEAX_K@Z ; std::_Allocate<16,std::_Default_allocate_traits>
 ??$_Allocate_at_least_helper@V?$allocator@D@std@@@std@@YAPEADAEAV?$allocator@D@0@AEA_K@Z ENDP ; std::_Allocate_at_least_helper<std::allocator<char> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$invoke@P6AXXZ@std@@YAX$$QEAP6AXXZ@Z
-_TEXT	SEGMENT
-_Obj$ = 8
-??$invoke@P6AXXZ@std@@YAX$$QEAP6AXXZ@Z PROC		; std::invoke<void (__cdecl*)(void)>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits
-; Line 1670
-	rex_jmp	QWORD PTR [rcx]
-??$invoke@P6AXXZ@std@@YAX$$QEAP6AXXZ@Z ENDP		; std::invoke<void (__cdecl*)(void)>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$move@AEAP6AXXZ@std@@YA$$QEAP6AXXZAEAP6AXXZ@Z
-_TEXT	SEGMENT
-_Arg$ = 8
-??$move@AEAP6AXXZ@std@@YA$$QEAP6AXXZAEAP6AXXZ@Z PROC	; std::move<void (__cdecl*&)(void)>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits
-; Line 1513
-	mov	rax, rcx
-; Line 1514
-	ret	0
-??$move@AEAP6AXXZ@std@@YA$$QEAP6AXXZAEAP6AXXZ@Z ENDP	; std::move<void (__cdecl*&)(void)>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$get@$0A@P6AXXZ@std@@YAAEAP6AXXZAEAV?$tuple@P6AXXZ@0@@Z
-_TEXT	SEGMENT
-_Tuple$ = 8
-??$get@$0A@P6AXXZ@std@@YAAEAP6AXXZAEAV?$tuple@P6AXXZ@0@@Z PROC ; std::get<0,void (__cdecl*)(void)>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 901
-	mov	rax, rcx
-; Line 902
-	ret	0
-??$get@$0A@P6AXXZ@std@@YAAEAP6AXXZAEAV?$tuple@P6AXXZ@0@@Z ENDP ; std::get<0,void (__cdecl*)(void)>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@1@@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAU?$default_delete@V?$tuple@P6AXXZ@std@@@1@$$QEAPEAV?$tuple@P6AXXZ@1@@Z
-_TEXT	SEGMENT
-this$ = 8
-__formal$ = 16
-_Val1$ = 24
-<_Val2_0>$ = 32
-??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@1@@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAU?$default_delete@V?$tuple@P6AXXZ@std@@@1@$$QEAPEAV?$tuple@P6AXXZ@1@@Z PROC ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1><std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1536
-	mov	rax, QWORD PTR [r9]
-	mov	QWORD PTR [rcx], rax
-	mov	rax, rcx
-	ret	0
-??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@1@@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAA@U_One_then_variadic_args_t@1@$$QEAU?$default_delete@V?$tuple@P6AXXZ@std@@@1@$$QEAPEAV?$tuple@P6AXXZ@1@@Z ENDP ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1><std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$forward@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@@std@@YA$$QEAU?$default_delete@V?$tuple@P6AXXZ@std@@@0@AEAU10@@Z
-_TEXT	SEGMENT
-_Arg$ = 8
-??$forward@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@@std@@YA$$QEAU?$default_delete@V?$tuple@P6AXXZ@std@@@0@AEAU10@@Z PROC ; std::forward<std::default_delete<std::tuple<void (__cdecl*)(void)> > >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits
-; Line 1502
-	mov	rax, rcx
-; Line 1503
-	ret	0
-??$forward@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@@std@@YA$$QEAU?$default_delete@V?$tuple@P6AXXZ@std@@@0@AEAU10@@Z ENDP ; std::forward<std::default_delete<std::tuple<void (__cdecl*)(void)> > >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@PEAV?$tuple@P6AXXZ@1@@Z
-_TEXT	SEGMENT
-this$ = 8
-_Ptr$ = 16
-??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@PEAV?$tuple@P6AXXZ@1@@Z PROC ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > ><std::default_delete<std::tuple<void (__cdecl*)(void)> >,0>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1531
-	mov	QWORD PTR [rcx], rdx
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3370
-	mov	rax, rcx
-	ret	0
-??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@PEAV?$tuple@P6AXXZ@1@@Z ENDP ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > ><std::default_delete<std::tuple<void (__cdecl*)(void)> >,0>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$?0P6AXXZ$0A@@?$tuple@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z
-_TEXT	SEGMENT
-this$ = 8
-_This_arg$ = 16
-??$?0P6AXXZ$0A@@?$tuple@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z PROC ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><void (__cdecl*)(void),0>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 132
-	mov	rax, QWORD PTR [rdx]
-	mov	QWORD PTR [rcx], rax
-; Line 340
-	mov	rax, rcx
-	ret	0
-??$?0P6AXXZ$0A@@?$tuple@P6AXXZ@std@@QEAA@AEBQ6AXXZ@Z ENDP ; std::tuple<void (__cdecl*)(void)>::tuple<void (__cdecl*)(void)><void (__cdecl*)(void),0>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$forward@AEAPEAV_Facet_base@std@@@std@@YAAEAPEAV_Facet_base@0@AEAPEAV10@@Z
@@ -9102,187 +8622,6 @@ _Arg$ = 8
 ; Line 1503
 	ret	0
 ??$forward@V?$allocator@D@std@@@std@@YA$$QEAV?$allocator@D@0@AEAV10@@Z ENDP ; std::forward<std::allocator<char> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z
-_TEXT	SEGMENT
-_RawVals$ = 48
-??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z PROC ; std::thread::_Invoke<std::tuple<void (__cdecl*)(void)>,0>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 56
-$LN21:
-	push	rbx
-	sub	rsp, 32					; 00000020H
-	mov	rbx, rcx
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits
-; Line 1670
-	call	QWORD PTR [rcx]
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 61
-	call	_Cnd_do_broadcast_at_thread_exit
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3309
-	mov	edx, 8
-	mov	rcx, rbx
-	call	??3@YAXPEAX_K@Z				; operator delete
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 62
-	xor	eax, eax
-; Line 63
-	add	rsp, 32					; 00000020H
-	pop	rbx
-	ret	0
-??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z ENDP ; std::thread::_Invoke<std::tuple<void (__cdecl*)(void)>,0>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@$$QEAV01@@Z
-_TEXT	SEGMENT
-this$ = 8
-_Right$ = 16
-??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@$$QEAV01@@Z PROC ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > ><std::default_delete<std::tuple<void (__cdecl*)(void)> >,0>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\utility
-; Line 773
-	mov	rax, QWORD PTR [rdx]
-; Line 774
-	mov	QWORD PTR [rdx], 0
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1536
-	mov	QWORD PTR [rcx], rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3386
-	mov	rax, rcx
-	ret	0
-??$?0U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@$0A@@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@$$QEAV01@@Z ENDP ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > ><std::default_delete<std::tuple<void (__cdecl*)(void)> >,0>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Get_first@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAAAEAU?$default_delete@V?$tuple@P6AXXZ@std@@@2@XZ
-_TEXT	SEGMENT
-this$ = 8
-?_Get_first@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAAAEAU?$default_delete@V?$tuple@P6AXXZ@std@@@2@XZ PROC ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Get_first, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1539
-	mov	rax, rcx
-; Line 1540
-	ret	0
-?_Get_first@?$_Compressed_pair@U?$default_delete@V?$tuple@P6AXXZ@std@@@std@@PEAV?$tuple@P6AXXZ@2@$00@std@@QEAAAEAU?$default_delete@V?$tuple@P6AXXZ@std@@@2@XZ ENDP ; std::_Compressed_pair<std::default_delete<std::tuple<void (__cdecl*)(void)> >,std::tuple<void (__cdecl*)(void)> *,1>::_Get_first
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?release@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAAPEAV?$tuple@P6AXXZ@2@XZ
-_TEXT	SEGMENT
-this$ = 8
-?release@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAAPEAV?$tuple@P6AXXZ@2@XZ PROC ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::release, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\utility
-; Line 773
-	mov	rax, QWORD PTR [rcx]
-; Line 774
-	mov	QWORD PTR [rcx], 0
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3466
-	ret	0
-?release@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAAPEAV?$tuple@P6AXXZ@2@XZ ENDP ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::release
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?get@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEBAPEAV?$tuple@P6AXXZ@2@XZ
-_TEXT	SEGMENT
-this$ = 8
-?get@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEBAPEAV?$tuple@P6AXXZ@2@XZ PROC ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::get, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3457
-	mov	rax, QWORD PTR [rcx]
-; Line 3458
-	ret	0
-?get@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEBAPEAV?$tuple@P6AXXZ@2@XZ ENDP ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::get
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?get_deleter@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAAAEAU?$default_delete@V?$tuple@P6AXXZ@std@@@2@XZ
-_TEXT	SEGMENT
-this$ = 8
-?get_deleter@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAAAEAU?$default_delete@V?$tuple@P6AXXZ@std@@@2@XZ PROC ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::get_deleter, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3441
-	mov	rax, rcx
-; Line 3442
-	ret	0
-?get_deleter@?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAAAEAU?$default_delete@V?$tuple@P6AXXZ@std@@@2@XZ ENDP ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::get_deleter
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ
-_TEXT	SEGMENT
-this$ = 8
-??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ PROC ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::~unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3426
-	mov	rcx, QWORD PTR [rcx]
-	test	rcx, rcx
-	je	SHORT $LN6@unique_ptr
-; Line 3309
-	mov	edx, 8
-	jmp	??3@YAXPEAX_K@Z				; operator delete
-$LN6@unique_ptr:
-; Line 3438
-	ret	0
-??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ ENDP ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::~unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??R?$default_delete@V?$tuple@P6AXXZ@std@@@std@@QEBAXPEAV?$tuple@P6AXXZ@1@@Z
-_TEXT	SEGMENT
-this$ = 8
-_Ptr$ = 16
-??R?$default_delete@V?$tuple@P6AXXZ@std@@@std@@QEBAXPEAV?$tuple@P6AXXZ@1@@Z PROC ; std::default_delete<std::tuple<void (__cdecl*)(void)> >::operator(), COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3307
-	mov	rcx, rdx
-; Line 3309
-	mov	edx, 8
-	jmp	??3@YAXPEAX_K@Z				; operator delete
-??R?$default_delete@V?$tuple@P6AXXZ@std@@@std@@QEBAXPEAV?$tuple@P6AXXZ@1@@Z ENDP ; std::default_delete<std::tuple<void (__cdecl*)(void)> >::operator()
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$make_unique@V?$tuple@P6AXXZ@std@@A6AXXZ$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@0@A6AXXZ@Z
-_TEXT	SEGMENT
-__$ReturnUdt$ = 64
-<_Args_0>$ = 72
-??$make_unique@V?$tuple@P6AXXZ@std@@A6AXXZ$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@0@A6AXXZ@Z PROC ; std::make_unique<std::tuple<void (__cdecl*)(void)>,void (__cdecl&)(void),0>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3629
-$LN44:
-	mov	QWORD PTR [rsp+8], rbx
-	push	rdi
-	sub	rsp, 48					; 00000030H
-	mov	rbx, rcx
-	mov	rdi, rdx
-; Line 3630
-	mov	ecx, 8
-	call	??2@YAPEAX_K@Z				; operator new
-	test	rax, rax
-	je	SHORT $LN3@make_uniqu
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 132
-	mov	QWORD PTR [rax], rdi
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1536
-	mov	QWORD PTR [rbx], rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3631
-	mov	rax, rbx
-	mov	rbx, QWORD PTR [rsp+64]
-	add	rsp, 48					; 00000030H
-	pop	rdi
-	ret	0
-$LN3@make_uniqu:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1536
-	mov	QWORD PTR [rbx], 0
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3631
-	mov	rax, rbx
-	mov	rbx, QWORD PTR [rsp+64]
-	add	rsp, 48					; 00000030H
-	pop	rdi
-	ret	0
-??$make_unique@V?$tuple@P6AXXZ@std@@A6AXXZ$0A@@std@@YA?AV?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@0@A6AXXZ@Z ENDP ; std::make_unique<std::tuple<void (__cdecl*)(void)>,void (__cdecl&)(void),0>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$?0AEAPEAV_Facet_base@std@@@?$_Compressed_pair@U?$default_delete@V_Facet_base@std@@@std@@PEAV_Facet_base@2@$00@std@@QEAA@U_Zero_then_variadic_args_t@1@AEAPEAV_Facet_base@1@@Z
@@ -13215,122 +12554,6 @@ _Len$ = 8
 ??$_Convert_size@_K_K@std@@YA_K_K@Z ENDP		; std::_Convert_size<unsigned __int64,unsigned __int64>
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
-;	COMDAT ??$_Atomic_reinterpret_as@HH@std@@YAHAEBH@Z
-_TEXT	SEGMENT
-_Source$ = 8
-??$_Atomic_reinterpret_as@HH@std@@YAHAEBH@Z PROC	; std::_Atomic_reinterpret_as<int,int>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 358
-	mov	eax, DWORD PTR [rcx]
-; Line 366
-	ret	0
-??$_Atomic_reinterpret_as@HH@std@@YAHAEBH@Z ENDP	; std::_Atomic_reinterpret_as<int,int>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPECHAEAU?$_Atomic_padded@H@0@@Z
-_TEXT	SEGMENT
-_Source$ = 8
-??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPECHAEAU?$_Atomic_padded@H@0@@Z PROC ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xatomic.h
-; Line 115
-	mov	rax, rcx
-; Line 116
-	ret	0
-??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPECHAEAU?$_Atomic_padded@H@0@@Z ENDP ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPEDHAEBU?$_Atomic_padded@H@0@@Z
-_TEXT	SEGMENT
-_Source$ = 8
-??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPEDHAEBU?$_Atomic_padded@H@0@@Z PROC ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xatomic.h
-; Line 122
-	mov	rax, rcx
-; Line 123
-	ret	0
-??$_Atomic_address_as@HU?$_Atomic_padded@H@std@@@std@@YAPEDHAEBU?$_Atomic_padded@H@0@@Z ENDP ; std::_Atomic_address_as<int,std::_Atomic_padded<int> >
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z
-_TEXT	SEGMENT
-this$ = 64
-_Decay_copied$ = 64
-_Fx$ = 72
-??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z PROC	; std::thread::_Start<void (__cdecl&)(void)>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 73
-$LN81:
-	mov	QWORD PTR [rsp+16], rbx
-	push	rdi
-	sub	rsp, 48					; 00000030H
-	mov	rbx, rdx
-	mov	rdi, rcx
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3630
-	mov	ecx, 8
-	call	??2@YAPEAX_K@Z				; operator new
-	test	rax, rax
-	je	SHORT $LN10@Start
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 132
-	mov	QWORD PTR [rax], rbx
-$LN10@Start:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1536
-	mov	QWORD PTR _Decay_copied$[rsp], rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 78
-	lea	rbx, QWORD PTR [rdi+8]
-	mov	QWORD PTR [rsp+40], rbx
-	mov	DWORD PTR [rsp+32], 0
-	mov	r9, rax
-	lea	r8, OFFSET FLAT:??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z ; std::thread::_Invoke<std::tuple<void (__cdecl*)(void)>,0>
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_beginthreadex
-	mov	QWORD PTR [rdi], rax
-; Line 81
-	test	rax, rax
-	je	SHORT $LN2@Start
-; Line 87
-	mov	rbx, QWORD PTR [rsp+72]
-	add	rsp, 48					; 00000030H
-	pop	rdi
-	ret	0
-$LN2@Start:
-; Line 84
-	mov	DWORD PTR [rbx], 0
-; Line 85
-	mov	ecx, 6
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	int	3
-$LN78@Start:
-??$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z ENDP	; std::thread::_Start<void (__cdecl&)(void)>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT text$x
-text$x	SEGMENT
-this$ = 64
-_Decay_copied$ = 64
-_Fx$ = 72
-?dtor$1@?0???$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z@4HA PROC ; `std::thread::_Start<void (__cdecl&)(void)>'::`1'::dtor$1
-	lea	rcx, QWORD PTR _Decay_copied$[rdx]
-	jmp	??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::~unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >
-?dtor$1@?0???$_Start@A6AXXZ$$V@thread@std@@AEAAXA6AXXZ@Z@4HA ENDP ; `std::thread::_Start<void (__cdecl&)(void)>'::`1'::dtor$1
-text$x	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$forward@A6AXXZ@std@@YAA6AXXZA6AXXZ@Z
-_TEXT	SEGMENT
-_Arg$ = 8
-??$forward@A6AXXZ@std@@YAA6AXXZA6AXXZ@Z PROC		; std::forward<void (__cdecl&)(void)>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\type_traits
-; Line 1502
-	mov	rax, rcx
-; Line 1503
-	ret	0
-??$forward@A6AXXZ@std@@YAA6AXXZA6AXXZ@Z ENDP		; std::forward<void (__cdecl&)(void)>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
 ;	COMDAT ?_Pnavail@?$basic_streambuf@DU?$char_traits@D@std@@@std@@IEBA_JXZ
 _TEXT	SEGMENT
 this$ = 8
@@ -13771,75 +12994,6 @@ _Right$ = 16
 	ret	0
 ??$min@_K@std@@YAAEB_KAEB_K0@Z ENDP			; std::min<unsigned __int64>
 _TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z
-_TEXT	SEGMENT
-this$ = 64
-_Decay_copied$1 = 64
-_Fx$ = 72
-??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z PROC	; std::thread::thread<void (__cdecl&)(void),0>, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 92
-$LN84:
-	mov	QWORD PTR [rsp+16], rbx
-	push	rdi
-	sub	rsp, 48					; 00000030H
-	mov	rdi, rdx
-	mov	rbx, rcx
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3630
-	mov	ecx, 8
-	call	??2@YAPEAX_K@Z				; operator new
-	test	rax, rax
-	je	SHORT $LN12@thread
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 132
-	mov	QWORD PTR [rax], rdi
-$LN12@thread:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1536
-	mov	QWORD PTR _Decay_copied$1[rsp], rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 78
-	lea	rdi, QWORD PTR [rbx+8]
-	mov	QWORD PTR [rsp+40], rdi
-	mov	DWORD PTR [rsp+32], 0
-	mov	r9, rax
-	lea	r8, OFFSET FLAT:??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z ; std::thread::_Invoke<std::tuple<void (__cdecl*)(void)>,0>
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_beginthreadex
-	mov	QWORD PTR [rbx], rax
-; Line 81
-	test	rax, rax
-	je	SHORT $LN4@thread
-; Line 94
-	mov	rax, rbx
-	mov	rbx, QWORD PTR [rsp+72]
-	add	rsp, 48					; 00000030H
-	pop	rdi
-	ret	0
-$LN4@thread:
-; Line 84
-	mov	DWORD PTR [rdi], 0
-; Line 85
-	mov	ecx, 6
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	int	3
-$LN81@thread:
-??$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z ENDP	; std::thread::thread<void (__cdecl&)(void),0>
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT text$x
-text$x	SEGMENT
-this$ = 64
-_Decay_copied$1 = 64
-_Fx$ = 72
-?dtor$1@?0???$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z@4HA PROC ; `std::thread::thread<void (__cdecl&)(void),0>'::`1'::dtor$1
-	lea	rcx, QWORD PTR _Decay_copied$1[rdx]
-	jmp	??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::~unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >
-?dtor$1@?0???$?0A6AXXZ$$V$0A@@thread@std@@QEAA@A6AXXZ@Z@4HA ENDP ; `std::thread::thread<void (__cdecl&)(void),0>'::`1'::dtor$1
-text$x	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z
 _TEXT	SEGMENT
@@ -15622,497 +14776,98 @@ _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT main
 _TEXT	SEGMENT
-t1$1 = 48
-t2$2 = 64
-$T3 = 80
-$T4 = 80
-_Decay_copied$5 = 128
-_Decay_copied$6 = 128
+$T1 = 32
 main	PROC						; COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 28
-$LN234:
-	mov	QWORD PTR [rsp+16], rbx
-	mov	QWORD PTR [rsp+24], rbp
-	push	rsi
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\clip1.cpp
+; Line 11
+$LN28:
+	mov	QWORD PTR [rsp+8], rbx
+	mov	QWORD PTR [rsp+16], rsi
 	push	rdi
-	push	r14
-	sub	rsp, 96					; 00000060H
-	xor	esi, esi
-; Line 30
-	mov	edi, esi
-; Line 32
-	lea	rdx, OFFSET FLAT:??_C@_0DO@NBNMGBEK@?$FLSeq_Cst?$FN?5Starting?5experiment?4?5@
+	sub	rsp, 48					; 00000030H
+; Line 18
+	mov	edx, 3
 	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
-; Line 191
-	mov	rcx, rax
-	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 34
-	mov	ebx, esi
-	lea	rbp, OFFSET FLAT:?thread1@@YAXXZ	; thread1
-	lea	r14, OFFSET FLAT:?thread2@@YAXXZ	; thread2
-	npad	15
-$LL4@main:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	mov	eax, esi
-	xchg	DWORD PTR ?x@@3U?$atomic@H@std@@A, eax	; x
-	mov	ecx, esi
-	xchg	DWORD PTR ?y@@3U?$atomic@H@std@@A, ecx	; y
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 35
-	mov	DWORD PTR ?r1@@3HA, esi			; r1
-	mov	DWORD PTR ?r2@@3HA, esi			; r2
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3630
-	mov	ecx, 8
-	call	??2@YAPEAX_K@Z				; operator new
-	test	rax, rax
-	je	SHORT $LN33@main
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 132
-	mov	QWORD PTR [rax], rbp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3630
-	jmp	SHORT $LN34@main
-$LN33@main:
-	mov	rax, rsi
-$LN34@main:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1536
-	mov	QWORD PTR _Decay_copied$5[rsp], rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 78
-	lea	rcx, QWORD PTR t1$1[rsp+8]
-	mov	QWORD PTR [rsp+40], rcx
-	mov	DWORD PTR [rsp+32], esi
-	mov	r9, rax
-	lea	r8, OFFSET FLAT:??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z ; std::thread::_Invoke<std::tuple<void (__cdecl*)(void)>,0>
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_beginthreadex
-	mov	QWORD PTR t1$1[rsp], rax
-	test	rax, rax
-; Line 81
-	je	$LN26@main
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3630
-	mov	ecx, 8
-	call	??2@YAPEAX_K@Z				; operator new
-	test	rax, rax
-	je	SHORT $LN114@main
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\tuple
-; Line 132
-	mov	QWORD PTR [rax], r14
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory
-; Line 3630
-	jmp	SHORT $LN115@main
-$LN114@main:
-	mov	rax, rsi
-$LN115@main:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xmemory
-; Line 1536
-	mov	QWORD PTR _Decay_copied$6[rsp], rax
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 78
-	lea	rcx, QWORD PTR t2$2[rsp+8]
-	mov	QWORD PTR [rsp+40], rcx
-	mov	DWORD PTR [rsp+32], esi
-	mov	r9, rax
-	lea	r8, OFFSET FLAT:??$_Invoke@V?$tuple@P6AXXZ@std@@$0A@@thread@std@@CAIPEAX@Z ; std::thread::_Invoke<std::tuple<void (__cdecl*)(void)>,0>
-	xor	edx, edx
-	xor	ecx, ecx
-	call	_beginthreadex
-	mov	QWORD PTR t2$2[rsp], rax
-	test	rax, rax
-; Line 81
-	je	$LN107@main
-; Line 125
-	cmp	DWORD PTR t1$1[rsp+8], 0
-	je	$LN219@main
-; Line 129
-	call	_Thrd_id
-	cmp	DWORD PTR t1$1[rsp+8], eax
-	je	$LN220@main
-; Line 133
-	movaps	xmm0, XMMWORD PTR t1$1[rsp]
-	movdqa	XMMWORD PTR $T3[rsp], xmm0
-	xor	edx, edx
-	lea	rcx, QWORD PTR $T3[rsp]
-	call	_Thrd_join
-	test	eax, eax
-	jne	$LN221@main
-	xorps	xmm0, xmm0
-; Line 137
-	movdqa	XMMWORD PTR t1$1[rsp], xmm0
-; Line 125
-	cmp	DWORD PTR t2$2[rsp+8], eax
-	je	$LN219@main
-; Line 129
-	call	_Thrd_id
-	cmp	DWORD PTR t2$2[rsp+8], eax
-	je	$LN220@main
-; Line 133
-	movaps	xmm0, XMMWORD PTR t2$2[rsp]
-	movdqa	XMMWORD PTR $T4[rsp], xmm0
-	xor	edx, edx
-	lea	rcx, QWORD PTR $T4[rsp]
-	call	_Thrd_join
-	test	eax, eax
-	jne	$LN221@main
-	xorps	xmm0, xmm0
-; Line 137
-	movdqa	XMMWORD PTR t2$2[rsp], xmm0
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 43
-	cmp	DWORD PTR ?r1@@3HA, eax			; r1
-	jne	SHORT $LN5@main
-	cmp	DWORD PTR ?r2@@3HA, eax			; r2
-	jne	SHORT $LN5@main
-; Line 44
-	inc	edi
-$LN5@main:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 97
-	cmp	DWORD PTR t1$1[rsp+8], 0
-	jne	$LN226@main
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 34
-	inc	ebx
-	cmp	ebx, 500000				; 0007a120H
-	jl	$LL4@main
-; Line 48
-	lea	rdx, OFFSET FLAT:??_C@_0CI@EEKFHLNG@?$FLSeq_Cst?$FN?5Completed?5500?0000?5ite@
-	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
-; Line 191
-	mov	rcx, rax
-	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 49
-	lea	rdx, OFFSET FLAT:??_C@_0CN@EJLKPHAD@?$FLSeq_Cst?$FN?5Violations?5?$CIr1?$DN0?0?5r2?$DN@
-	lea	rcx, OFFSET FLAT:?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A ; std::cout
-	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
-	mov	rcx, rax
-	mov	edx, edi
 	call	??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
-; Line 191
 	mov	rcx, rax
-	call	??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z ; std::endl<char,std::char_traits<char> >
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 51
+	lea	rdx, OFFSET FLAT:??_C@_01CLKCMJKC@?5@
+	call	??$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z ; std::operator<<<std::char_traits<char> >
+	mov	rcx, rax
+	mov	edx, 2
+	call	??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@H@Z ; std::basic_ostream<char,std::char_traits<char> >::operator<<
+	mov	rdi, rax
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
+; Line 1013
+	mov	rcx, QWORD PTR [rax]
+	movsxd	rdx, DWORD PTR [rcx+4]
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xlocale
+; Line 268
+	mov	rcx, QWORD PTR [rdx+rax+64]
+	mov	rbx, QWORD PTR [rcx+8]
+	mov	QWORD PTR $T1[rsp+8], rbx
+; Line 269
+	mov	rcx, QWORD PTR [rbx]
+	mov	rdx, QWORD PTR [rcx+8]
+	mov	rcx, rbx
+	call	rdx
+	npad	1
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\ios
+; Line 113
+	lea	rcx, QWORD PTR $T1[rsp]
+	call	??$use_facet@V?$ctype@D@std@@@std@@YAAEBV?$ctype@D@0@AEBVlocale@0@@Z ; std::use_facet<std::ctype<char> >
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xlocale
+; Line 2755
+	mov	rdx, QWORD PTR [rax]
+	mov	r8, QWORD PTR [rdx+64]
+	mov	dl, 10
+	mov	rcx, rax
+	call	r8
+	movzx	esi, al
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\ios
+; Line 113
+	test	rbx, rbx
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xlocale
+; Line 354
+	je	SHORT $LN23@main
+; Line 355
+	mov	rdx, QWORD PTR [rbx]
+	mov	rcx, rbx
+	call	QWORD PTR [rdx+16]
+	test	rax, rax
+	je	SHORT $LN23@main
+	mov	rcx, QWORD PTR [rax]
+	mov	r8, QWORD PTR [rcx]
+	mov	edx, 1
+	mov	rcx, rax
+	call	r8
+$LN23@main:
+; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\__msvc_ostream.hpp
+; Line 1013
+	movzx	edx, sil
+	mov	rcx, rdi
+	call	?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z ; std::basic_ostream<char,std::char_traits<char> >::put
+; Line 1014
+	mov	rcx, rdi
+	call	?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ ; std::basic_ostream<char,std::char_traits<char> >::flush
+; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\clip1.cpp
+; Line 19
 	xor	eax, eax
-; Line 52
-	lea	r11, QWORD PTR [rsp+96]
-	mov	rbx, QWORD PTR [r11+40]
-	mov	rbp, QWORD PTR [r11+48]
-	mov	rsp, r11
-	pop	r14
+	mov	rbx, QWORD PTR [rsp+64]
+	mov	rsi, QWORD PTR [rsp+72]
+	add	rsp, 48					; 00000030H
 	pop	rdi
-	pop	rsi
 	ret	0
-$LN107@main:
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 84
-	mov	DWORD PTR t2$2[rsp+8], esi
-; Line 85
-	mov	ecx, 6
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	npad	1
-$LN26@main:
-; Line 84
-	mov	DWORD PTR t1$1[rsp+8], esi
-; Line 85
-	mov	ecx, 6
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	npad	1
-$LN226@main:
-; Line 98
-	call	terminate
-	npad	1
-$LN221@main:
-; Line 134
-	mov	ecx, 2
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	int	3
-$LN220@main:
-; Line 130
-	mov	ecx, 5
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	int	3
-$LN219@main:
-; Line 126
-	mov	ecx, 1
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	int	3
-$LN231@main:
 main	ENDP
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT text$x
 text$x	SEGMENT
-t1$1 = 48
-t2$2 = 64
-$T3 = 80
-$T4 = 80
-_Decay_copied$5 = 128
-_Decay_copied$6 = 128
-main$dtor$3 PROC
-	lea	rcx, QWORD PTR _Decay_copied$5[rdx]
-	jmp	??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::~unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >
-main$dtor$3 ENDP
-text$x	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT text$x
-text$x	SEGMENT
-t1$1 = 48
-t2$2 = 64
-$T3 = 80
-$T4 = 80
-_Decay_copied$5 = 128
-_Decay_copied$6 = 128
+$T1 = 32
 main$dtor$0 PROC
-	lea	rcx, QWORD PTR t1$1[rdx]
-	jmp	??1thread@std@@QEAA@XZ			; std::thread::~thread
+	lea	rcx, QWORD PTR $T1[rdx]
+	jmp	??1locale@std@@QEAA@XZ			; std::locale::~locale
 main$dtor$0 ENDP
 text$x	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT text$x
-text$x	SEGMENT
-t1$1 = 48
-t2$2 = 64
-$T3 = 80
-$T4 = 80
-_Decay_copied$5 = 128
-_Decay_copied$6 = 128
-main$dtor$7 PROC
-	lea	rcx, QWORD PTR _Decay_copied$6[rdx]
-	jmp	??1?$unique_ptr@V?$tuple@P6AXXZ@std@@U?$default_delete@V?$tuple@P6AXXZ@std@@@2@@std@@QEAA@XZ ; std::unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >::~unique_ptr<std::tuple<void (__cdecl*)(void)>,std::default_delete<std::tuple<void (__cdecl*)(void)> > >
-main$dtor$7 ENDP
-text$x	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT text$x
-text$x	SEGMENT
-t1$1 = 48
-t2$2 = 64
-$T3 = 80
-$T4 = 80
-_Decay_copied$5 = 128
-_Decay_copied$6 = 128
-main$dtor$1 PROC
-	lea	rcx, QWORD PTR t2$2[rdx]
-	jmp	??1thread@std@@QEAA@XZ			; std::thread::~thread
-main$dtor$1 ENDP
-text$x	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?thread2@@YAXXZ
-_TEXT	SEGMENT
-?thread2@@YAXXZ PROC					; thread2, COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	mov	eax, 1
-	xchg	DWORD PTR ?y@@3U?$atomic@H@std@@A, eax	; y
-; Line 932
-	mov	ecx, DWORD PTR ?x@@3U?$atomic@H@std@@A	; x
-; Line 933
-	npad	1
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 25
-	mov	DWORD PTR ?r2@@3HA, ecx			; r2
-; Line 26
-	ret	0
-?thread2@@YAXXZ ENDP					; thread2
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?thread1@@YAXXZ
-_TEXT	SEGMENT
-?thread1@@YAXXZ PROC					; thread1, COMDAT
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	mov	eax, 1
-	xchg	DWORD PTR ?x@@3U?$atomic@H@std@@A, eax	; x
-; Line 932
-	mov	ecx, DWORD PTR ?y@@3U?$atomic@H@std@@A	; y
-; Line 933
-	npad	1
-; File C:\Users\20131\Desktop\Workplace\CppConsistency\src\mo_seq_cst.cpp
-; Line 20
-	mov	DWORD PTR ?r1@@3HA, ecx			; r1
-; Line 21
-	ret	0
-?thread1@@YAXXZ ENDP					; thread1
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??4?$atomic@H@std@@QEAAHH@Z
-_TEXT	SEGMENT
-this$ = 8
-_Value$ = 16
-??4?$atomic@H@std@@QEAAHH@Z PROC			; std::atomic<int>::operator=, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	mov	eax, edx
-	xchg	DWORD PTR [rcx], eax
-; Line 2175
-	mov	eax, edx
-; Line 2176
-	ret	0
-??4?$atomic@H@std@@QEAAHH@Z ENDP			; std::atomic<int>::operator=
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?load@?$_Atomic_storage@H$03@std@@QEBAHW4memory_order@2@@Z
-_TEXT	SEGMENT
-this$ = 8
-_Order$ = 16
-?load@?$_Atomic_storage@H$03@std@@QEBAHW4memory_order@2@@Z PROC ; std::_Atomic_storage<int,4>::load, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 932
-	mov	eax, DWORD PTR [rcx]
-; Line 933
-	test	edx, edx
-	je	SHORT $LN5@load
-	npad	1
-$LN5@load:
-; Line 936
-	ret	0
-?load@?$_Atomic_storage@H$03@std@@QEBAHW4memory_order@2@@Z ENDP ; std::_Atomic_storage<int,4>::load
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?store@?$_Atomic_storage@H$03@std@@QEAAXHW4memory_order@2@@Z
-_TEXT	SEGMENT
-this$ = 8
-_Value$ = 16
-_Order$ = 24
-?store@?$_Atomic_storage@H$03@std@@QEAAXHW4memory_order@2@@Z PROC ; std::_Atomic_storage<int,4>::store, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 916
-	test	r8d, r8d
-	je	SHORT $LN11@store
-; Line 918
-	cmp	r8d, 3
-	jne	SHORT $LN4@store
-; Line 919
-	npad	1
-$LN11@store:
-; Line 923
-	mov	DWORD PTR [rcx], edx
-	ret	0
-$LN4@store:
-; Line 907
-	xchg	DWORD PTR [rcx], edx
-; Line 923
-	ret	0
-?store@?$_Atomic_storage@H$03@std@@QEAAXHW4memory_order@2@@Z ENDP ; std::_Atomic_storage<int,4>::store
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?store@?$_Atomic_storage@H$03@std@@QEAAXH@Z
-_TEXT	SEGMENT
-this$ = 8
-_Value$ = 16
-?store@?$_Atomic_storage@H$03@std@@QEAAXH@Z PROC	; std::_Atomic_storage<int,4>::store, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 907
-	xchg	DWORD PTR [rcx], edx
-; Line 908
-	ret	0
-?store@?$_Atomic_storage@H$03@std@@QEAAXH@Z ENDP	; std::_Atomic_storage<int,4>::store
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?join@thread@std@@QEAAXXZ
-_TEXT	SEGMENT
-$T1 = 32
-this$ = 64
-?join@thread@std@@QEAAXXZ PROC				; std::thread::join, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 124
-$LN18:
-	push	rdi
-	sub	rsp, 48					; 00000030H
-; Line 125
-	cmp	DWORD PTR [rcx+8], 0
-	mov	rdi, rcx
-	je	SHORT $LN14@join
-; Line 129
-	mov	QWORD PTR [rsp+64], rbx
-	mov	ebx, DWORD PTR [rcx+8]
-	call	_Thrd_id
-	cmp	ebx, eax
-	mov	rbx, QWORD PTR [rsp+64]
-	je	SHORT $LN15@join
-; Line 133
-	movups	xmm0, XMMWORD PTR [rdi]
-	xor	edx, edx
-	lea	rcx, QWORD PTR $T1[rsp]
-	movaps	XMMWORD PTR $T1[rsp], xmm0
-	call	_Thrd_join
-	test	eax, eax
-	jne	SHORT $LN16@join
-; Line 137
-	xorps	xmm0, xmm0
-	movups	XMMWORD PTR [rdi], xmm0
-; Line 138
-	add	rsp, 48					; 00000030H
-	pop	rdi
-	ret	0
-$LN16@join:
-; Line 134
-	mov	ecx, 2
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	int	3
-$LN14@join:
-; Line 126
-	mov	ecx, 1
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	int	3
-$LN15@join:
-; Line 130
-	mov	ecx, 5
-	call	?_Throw_Cpp_error@std@@YAXH@Z		; std::_Throw_Cpp_error
-	int	3
-$LN12@join:
-?join@thread@std@@QEAAXXZ ENDP				; std::thread::join
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?joinable@thread@std@@QEBA_NXZ
-_TEXT	SEGMENT
-this$ = 8
-?joinable@thread@std@@QEBA_NXZ PROC			; std::thread::joinable, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 121
-	cmp	DWORD PTR [rcx+8], 0
-	setne	al
-; Line 122
-	ret	0
-?joinable@thread@std@@QEBA_NXZ ENDP			; std::thread::joinable
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ??1thread@std@@QEAA@XZ
-_TEXT	SEGMENT
-this$ = 48
-??1thread@std@@QEAA@XZ PROC				; std::thread::~thread, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\thread
-; Line 96
-$LN12:
-	sub	rsp, 40					; 00000028H
-; Line 97
-	cmp	DWORD PTR [rcx+8], 0
-	jne	SHORT $LN10@thread
-; Line 100
-	add	rsp, 40					; 00000028H
-	ret	0
-$LN10@thread:
-; Line 98
-	call	terminate
-	int	3
-$LN8@thread:
-??1thread@std@@QEAA@XZ ENDP				; std::thread::~thread
-_TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ?getloc@ios_base@std@@QEBA?AVlocale@2@XZ
 _TEXT	SEGMENT
@@ -19456,26 +18211,6 @@ _TEXT	SEGMENT
 ; Line 699
 	ret	0
 ?iostream_category@std@@YAAEBVerror_category@1@XZ ENDP	; std::iostream_category
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z
-_TEXT	SEGMENT
-_Order$ = 8
-?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z PROC ; std::_Check_load_memory_order, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 319
-	ret	0
-?_Check_load_memory_order@std@@YAXW4memory_order@1@@Z ENDP ; std::_Check_load_memory_order
-_TEXT	ENDS
-; Function compile flags: /Ogtpy
-;	COMDAT ?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z
-_TEXT	SEGMENT
-_Order$ = 8
-?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z PROC ; std::_Check_store_memory_order, COMDAT
-; File C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\atomic
-; Line 303
-	ret	0
-?_Check_store_memory_order@std@@YAXW4memory_order@1@@Z ENDP ; std::_Check_store_memory_order
 _TEXT	ENDS
 ; Function compile flags: /Ogtpy
 ;	COMDAT ??_Gruntime_error@std@@UEAAPEAXI@Z
